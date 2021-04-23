@@ -277,6 +277,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/options/stickytitles</li>
 
+<li>Backlinks.css</li>
+
 <li>Bootstrap</li>
 
 <li>Chrome</li>
@@ -286,6 +288,8 @@ Error message and password prompt
 <li>demo</li>
 
 <li>Description</li>
+
+<li>Draft of '$:/plugins/rmnvsl/krystal/references.css'</li>
 
 <li>Express</li>
 
@@ -12095,7 +12099,7 @@ exports.Completion = Completion;
 <div created="20210422043416094" modified="20210422043416094" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/freelinks">
 <pre>yes</pre>
 </div>
-<div created="20210422041645291" modified="20210423015306510" title="$:/state/advancedsearch/currentTab">
+<div created="20210422041645291" modified="20210423055401008" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Shadows</pre>
 </div>
 <div created="20210422043922412" modified="20210422043925613" title="$:/state/dropdown/keyboardshortcut/add-field-286565879">
@@ -12134,7 +12138,7 @@ exports.Completion = Completion;
 <div created="20210422041350172" modified="20210422043322574" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
 </div>
-<div created="20210422041645291" modified="20210423015306510" title="$:/state/tab--1498284803">
+<div created="20210422041645291" modified="20210423055401009" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Shadows</pre>
 </div>
 <div created="20210422043732159" modified="20210422052156494" title="$:/state/tab--1963855381">
@@ -12170,7 +12174,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210423014601700" list="demo Mentat Project $:/core/ui/SideBar/Recent [[View Tag Backlinks]]" modified="20210423054830864" title="$:/StoryList">
+<div created="20210423014601700" list="demo Mentat Project $:/AdvancedSearch $:/core/ui/ViewTemplate/tags $:/core/ui/SideBar/Recent [[View Data Backlinks]]" modified="20210423064922035" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Fields]] [[View Data Backlinks]] [[View Tag Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin $:/plugins/rmnvsl/krystal/references $:/plugins/rmnvsl/krystal/title" modified="20210423054837603" title="$:/tags/ViewTemplate">
@@ -12297,6 +12301,13 @@ exports.Completion = Completion;
 <div created="20210422050111441" modified="20210422050114870" title="$:/themes/tiddlywiki/vanilla/options/stickytitles">
 <pre>no</pre>
 </div>
+<div created="20210423062421389" modified="20210423064610900" tags="$:/tags/Stylesheet" title="Backlinks.css">
+<pre>.backlinks-wrapper {
+ background: &lt;&lt;color page-background&gt;&gt;;
+  font-size: 0.9em;
+}
+</pre>
+</div>
 <div created="20210422235154147" modified="20210422235154147" title="Bootstrap">
 <pre></pre>
 </div>
@@ -12311,6 +12322,65 @@ exports.Completion = Completion;
 </div>
 <div created="20210422235240170" modified="20210422235240170" title="Description">
 <pre></pre>
+</div>
+<div draft.of="$:/plugins/rmnvsl/krystal/references.css" draft.title="$:/plugins/rmnvsl/krystal/references.css" modified="20210423062459415" tags="$:/tags/Stylesheet" title="Draft of '$:/plugins/rmnvsl/krystal/references.css'">
+<pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
+
+.krystal-references {
+  background: &lt;&lt;color page-background&gt;&gt;;
+  font-size: 0.75em;
+  padding: 0.5rem;
+  list-style: none;
+  margin-top: 3rem;
+  margin-bottom: 0;
+  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.krystal-references__title {
+  font-size: 1.25em;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.krystal-references__reference {
+  width: 50%;
+}
+
+.krystal-references__reference &gt; a {
+  color: inherit;
+  background: inherit;
+  display: block;
+  text-decoration: none;
+  padding: 0.5rem;
+  height: 130px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.125s ease;
+}
+
+.krystal--static .krystal-references__reference &gt; a {
+  height: initial;
+  overflow: initial;
+}
+
+.krystal-references__reference &gt; a:hover {
+  color: &lt;&lt;color sidebar-tab-foreground&gt;&gt;;
+  background: &lt;&lt;color sidebar-tab-background&gt;&gt;;
+  text-decoration: none;
+}
+
+.krystal--static .krystal-references__content {
+  height: 130px;
+  overflow: hidden;
+}
+
+.krystal-references__content a {
+  color: inherit !important;
+  text-decoration: none !important;
+  pointer-events: none;
+}</pre>
 </div>
 <div created="20210422235515309" modified="20210422235515309" title="Express">
 <pre></pre>
@@ -12650,12 +12720,12 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 <div created="20210422235122495" modified="20210422235122495" title="TODO">
 <pre></pre>
 </div>
-<div created="20210423054125933" modified="20210423054446919" tags="$:/tags/ViewTemplate" title="View Data Backlinks">
+<div created="20210423054125933" modified="20210423064937298" tags="$:/tags/ViewTemplate" title="View Data Backlinks">
 <pre>&lt;$set name=title value={{!!title}} &gt;
-&lt;$list filter=&quot;[all[tiddlers]has&lt;title&gt;] +[limit[1]]&quot; variable=none &gt;
-&lt;div&gt;
+&lt;$list filter=&quot;[all[tiddlers]has&lt;title&gt;] +[limit[1]]&quot; variable=_&gt;
+&lt;div class=&quot;backlinks-wrapper&quot;&gt;
 &lt;details open&gt;
-&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;em&gt;Notes with the &quot;&lt;&lt;title&gt;&gt;&quot; field&lt;/em&gt;&lt;/summary&gt;
+&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;&lt;em&gt;Notes with the &quot;&lt;&lt;title&gt;&gt;&quot; field&lt;/em&gt;&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
 &lt;$list filter=&quot;[all[tiddlers]has&lt;title&gt;sort[title]]&quot;&gt;
 &lt;$link mode=inline /&gt; :
@@ -12668,11 +12738,11 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 &lt;/$list&gt;
 &lt;/$set&gt;</pre>
 </div>
-<div created="20210423015529529" modified="20210423053835645" tags="$:/tags/ViewTemplate" title="View Fields">
+<div created="20210423015529529" modified="20210423062712510" tags="$:/tags/ViewTemplate" title="View Fields">
 <pre>&lt;$list filter=&quot;[all[current]fields[]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]] +[limit[1]]&quot; variable=none&gt;
-&lt;div&gt;
+&lt;div class=&quot;backlinks-wrapper&quot;&gt;
 &lt;details open&gt;
-&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;em&gt;Fields&lt;/em&gt;&lt;/summary&gt;
+&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;em&gt;&lt;strong&gt;Fields&lt;/strong&gt;&lt;/em&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px;&quot;&gt;
 &lt;$list filter=&quot;[all[current]fields[]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]&quot; variable=&quot;title&quot;&gt;
 &lt;$link to=&lt;&lt;title&gt;&gt; mode=inline/&gt; :
@@ -12686,16 +12756,19 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 
 </pre>
 </div>
-<div created="20210423054644610" modified="20210423054753231" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
+<div created="20210423054644610" modified="20210423064913650" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
 <pre>&lt;$set name=title value={{!!title}} &gt;
-&lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;] +[limit[1]]&quot; variable=none &gt;
-&lt;div&gt;
+&lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;] +[limit[1]]&quot; variable=_ &gt;
+&lt;div class=&quot;backlinks-wrapper&quot;&gt;
 &lt;details open&gt;
-&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;em&gt;Notes with the &quot;&lt;&lt;title&gt;&gt;&quot; tag&lt;/em&gt;&lt;/summary&gt;
+&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;&lt;em&gt;Notes with the &quot;&lt;&lt;title&gt;&gt;&quot; tag&lt;/em&gt;&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
 &lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;sort[title]]&quot;&gt;
-&lt;$link mode=inline /&gt; 
-&lt;br/&gt;
+&lt;$link mode=inline /&gt;
+&lt;div style=&quot;margin-left: 10px&quot; &gt;
+&lt;em&gt;Other tags:&lt;/em&gt;
+&lt;$list filter=&quot;[all[current]tags[]sort[title]] -[title&lt;title&gt;]&quot; template=&quot;$:/core/ui/TagTemplate&quot; storyview=&quot;pop&quot; emptyMessage=&quot;none&quot;/&gt;
+&lt;/div&gt;
 &lt;/$list&gt;
 &lt;/div&gt;
 &lt;/details&gt;
