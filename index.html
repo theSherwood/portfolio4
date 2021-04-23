@@ -157,6 +157,10 @@ Error message and password prompt
 
 <li>$:/config/RelinkOnRename</li>
 
+<li>$:/config/shortcuts/linkify</li>
+
+<li>$:/config/shortcuts/list-bullet</li>
+
 <li>$:/config/Tiddlers/TitleLinks</li>
 
 <li>$:/config/Toolbar/ButtonClass</li>
@@ -174,8 +178,6 @@ Error message and password prompt
 <li>$:/core/ui/ViewTemplate/subtitle</li>
 
 <li>$:/DefaultTiddlers</li>
-
-<li>$:/Import</li>
 
 <li>$:/isEncrypted</li>
 
@@ -214,6 +216,10 @@ Error message and password prompt
 <li>$:/state/dropdown/keyboardshortcut/add-field-286565879</li>
 
 <li>$:/state/dropdown/keyboardshortcut/advanced-search-286565879</li>
+
+<li>$:/state/dropdown/keyboardshortcut/linkify-286565879</li>
+
+<li>$:/state/dropdown/keyboardshortcut/list-bullet-286565879</li>
 
 <li>$:/state/folded/ting</li>
 
@@ -267,6 +273,56 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla/options/stickytitles</li>
 
+<li>Bootstrap</li>
+
+<li>Chrome</li>
+
+<li>CSS</li>
+
+<li>Demo</li>
+
+<li>Description</li>
+
+<li>Express</li>
+
+<li>Firefox</li>
+
+<li>GitHub</li>
+
+<li>HTML</li>
+
+<li>JavaScript</li>
+
+<li>Lessons Learned</li>
+
+<li>Mentat</li>
+
+<li>Node.js</li>
+
+<li>Overview</li>
+
+<li>Pain Points</li>
+
+<li>Project</li>
+
+<li>React</li>
+
+<li>Redux</li>
+
+<li>regex</li>
+
+<li>Regex101</li>
+
+<li>RegexXP</li>
+
+<li>Tech Stack</li>
+
+<li>TiddlyWiki</li>
+
+<li>TODO</li>
+
+<li>Website</li>
+
 </ul>
 </p>
 
@@ -304,6 +360,12 @@ Error message and password prompt
 </div>
 <div created="20210422061344270" modified="20210422061344270" title="$:/config/RelinkOnRename">
 <pre>yes</pre>
+</div>
+<div created="20210422231817888" modified="20210422231823385" title="$:/config/shortcuts/linkify">
+<pre>ctrl-shift-L</pre>
+</div>
+<div created="20210422231751805" modified="20210422231807226" title="$:/config/shortcuts/list-bullet">
+<pre>ctrl-shift-B</pre>
 </div>
 <div created="20210422040758747" modified="20210422040758747" title="$:/config/Tiddlers/TitleLinks">
 <pre>yes</pre>
@@ -10214,11 +10276,6 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210422040539032" modified="20210422060939915" title="$:/DefaultTiddlers">
 <pre>[list[$:/StoryList]]</pre>
 </div>
-<div status="complete" title="$:/Import">
-<pre>The following tiddlers were imported:
-
-# [[$:/plugins/flibbles/relink]]</pre>
-</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
@@ -12019,6 +12076,12 @@ exports.Completion = Completion;
 <div created="20210422043928403" modified="20210422043929424" title="$:/state/dropdown/keyboardshortcut/advanced-search-286565879">
 <pre>close</pre>
 </div>
+<div created="20210422231815085" modified="20210422231827099" title="$:/state/dropdown/keyboardshortcut/linkify-286565879">
+<pre>close</pre>
+</div>
+<div created="20210422231746854" modified="20210422231830060" title="$:/state/dropdown/keyboardshortcut/list-bullet-286565879">
+<pre>close</pre>
+</div>
 <div created="20210422052457493" modified="20210422052501141" title="$:/state/folded/ting">
 <pre>show</pre>
 </div>
@@ -12064,8 +12127,8 @@ exports.Completion = Completion;
 <div created="20210422061105008" modified="20210422061105008" title="$:/state/tab--959111941">
 <pre>$:/core/ui/ControlPanel/EditorTypes</pre>
 </div>
-<div created="20210422040635197" modified="20210422061437110" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20210422040635197" modified="20210422231420778" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/KeyboardShortcuts</pre>
 </div>
 <div created="20210422040944391" modified="20210422041004855" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
@@ -12076,7 +12139,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="GettingStarted" title="$:/StoryList">
+<div created="20210422235504757" list="Mentat" modified="20210423001634630" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210422042409319" modified="20210422042434260" title="$:/theme">
@@ -12199,6 +12262,201 @@ exports.Completion = Completion;
 </div>
 <div created="20210422050111441" modified="20210422050114870" title="$:/themes/tiddlywiki/vanilla/options/stickytitles">
 <pre>no</pre>
+</div>
+<div created="20210422235154147" modified="20210422235154147" title="Bootstrap">
+<pre></pre>
+</div>
+<div created="20210422235141386" modified="20210422235141386" title="Chrome">
+<pre></pre>
+</div>
+<div created="20210422235113490" modified="20210422235113490" title="CSS">
+<pre></pre>
+</div>
+<div created="20210422234919703" modified="20210422234919703" title="Demo">
+<pre></pre>
+</div>
+<div created="20210422235240170" modified="20210422235240170" title="Description">
+<pre></pre>
+</div>
+<div created="20210422235515309" modified="20210422235515309" title="Express">
+<pre></pre>
+</div>
+<div created="20210422235146730" modified="20210422235146730" title="Firefox">
+<pre></pre>
+</div>
+<div created="20210422234924506" modified="20210422234924506" title="GitHub">
+<pre></pre>
+</div>
+<div created="20210422235528832" modified="20210422235528832" title="HTML">
+<pre></pre>
+</div>
+<div created="20210422235049686" modified="20210422235049686" title="JavaScript">
+<pre></pre>
+</div>
+<div created="20210422235212827" modified="20210422235212827" title="Lessons Learned">
+<pre></pre>
+</div>
+<div created="20210422234117124" modified="20210423001433282" tags="Project" title="Mentat">
+<pre>[[Demo]] https://thesherwood.github.io/Mentat/ &lt;br/&gt;
+[[GitHub]] https://github.com/theSherwood/Mentat
+
+!! [[Description]]
+
+Mentat is actually a series of 4 plugins ([[Repopup]], [[Volant]], [[Engine]], and [[Mentat]]) for the [[TiddlyWiki]] platform. Each plugin builds on the last. Together, they create a platform for users to radically configure the UI/UX of their wiki intuitively and with speed. They also form a base from which even more adventurous UI/UX solutions can be developed.
+
+* [[Repopup]] handles popups and popovers native to [[TiddlyWiki]] to make them compatible with the other 3 plugins.
+* [[Volant]] allows a user to add a tag to a tiddler (the basic atomic building block of [[TiddlyWiki]]) that makes the tiddler positionable through dragging and dropping. Tags of the user’s choosing can also be imbued with the same power. Volant also has a convenient snapping system built in.
+* [[Engine]] uses Volant tiddlers to create a highly configurable heads up display. Taskbars, menu bars, side bars of the user’s choosing and design can quickly snap into place. It comes with some useful defaults.
+* [[Mentat]] brings it all together, adding positionable windows with scrolling tab bars, and powerful navigation between different window instances. Save layouts, window sessions, or entire multi-window sessions for later.
+
+!! [[Tech Stack]]
+
+[[TiddlyWiki]] is it’s own beast. It’s built in vanilla [[JavaScript]], [[HTML]], and [[CSS]], and additionally employs a [[TiddlyWiki]] markup, macro, and widget system not found anywhere else.
+
+!! [[Overview]]
+
+This was my first real project in Javascript, and is, to this date, the most difficult project I’ve taken on and probably still the one I’m most proud of.
+
+[[TiddlyWiki]] is spectacular. It is a [[quine]], and one interacts with one’s wiki by editing the source code, making [[TiddlyWiki]] probably the most user configurable anything I’ve ever encountered. In many respects, it is more like an operating system than an wiki or an app (but the way data is organized is far more powerful than any operating system I’ve ever encountered). I could wax lyrical about it, but suffice it to say that it is really something special.
+
+[[TiddlyWiki]] comes with a number of tools for making configuration easier. But there were not many of these tools or abstractions for the UI/UX. Mentat is an ambitious attempt to change that. It not only adds a jumping off point and a set of abstractions for future [[TiddlyWiki]] UI/UX developers, but it provides something immediately useful to the user. To do this, I decided to use abstractions and interactions that are already familiar to most users: taskbars and windows. But that’s just the beginning.
+
+Do not be fooled by the spartan appearance, [[TiddlyWiki]] is intended to be largely unopinionated on styling issues.
+
+!! Smooth Sailing
+
+There was no smooth sailing.
+
+!! [[Pain Points]]
+
+!!! [[TiddlyWiki]]’s Abstractions
+        [[TiddlyWiki]] is awesome, but the abstractions were unfamiliar. The existing [[TiddlyWiki]] codebase was also something like 25,000 lines at the time (formidable for a newbie like me), sitting in a single [[HTML]] file. Additionally, [[TiddlyWiki]] has its own component system, its own widgets, its own markup, it’s own macro system, etc. I had to grapple with all these new things while getting a handle on basic [[JavaScript]].
+
+!!! Configurability
+        [[TiddlyWiki]] is a [[quine]] which users manipulate by editing the source code from within the wiki. So everything has to be highly robust while being configurable as possible because users may be poking at it routinely. So Mentat had to be not only maintainable for developers, given future changes to the [[TiddlyWiki]] core, but robust enough to be configured in ways I couldn’t anticipate. It had to be a tool while also being something that users could immediately and intuitively make use of. That was a huge challenge.
+
+!!! User Feedback
+        Upon release, Mentat began to be used. I had naively thought that at release, the work was done. In hindsight, that was stupid. On release is when the bug reports, support and feature requests began rolling in ([[GitHub]] does not reflect this as the vast majority of this stuff occurred in the [[TiddlyWiki]] Google group). I could never have anticipated the ways some people were trying to use my plugins. Some feature requests I was able to implement and some were simply too far outside the scope of the project.
+
+!! [[Lessons Learned]]
+
+!!! Release
+        Release is when the work really begins. You also can’t make a tool or interface right for literally everyone. [[TiddlyWiki]]'s philosophy is to offer extensive configurability, but the philosophy of doing things one right way also has a great deal of merit.
+
+!!! Code Base
+        Know the code base. You can’t learn it all immediately, but learn it bit by bit. Mentat and [[TiddlyWiki]] taught me how to do that.
+
+!!! Go Big
+        Mentat was a really ambitious project for someone of my experience. And I still think it was probably the biggest upgrade to UI/UX functionality that [[TiddlyWiki]] has seen. It was really difficult, but it paid off.
+
+!!! Make Something You Want to Use
+        Sometimes this isn’t possible, but when it is, this is the way to go!
+
+!!! Respect the Weird
+        [[TiddlyWiki]] has a weird set of abstractions not seen outside it. That makes it something of a pain to work on. Weird projects merit some respect in that regard: they will not be easy. On the other hand, weird projects sometimes blaze new trails, and that is an awesome thing to be a part of.
+
+!! [[TODO]]
+
+* Mobile version. The current version is very much about creating a desktop workspace and is unsuited to mobile use.
+
+* Recursion. At present, window tiddlers cannot contain other window tiddlers.
+
+* Cloud dashboard. The current state of Mentat has made great use of Volant tiddlers that are fixed to the screen. Those Volant tiddlers that are not fixed to the screen could use some love.</pre>
+</div>
+<div created="20210422235507979" modified="20210422235507979" title="Node.js">
+<pre></pre>
+</div>
+<div created="20210422235224206" modified="20210422235224206" title="Overview">
+<pre></pre>
+</div>
+<div created="20210423001542699" modified="20210423001542699" title="Pain Points">
+<pre></pre>
+</div>
+<div created="20210423000856082" modified="20210423001137313" title="Project">
+<pre></pre>
+</div>
+<div created="20210422235203712" modified="20210422235203712" title="React">
+<pre></pre>
+</div>
+<div created="20210422235231955" modified="20210422235231955" title="Redux">
+<pre></pre>
+</div>
+<div created="20210422235056372" modified="20210422235056372" title="regex">
+<pre></pre>
+</div>
+<div created="20210423001516654" modified="20210423001523575" title="Regex101">
+<pre>[[Website]] https://regex101.com/</pre>
+</div>
+<div created="20210422230856028" modified="20210423001510762" tags="Project" title="RegexXP">
+<pre>[[Website]] https://www.regexxp.online/ &lt;br/&gt;
+[[GitHub]] https://github.com/theSherwood/RegexXP
+
+!! [[Description]]
+
+RegexXP is an educational app for [[JavaScript]] developers trying to improve their regular expression skills. The app allows users to create challenges and solve the challenges created by other users. It also contains a brief tutorial, covering the principal features of [[regex]] in [[JavaScript]].
+
+!! [[Tech Stack]]
+
+* [[React]] - UI framework
+* [[Redux]] - global state management
+* [[Bootstrap]] - CSS framework
+* [[Express]] - RESTful api
+* [[Node.js]] - server runtime
+* [[MongoDB]] - database
+* [[Mongoose]] - ODM
+* [[Passport]], [[OAuth]], [[JWT]] - authentication strategies employed
+* [[Now]] - serverless deployment (now [[Vercel]])
+
+!! [[Overview]]
+
+I started this project because I wanted to brush up on my [[regex]] skills. Originally, the UI was intended to be done in [[Handlebars]]. I quickly found that was an inadequate solution for creating the textareas that feature regex highlighting. I needed something a bit more powerful and reached for React (using the new Hooks API), leaving much of the [[Bootstrap]] styling in place.
+
+The app was also originally deployed to [[Heroku]]. I have since deployed it with [[Now]], instead, because I was curious about serverless and because [[Now]] makes https certification simple with custom domains.
+
+!! Smooth Sailing
+
+This was my first solo project using basically any of these technologies. [[React]] and [[Redux]] were straightforward. I’d used them before on some tutorials. I’d had previous experience with [[ORM]]s for dealing with relational databases, and [[Mongoose]] was reminiscent of that. Deploying to [[Heroku]] was also straightforward.
+
+!! [[Pain Points]]
+
+!!! [[Passport]], [[OAuth]], and [[JWT]]
+        This was complex. I’ve no doubt that [[Passport]] simplifies the process, but it was still tricky to muddle through. I wanted [[OAuth]] with Google and [[GitHub]] as well as authentication through email and password. I ended up using [[JWT]] for the email and password authentication and exchanging the tokens received from the Google and [[GitHub]] [[OAuth]] callbacks for JSON web tokens so that all the authentication processes ended up using the same system.
+
+!!! [[Now]]
+        Serverless deployment with Now was also incredibly tricky. I would get the RESTful backend routes working and the front end routing would break, and vice versa. Eventually, I figured out how to handle the client-side routing in the config file, and the process clicked into place.
+
+!!! [[Bootstrap]]
+        Bootstrap sometimes got in the way as much as it helped. I personally quite like functional [[CSS]] (at least in theory), but I couldn’t help but feel that I might be better off eschewing a [[CSS]] framework completely. Or perhaps the key is simply to become much more familiar with a particular framework.
+
+!!! Highlightable Textarea
+        Making the highlightable textarea components was difficult. The differences in the way [[Firefox]] and [[Chrome]] handle some of the [[CSS]] made the process even more nightmare-ish. That said, the current version works well.
+
+!! [[Lessons Learned]]
+
+!!! [[React Hooks]] Api
+        The [[React Hooks]] API seems to me a considerable improvement on the class component system. For the most part, it makes reasoning about async events dead simple.
+
+!!! [[CSS]] Frameworks
+        Introducing a [[CSS]] framework from the beginning may be a mistake.
+
+!!! [[Research]]
+        Do better research. There are some great websites for learning regular expressions already, in particular [[Regex101]]. There are also already ways to highlight text in a textarea. Use those solutions instead of building your own.
+
+!! [[TODO]]
+
+The highlightable textarea component is just a bit too tightly coupled. I need to extricate it and publish it as an [[NPM]] package.</pre>
+</div>
+<div created="20210422234943285" modified="20210422234943285" title="Tech Stack">
+<pre></pre>
+</div>
+<div created="20210422234931461" modified="20210423001614528" title="TiddlyWiki">
+<pre>[[Website]] https://tiddlywiki.com/</pre>
+</div>
+<div created="20210422235122495" modified="20210422235122495" title="TODO">
+<pre></pre>
+</div>
+<div created="20210422234957817" modified="20210422234957817" title="Website">
+<pre></pre>
 </div>
 
 
