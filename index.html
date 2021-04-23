@@ -12164,7 +12164,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210423014601700" list="Mentat [[View Fields]] $:/core/ui/SideBar/Recent" modified="20210423021917195" title="$:/StoryList">
+<div created="20210423014601700" list="Mentat demo $:/core/ui/SideBar/Recent [[View Fields]]" modified="20210423045545554" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/subtitle $:/core/ui/ViewTemplate/tags [[View Fields]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin $:/plugins/rmnvsl/krystal/references $:/plugins/rmnvsl/krystal/title" modified="20210423020212887" title="$:/tags/ViewTemplate">
@@ -12300,8 +12300,14 @@ exports.Completion = Completion;
 <div created="20210422235113490" modified="20210422235113490" title="CSS">
 <pre></pre>
 </div>
-<div created="20210422234919703" modified="20210423021505703" title="demo">
-<pre></pre>
+<div created="20210422234919703" modified="20210423045954235" title="demo">
+<pre>&lt;$set name=title value={{!!title}} &gt;
+&lt;$list filter=&quot;[all[tiddlers]has&lt;title&gt;]&quot;&gt;
+&lt;$link mode=inline /&gt; :
+&lt;$transclude field=&lt;&lt;title&gt;&gt; mode=inline /&gt;
+&lt;br/&gt;
+&lt;/$list&gt;
+&lt;/$set&gt;</pre>
 </div>
 <div created="20210422235240170" modified="20210422235240170" title="Description">
 <pre></pre>
@@ -12641,10 +12647,14 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 <div created="20210422235122495" modified="20210422235122495" title="TODO">
 <pre></pre>
 </div>
-<div created="20210423015529529" modified="20210423021222137" tags="$:/tags/ViewTemplate" title="View Fields">
-<pre>&lt;$list filter=&quot;[all[current]fields[]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]&quot; variable=&quot;title&quot;&gt;
-&lt;$link to=&lt;&lt;title&gt;&gt;/&gt;&lt;a href=&lt;&lt;title&gt;&gt; class=&quot;tc-tiddlylink-external&quot;&gt;&lt;$view field=&lt;&lt;title&gt;&gt;/&gt;&lt;/a&gt;
-&lt;/$list&gt;</pre>
+<div created="20210423015529529" modified="20210423050004710" tags="$:/tags/ViewTemplate" title="View Fields">
+<pre>&lt;div&gt;
+&lt;$list filter=&quot;[all[current]fields[]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]&quot; variable=&quot;title&quot;&gt;
+&lt;$link to=&lt;&lt;title&gt;&gt; mode=inline/&gt; :
+&lt;$transclude field=&lt;&lt;title&gt;&gt; mode=inline /&gt;
+&lt;br/&gt;
+&lt;/$list&gt;
+&lt;/div&gt;</pre>
 </div>
 <div created="20210422234957817" modified="20210423021616491" title="website">
 <pre></pre>
