@@ -12182,7 +12182,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210423070440247" list="demo ReconJS RollupJS website" modified="20210423070610051" title="$:/StoryList">
+<div created="20210423142140415" list="demo ReconJS [[ReconJS Site]] Project $:/core/ui/SideBar/Recent [[View Tag Backlinks]]" modified="20210423142427374" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Fields]] [[View Data Backlinks]] [[View Tag Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin $:/plugins/rmnvsl/krystal/references $:/plugins/rmnvsl/krystal/title" modified="20210423054837603" title="$:/tags/ViewTemplate">
@@ -12414,7 +12414,7 @@ exports.Completion = Completion;
 <div created="20210422235212827" modified="20210422235212827" title="Lessons Learned">
 <pre></pre>
 </div>
-<div created="20210422234117124" demo="https://thesherwood.github.io/Mentat/" github="https://github.com/theSherwood/Mentat" modified="20210423065642871" tags="Project 2019" title="Mentat" website="https://thesherwood.github.io/Mentat/">
+<div created="20210422234117124" demo="https://thesherwood.github.io/Mentat/" github="https://github.com/theSherwood/Mentat" modified="20210423142205129" tags="Project 2019 Plugin" title="Mentat" website="https://thesherwood.github.io/Mentat/">
 <pre>!! [[Description]]
 
 Mentat is actually a series of 4 plugins ([[Repopup]], [[Volant]], [[Engine]], and [[Mentat]]) for the [[TiddlyWiki]] platform. Each plugin builds on the last. Together, they create a platform for users to radically configure the UI/UX of their wiki intuitively and with speed. They also form a base from which even more adventurous UI/UX solutions can be developed.
@@ -12551,7 +12551,7 @@ Things have been reasonably smooth. [[Svelte]] is pretty ergonomic, [[Skeleton]]
 <div created="20210423070047202" modified="20210423070047202" title="React Hooks">
 <pre></pre>
 </div>
-<div created="20210423001904393" demo="https://reconjs-site.thesherwood.now.sh/ " github="https://github.com/theSherwood/ReconJS" modified="20210423065715056" npm="https://www.npmjs.com/package/@thesherwood/reconjs" tags="Project 2019" title="ReconJS">
+<div created="20210423001904393" demo="https://reconjs-site.thesherwood.now.sh/ " github="https://github.com/theSherwood/ReconJS" modified="20210423142228575" npm="https://www.npmjs.com/package/@thesherwood/reconjs" tags="Project 2019 Library" title="ReconJS">
 <pre>!! [[Description]]
 
 [[ReconJS]] is a tool for statically checking arbitrary Javascript code for security threats. Analyze code for safety before you run it.
@@ -12602,7 +12602,7 @@ Once I had [[AcornJS]] building the AST, it was pretty straightforward. Prior to
 * Using [[ReconJS]] to check files, as a command line tool, rather than using it programmatically and passing in strings of code.
 * Add tests.</pre>
 </div>
-<div created="20210423011414633" github="https://github.com/theSherwood/reconjs-site" modified="20210423065728928" tags="Project 2019" title="ReconJS Site" website="https://reconjs-site.thesherwood.now.sh/">
+<div created="20210423011414633" github="https://github.com/theSherwood/reconjs-site" modified="20210423142334134" tags="Project 2019 [[Web App]]" title="ReconJS Site" website="https://reconjs-site.thesherwood.now.sh/">
 <pre>!! [[Description]]
 
 The ReconJS Site is a gamified, adversarial demo of [[ReconJS]]. The purpose is two-fold:
@@ -12662,7 +12662,7 @@ Consider a freeform section where developers can play with configuring [[ReconJS
 <div created="20210423001516654" modified="20210423021752990" title="Regex101" website="https://regex101.com/">
 <pre></pre>
 </div>
-<div created="20210422230856028" github="https://github.com/theSherwood/RegexXP" modified="20210423065740369" tags="Project 2019" title="RegexXP" website="https://www.regexxp.online/">
+<div created="20210422230856028" github="https://github.com/theSherwood/RegexXP" modified="20210423142319316" tags="Project 2019 [[Web App]]" title="RegexXP" website="https://www.regexxp.online/">
 <pre>!! [[Description]]
 
 RegexXP is an educational app for [[JavaScript]] developers trying to improve their regular expression skills. The app allows users to create challenges and solve the challenges created by other users. It also contains a brief tutorial, covering the principal features of [[regex]] in [[JavaScript]].
@@ -12775,7 +12775,7 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 
 </pre>
 </div>
-<div created="20210423054644610" modified="20210423064913650" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
+<div created="20210423054644610" modified="20210423142459663" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
 <pre>&lt;$set name=title value={{!!title}} &gt;
 &lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;] +[limit[1]]&quot; variable=_ &gt;
 &lt;div class=&quot;backlinks-wrapper&quot;&gt;
@@ -12785,8 +12785,7 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 &lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;sort[title]]&quot;&gt;
 &lt;$link mode=inline /&gt;
 &lt;div style=&quot;margin-left: 10px&quot; &gt;
-&lt;em&gt;Other tags:&lt;/em&gt;
-&lt;$list filter=&quot;[all[current]tags[]sort[title]] -[title&lt;title&gt;]&quot; template=&quot;$:/core/ui/TagTemplate&quot; storyview=&quot;pop&quot; emptyMessage=&quot;none&quot;/&gt;
+&lt;$list filter=&quot;[all[current]tags[]sort[title]]&quot; template=&quot;$:/core/ui/TagTemplate&quot; storyview=&quot;pop&quot; emptyMessage=&quot;none&quot;/&gt;
 &lt;/div&gt;
 &lt;/$list&gt;
 &lt;/div&gt;
