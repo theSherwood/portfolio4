@@ -193,6 +193,8 @@ Error message and password prompt
 
 <li>$:/plugins/rmnvsl/krystal</li>
 
+<li>$:/plugins/rmnvsl/krystal/references</li>
+
 <li>$:/plugins/snowgoon88/edit-comptext</li>
 
 <li>$:/plugins/snowgoon88/edit-comptext/completion.js</li>
@@ -368,6 +370,8 @@ Error message and password prompt
 <li>TiddlyWiki</li>
 
 <li>TODO</li>
+
+<li>View Backlinks</li>
 
 <li>View Data Backlinks</li>
 
@@ -11469,6 +11473,21 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
+<div created="20210424081900613" modified="20210424081907364" tags="" title="$:/plugins/rmnvsl/krystal/references">
+<pre>&lt;$list filter=&quot;[!is[system]all[current]backlinks[]sort[title]] -[is[current]] +[limit[1]]&quot; variable=none&gt;
+&lt;ul class=&quot;krystal-references&quot;&gt;
+&lt;li class=&quot;krystal-references__title&quot;&gt;&lt;strong&gt;&lt;$transclude tiddler=&quot;$:/plugins/rmnvsl/krystal/referenceshere&quot; field=&quot;text&quot; mode=&quot;inline&quot; /&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;$list filter=&quot;[!is[system]all[current]backlinks[]sort[title]] -[is[current]]&quot;&gt;
+&lt;li class=&quot;krystal-references__reference&quot;&gt;
+&lt;$link&gt;
+&lt;b&gt;&lt;$view field=&quot;title&quot; /&gt;&lt;/b&gt;
+&lt;div class=&quot;krystal-references__content&quot;&gt;&lt;$transclude field=&quot;text&quot; mode=&quot;inline&quot; /&gt;&lt;/div&gt;
+&lt;/$link&gt;
+&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;
+&lt;/$list&gt;</pre>
+</div>
 <div author="AlainD" core-version="&gt;=5.1.13" created="20200304200257539" dependents="" description="Editor with some on-line completion capabilities" list="readme usage examples" modified="20210424072142552" plugin-type="plugin" source="https://github.com/snowgoon88/TW5-extendedit" tags="" title="$:/plugins/snowgoon88/edit-comptext" type="application/json" version="0.8.1">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -12309,7 +12328,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210424072436340" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent [[ReconJS Site]] Project Sinuous Library ReconJS" modified="20210424074552633" title="$:/StoryList">
+<div created="20210424072436340" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat TiddlyWiki" modified="20210424082238479" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Fields]] [[View Data Backlinks]] [[View Tag Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin $:/plugins/rmnvsl/krystal/references $:/plugins/rmnvsl/krystal/title" modified="20210423054837603" title="$:/tags/ViewTemplate">
@@ -12822,6 +12841,28 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 <div created="20210422235122495" modified="20210422235122495" title="TODO">
 <pre></pre>
 </div>
+<div created="20210424074853252" modified="20210424082233895" tags="$:/tags/ViewTemplate" title="View Backlinks">
+<pre>&lt;$list filter=&quot;[all[current]backlinks[]!title&lt;currentTiddler&gt;] +[limit[1]]&quot; variable=_ &gt;
+&lt;div class=&quot;backlinks-wrapper&quot;&gt;
+&lt;details open&gt;
+&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Links to this note&lt;/strong&gt;&lt;/summary&gt;
+&lt;div style=&quot;margin-left: 20px&quot;&gt;
+&lt;$list filter=&quot;[all[current]backlinks[]!title&lt;currentTiddler&gt;sort[title]]&quot;&gt;
+&lt;details open&gt;
+&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;$link mode=inline /&gt;&lt;/summary&gt;
+&lt;div style=&quot;margin-left: 10px&quot; &gt;
+&lt;$list filter=&quot;[all[current]tags[]sort[title]]&quot; template=&quot;$:/core/ui/TagTemplate&quot; storyview=&quot;pop&quot; emptyMessage=&quot;none&quot;/&gt;
+&lt;div style=&quot;margin-left: 10px&quot; &gt;
+{{!!_blurb}}
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;
+&lt;/$list&gt;</pre>
+</div>
 <div created="20210423054125933" modified="20210423064937298" tags="$:/tags/ViewTemplate" title="View Data Backlinks">
 <pre>&lt;$set name=title value={{!!title}} &gt;
 &lt;$list filter=&quot;[all[tiddlers]has&lt;title&gt;] +[limit[1]]&quot; variable=_&gt;
@@ -12858,7 +12899,7 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 
 </pre>
 </div>
-<div created="20210423054644610" modified="20210424070718510" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
+<div created="20210423054644610" modified="20210424074848553" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
 <pre>&lt;$set name=title value={{!!title}} &gt;
 &lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;] +[limit[1]]&quot; variable=_ &gt;
 &lt;div class=&quot;backlinks-wrapper&quot;&gt;
