@@ -12250,8 +12250,8 @@ exports.Completion = Completion;
 <div created="20210422043416094" modified="20210422043416094" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/freelinks">
 <pre>yes</pre>
 </div>
-<div created="20210422041645291" modified="20210423145139307" title="$:/state/advancedsearch/currentTab">
-<pre>$:/core/ui/AdvancedSearch/Standard</pre>
+<div created="20210422041645291" modified="20210424210108967" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
 </div>
 <div created="20210422043922412" modified="20210422043925613" title="$:/state/dropdown/keyboardshortcut/add-field-286565879">
 <pre>close</pre>
@@ -12292,8 +12292,8 @@ exports.Completion = Completion;
 <div created="20210422041350172" modified="20210422043322574" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
 </div>
-<div created="20210422041645291" modified="20210423145139308" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/Standard</pre>
+<div created="20210422041645291" modified="20210424210108967" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
 </div>
 <div created="20210422043732159" modified="20210423153025124" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Palette</pre>
@@ -12328,7 +12328,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210424072436340" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat GitHub" modified="20210424190612665" title="$:/StoryList">
+<div created="20210424204634156" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Project Volant" modified="20210424212005303" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Fields]] [[View Data Backlinks]] [[View Tag Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin $:/plugins/rmnvsl/krystal/references $:/plugins/rmnvsl/krystal/title" modified="20210423054837603" title="$:/tags/ViewTemplate">
@@ -12458,13 +12458,15 @@ exports.Completion = Completion;
 <div created="20210423065650716" modified="20210423065650716" title="2019">
 <pre></pre>
 </div>
-<div created="20210423062421389" modified="20210424185851860" tags="$:/tags/Stylesheet" title="Backlinks.css">
+<div created="20210423062421389" modified="20210424205427714" tags="$:/tags/Stylesheet" title="Backlinks.css">
 <pre>.backlinks-wrapper {
   background: &lt;&lt;color page-background&gt;&gt;;
   font-size: 0.9em;
   padding: 10px;
 }
-</pre>
+.backlinks-wrapper .tc-tag-list-item {
+  margin-right: 3px;
+}</pre>
 </div>
 <div created="20210422235154147" modified="20210422235154147" title="Bootstrap">
 <pre></pre>
@@ -12502,7 +12504,7 @@ exports.Completion = Completion;
 <div created="20210422235212827" modified="20210422235212827" title="Lessons Learned">
 <pre></pre>
 </div>
-<div _blurb="Mentat is actually a series of 4 plugins (Repopup, Volant, Engine, and Mentat) for the TiddlyWiki platform. Each plugin builds on the last. Together, they create a platform for users to radically configure the UI/UX of their wiki intuitively and with speed. They also form a base from which even more adventurous UI/UX solutions can be developed." created="20210422234117124" demo="https://thesherwood.github.io/Mentat/" github="https://github.com/theSherwood/Mentat" modified="20210424190657448" tags="Project 2019 Plugin JavaScript UI TiddlyWiki" title="Mentat" website="https://thesherwood.github.io/Mentat/">
+<div _blurb="Mentat is actually a series of 4 plugins ([[Repopup]], [[Volant]], [[Engine]], and [[Mentat]]) for the [[TiddlyWiki]] platform. Each plugin builds on the last. Together, they create a platform for users to radically configure the UI/UX of their wiki intuitively and with speed. They also form a base from which even more adventurous UI/UX solutions can be developed." created="20210422234117124" demo="https://thesherwood.github.io/Mentat/" github="https://github.com/theSherwood/Mentat" modified="20210424211955384" tags="Project 2019 Plugin JavaScript UI TiddlyWiki" title="Mentat" website="https://thesherwood.github.io/Mentat/">
 <pre>!! [[Description]]
 
 Mentat is actually a series of 4 plugins ([[Repopup]], [[Volant]], [[Engine]], and [[Mentat]]) for the [[TiddlyWiki]] platform. Each plugin builds on the last. Together, they create a platform for users to radically configure the UI/UX of their wiki intuitively and with speed. They also form a base from which even more adventurous UI/UX solutions can be developed.
@@ -12862,12 +12864,12 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 &lt;/div&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210423054125933" modified="20210424190313248" tags="$:/tags/ViewTemplate" title="View Data Backlinks">
+<div created="20210423054125933" modified="20210424204655392" tags="$:/tags/ViewTemplate" title="View Data Backlinks">
 <pre>&lt;$set name=title value={{!!title}} &gt;
 &lt;$list filter=&quot;[all[tiddlers]has&lt;title&gt;] +[limit[1]]&quot; variable=_&gt;
 &lt;div class=&quot;backlinks-wrapper&quot;&gt;
 &lt;details open&gt;
-&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the &quot;&lt;&lt;title&gt;&gt;&quot; field&lt;/strong&gt;&lt;/summary&gt;
+&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the &lt;code&gt;&lt;&lt;title&gt;&gt;&lt;/code&gt; field&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
 &lt;$list filter=&quot;[all[tiddlers]has&lt;title&gt;sort[title]]&quot;&gt;
 &lt;$link mode=inline /&gt; :
@@ -12898,12 +12900,12 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 
 </pre>
 </div>
-<div created="20210423054644610" modified="20210424190216398" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
+<div created="20210423054644610" modified="20210424204920835" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
 <pre>&lt;$set name=title value={{!!title}} &gt;
 &lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;] +[limit[1]]&quot; variable=_ &gt;
 &lt;div class=&quot;backlinks-wrapper&quot;&gt;
 &lt;details open&gt;
-&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the &quot;&lt;&lt;title&gt;&gt;&quot; tag&lt;/strong&gt;&lt;/summary&gt;
+&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the {{!!title||$:/core/ui/TagTemplate}} tag&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
 &lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;sort[title]]&quot;&gt;
 &lt;details open&gt;
