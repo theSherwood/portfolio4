@@ -221,6 +221,10 @@ Error message and password prompt
 
 <li>$:/state/advancedsearch/currentTab</li>
 
+<li>$:/state/backlinks-expanded-1185306184</li>
+
+<li>$:/state/backlinks-expanded-1559724438</li>
+
 <li>$:/state/dropdown/keyboardshortcut/add-field-286565879</li>
 
 <li>$:/state/dropdown/keyboardshortcut/advanced-search-286565879</li>
@@ -268,6 +272,12 @@ Error message and password prompt
 <li>$:/state/tab-956680667</li>
 
 <li>$:/state/tab/sidebar--595412856</li>
+
+<li>$:/state/tag-backlinks-expanded--1466473872</li>
+
+<li>$:/state/tag-backlinks-expanded--1890935632</li>
+
+<li>$:/state/tag-backlinks-expanded-726298926</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -12270,8 +12280,14 @@ exports.Completion = Completion;
 <div created="20210422043416094" modified="20210422043416094" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/freelinks">
 <pre>yes</pre>
 </div>
-<div created="20210422041645291" modified="20210425192840258" title="$:/state/advancedsearch/currentTab">
+<div created="20210422041645291" modified="20210425204655391" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
+</div>
+<div created="20210425205105494" modified="20210425205107248" title="$:/state/backlinks-expanded-1185306184">
+<pre>open</pre>
+</div>
+<div created="20210425205126915" modified="20210425205223633" title="$:/state/backlinks-expanded-1559724438">
+<pre>not-open</pre>
 </div>
 <div created="20210422043922412" modified="20210422043925613" title="$:/state/dropdown/keyboardshortcut/add-field-286565879">
 <pre>close</pre>
@@ -12312,7 +12328,7 @@ exports.Completion = Completion;
 <div created="20210422041350172" modified="20210422043322574" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
 </div>
-<div created="20210422041645291" modified="20210425192840258" title="$:/state/tab--1498284803">
+<div created="20210422041645291" modified="20210425204655392" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
 </div>
 <div created="20210422043732159" modified="20210423153025124" title="$:/state/tab--1963855381">
@@ -12345,10 +12361,19 @@ exports.Completion = Completion;
 <div created="20210422041130641" modified="20210422041144568" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
+<div created="20210425205135088" modified="20210425205136299" title="$:/state/tag-backlinks-expanded--1466473872">
+<pre>open</pre>
+</div>
+<div created="20210425203620641" modified="20210425204611050" title="$:/state/tag-backlinks-expanded--1890935632">
+<pre>open</pre>
+</div>
+<div created="20210425203527220" modified="20210425204443832" title="$:/state/tag-backlinks-expanded-726298926">
+<pre>open</pre>
+</div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210425190923781" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project" modified="20210425194429833" title="$:/StoryList">
+<div created="20210425204657029" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project TiddlyWiki [[View Tag Backlinks]] $:/core/ui/ViewTemplate/tags $:/AdvancedSearch React $:/core/macros/tag" modified="20210425205236620" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Fields]] [[View Data Backlinks]] [[View Tag Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin $:/plugins/rmnvsl/krystal/references $:/plugins/rmnvsl/krystal/title" modified="20210423054837603" title="$:/tags/ViewTemplate">
@@ -12865,21 +12890,37 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 <div created="20210422235122495" modified="20210422235122495" title="TODO">
 <pre></pre>
 </div>
-<div created="20210424074853252" modified="20210425194230475" tags="$:/tags/ViewTemplate" title="View Backlinks">
-<pre>&lt;$list filter=&quot;[all[current]backlinks[]!title&lt;currentTiddler&gt;] +[limit[1]]&quot; variable=_ &gt;
-&lt;div class=&quot;backlinks-wrapper&quot;&gt;
-&lt;details open&gt;
-&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Links to this note&lt;/strong&gt;&lt;/summary&gt;
-&lt;div style=&quot;margin-left: 20px&quot;&gt;
-&lt;$list filter=&quot;[all[current]backlinks[]!title&lt;currentTiddler&gt;sort[title]]&quot;&gt;
-&lt;details open&gt;
+<div created="20210424074853252" modified="20210425205202049" tags="$:/tags/ViewTemplate" title="View Backlinks">
+<pre>\define details-start(open-attribute)
+&lt;details $open-attribute$ &gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;$link mode=inline /&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 10px&quot; &gt;
 {{||$:/core/ui/ViewTemplate/tags}}
 {{!!_blurb}}
 &lt;/div&gt;
 &lt;/details&gt;
+\end
+
+&lt;$list filter=&quot;[all[current]backlinks[]!title&lt;currentTiddler&gt;] +[limit[1]]&quot; variable=_ &gt;
+&lt;div class=&quot;backlinks-wrapper&quot;&gt;
+&lt;details open&gt;
+&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Links to this note&lt;/strong&gt;&lt;/summary&gt;
+&lt;div style=&quot;margin-left: 20px&quot;&gt;
+&lt;div&gt;
+&lt;$button tooltip=&quot;Collapse all&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;qualify $:/state/backlinks-expanded &gt;&gt; text=&quot;not-open&quot;/&gt;
+{{$:/core/images/fold-button}}
+&lt;/$button&gt;
+&lt;$button tooltip=&quot;Expand all&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;qualify $:/state/backlinks-expanded &gt;&gt; text=&quot;open&quot;/&gt;
+{{$:/core/images/unfold-button}}
+&lt;/$button&gt;
+&lt;/div&gt;
+&lt;$set tiddler=&lt;&lt;qualify $:/state/backlinks-expanded &gt;&gt; name=open emptyValue=&quot;open&quot; &gt;
+&lt;$list filter=&quot;[all[current]backlinks[]!title&lt;currentTiddler&gt;sort[title]]&quot;&gt;
+&lt;$macrocall $name=&quot;details-start&quot; open-attribute=&lt;&lt;open&gt;&gt; /&gt;
 &lt;/$list&gt;
+&lt;/$set&gt;
 &lt;/div&gt;
 &lt;/details&gt;
 &lt;/div&gt;
@@ -12921,22 +12962,38 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 
 </pre>
 </div>
-<div created="20210423054644610" modified="20210425194157432" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
-<pre>&lt;$set name=title value={{!!title}} &gt;
-&lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;] +[limit[1]]&quot; variable=_ &gt;
-&lt;div class=&quot;backlinks-wrapper&quot;&gt;
-&lt;details open&gt;
-&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the {{!!title||$:/core/ui/TagTemplate}} tag&lt;/strong&gt;&lt;/summary&gt;
-&lt;div style=&quot;margin-left: 20px&quot;&gt;
-&lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;sort[title]]&quot;&gt;
-&lt;details open&gt;
+<div created="20210423054644610" modified="20210425204425686" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
+<pre>\define details-start(open-attribute)
+&lt;details $open-attribute$ &gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;$link mode=inline /&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 10px&quot; &gt;
 {{||$:/core/ui/ViewTemplate/tags}}
 {{!!_blurb}}
 &lt;/div&gt;
 &lt;/details&gt;
+\end
+
+&lt;$set name=title value={{!!title}} &gt;
+&lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;] +[limit[1]]&quot; variable=_ &gt;
+&lt;div class=&quot;backlinks-wrapper&quot;&gt;
+&lt;details open&gt;
+&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the {{!!title||$:/core/ui/TagTemplate}} tag&lt;/strong&gt;&lt;/summary&gt;
+&lt;div style=&quot;margin-left: 20px&quot;&gt;
+&lt;div&gt;
+&lt;$button tooltip=&quot;Collapse all&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;qualify $:/state/tag-backlinks-expanded &gt;&gt; text=&quot;not-open&quot;/&gt;
+{{$:/core/images/fold-button}}
+&lt;/$button&gt;
+&lt;$button tooltip=&quot;Expand all&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$action-setfield $tiddler=&lt;&lt;qualify $:/state/tag-backlinks-expanded &gt;&gt; text=&quot;open&quot;/&gt;
+{{$:/core/images/unfold-button}}
+&lt;/$button&gt;
+&lt;/div&gt;
+&lt;$set tiddler=&lt;&lt;qualify $:/state/tag-backlinks-expanded &gt;&gt; name=open emptyValue=&quot;open&quot; &gt;
+&lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;sort[title]]&quot;&gt;
+&lt;$macrocall $name=&quot;details-start&quot; open-attribute=&lt;&lt;open&gt;&gt; /&gt;
 &lt;/$list&gt;
+&lt;/$set&gt;
 &lt;/div&gt;
 &lt;/details&gt;
 &lt;/div&gt;
