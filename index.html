@@ -12378,7 +12378,7 @@ exports.Completion = Completion;
 <div created="20210422041130641" modified="20210422041144568" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div created="20210425212732173" list="[[Web App]] JavaScript UI" modified="20210425225712009" title="$:/state/tag-backlinks-excluded">
+<div created="20210425212732173" list="" modified="20210425231916434" title="$:/state/tag-backlinks-excluded">
 <pre></pre>
 </div>
 <div created="20210425212204432" list="- &lt;&lt;currentTiddler&gt;&gt;" modified="20210425212208170" title="$:/state/tag-backlinks-excluded!!list">
@@ -12387,8 +12387,8 @@ exports.Completion = Completion;
 <div created="20210425205135088" modified="20210425205136299" title="$:/state/tag-backlinks-expanded--1466473872">
 <pre>open</pre>
 </div>
-<div created="20210425203620641" modified="20210425211720648" title="$:/state/tag-backlinks-expanded--1890935632">
-<pre>not-open</pre>
+<div created="20210425203620641" modified="20210425231316078" title="$:/state/tag-backlinks-expanded--1890935632">
+<pre>open</pre>
 </div>
 <div created="20210425205610496" modified="20210425205612612" title="$:/state/tag-backlinks-expanded-593591298">
 <pre>open</pre>
@@ -12396,7 +12396,7 @@ exports.Completion = Completion;
 <div created="20210425203527220" modified="20210425204443832" title="$:/state/tag-backlinks-expanded-726298926">
 <pre>open</pre>
 </div>
-<div created="20210425212452802" list="React Plugin Sinuous Svelte TiddlyWiki Project 2020" modified="20210425225716353" title="$:/state/tag-backlinks-included">
+<div created="20210425212452802" list="" modified="20210425231915010" title="$:/state/tag-backlinks-included">
 <pre></pre>
 </div>
 <div created="20210425212357866" list="+ React" modified="20210425212421379" title="$:/state/tag-backlinks-included!!list">
@@ -12538,7 +12538,7 @@ exports.Completion = Completion;
 <div created="20210425205604293" modified="20210425205604293" title="2020">
 <pre></pre>
 </div>
-<div created="20210423062421389" modified="20210425224047193" tags="$:/tags/Stylesheet" title="Backlinks.css">
+<div created="20210423062421389" modified="20210425231356456" tags="$:/tags/Stylesheet" title="Backlinks.css">
 <pre>.backlinks-wrapper {
   background: &lt;&lt;color page-background&gt;&gt;;
   font-size: 0.9em;
@@ -12554,7 +12554,7 @@ exports.Completion = Completion;
   color: inherit;
   fill: inherit;
 }
-.backlinks-wrapper .tc-tag-label {
+.backlinks-wrapper .tc-tag-label-neutral {
   background: #eaeaea;
 }
 .backlinks-wrapper .tc-tag-label-included {
@@ -13011,7 +13011,7 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 
 </pre>
 </div>
-<div created="20210423054644610" modified="20210425225744209" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
+<div created="20210423054644610" modified="20210425231849793" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
 <pre>\define details-start(open-attribute)
 &lt;details $open-attribute$ &gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;$link mode=inline /&gt;&lt;/summary&gt;
@@ -13029,7 +13029,7 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the {{!!title||$:/core/ui/TagTemplate}} tag&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
 &lt;!-- add filters --&gt;
-&lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;tags[]]&quot; variable=title&gt;
+&lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;tags[]] -[&lt;title&gt;]&quot; variable=title&gt;
 &lt;$list filter=&quot;[[$:/state/tag-backlinks-included]contains&lt;title&gt;]&quot; variable=_ &gt;
 &lt;span class=&quot;tc-tag-list-item&quot;&gt;
 &lt;span class=&quot;tc-tag-label tc-tag-label-included&quot;&gt;
@@ -13053,7 +13053,7 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 &lt;/$list&gt;
 &lt;$list filter=&quot;[[$:/state/tag-backlinks-included]!contains&lt;title&gt;then[true]] :intersection[[$:/state/tag-backlinks-excluded]!contains&lt;title&gt;then[true]]&quot; variable=_ &gt;
 &lt;span class=&quot;tc-tag-list-item&quot;&gt;
-&lt;span class=&quot;tc-tag-label&quot;&gt;
+&lt;span class=&quot;tc-tag-label tc-tag-label-neutral&quot;&gt;
 &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 &lt;$action-listops $tiddler=&quot;$:/state/tag-backlinks-included&quot; $subfilter=&quot;[&lt;title&gt;]&quot;/&gt;
 &lt;&lt;title&gt;&gt;
@@ -13062,15 +13062,6 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 &lt;/span&gt;
 &lt;/$list&gt;
 &lt;/$list&gt;
-
-Included:
-
-{{$:/state/tag-backlinks-included!!list}}
-
-Excluded:
-
-{{$:/state/tag-backlinks-excluded!!list}}
-
 &lt;div&gt;
 &lt;$button tooltip=&quot;Collapse all&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 &lt;$action-setfield $tiddler=&lt;&lt;qualify $:/state/tag-backlinks-expanded &gt;&gt; text=&quot;not-open&quot;/&gt;
@@ -13082,7 +13073,7 @@ Excluded:
 &lt;/$button&gt;
 &lt;/div&gt;
 &lt;$set tiddler=&lt;&lt;qualify $:/state/tag-backlinks-expanded &gt;&gt; name=open emptyValue=&quot;open&quot; &gt;
-&lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;sort[title]]&quot;&gt;
+&lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;sort[title]] :intersection[list[$:/state/tag-backlinks-included]tagging[]] -[list[$:/state/tag-backlinks-excluded]tagging[]]&quot;&gt;
 &lt;$macrocall $name=&quot;details-start&quot; open-attribute=&lt;&lt;open&gt;&gt; /&gt;
 &lt;/$list&gt;
 &lt;/$set&gt;
