@@ -425,6 +425,8 @@ Error message and password prompt
 
 <li>Skeleton</li>
 
+<li>styled-jsx</li>
+
 <li>Svelte</li>
 
 <li>Tech Stack</li>
@@ -12477,7 +12479,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210429233424138" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project sinuous-frame Reagent ClojureScript" modified="20210429234947277" title="$:/StoryList">
+<div created="20210429235419368" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project sinuous-style styled-jsx CSS RegexXP MongoDB" modified="20210430002321735" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Fields]] [[View Data Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210429234809469" title="$:/tags/ViewTemplate">
@@ -12946,16 +12948,16 @@ Consider a freeform section where developers can play with configuring [[ReconJS
 <div created="20210423001516654" modified="20210423021752990" title="Regex101" website="https://regex101.com/">
 <pre></pre>
 </div>
-<div _blurb="RegexXP is an educational app for [[JavaScript]] developers trying to improve their regular expression skills. The app allows users to create challenges and solve the challenges created by other users. It also contains a brief tutorial, covering the principal features of [[regex]] in [[JavaScript]]." created="20210422230856028" github="https://github.com/theSherwood/RegexXP" modified="20210424071822253" tags="Project 2019 React [[Web App]] JavaScript" title="RegexXP" website="https://www.regexxp.online/">
+<div _blurb="RegexXP is an educational app for [[JavaScript]] developers trying to improve their regular expression skills. The app allows users to create challenges and solve the challenges created by other users. It also contains a brief tutorial, covering the principal features of [[regex]] in [[JavaScript]]." created="20210422230856028" github="https://github.com/theSherwood/RegexXP" modified="20210430002314418" tags="Project 2019 React [[Web App]] JavaScript" title="RegexXP" website="https://www.regexxp.online/">
 <pre>!! [[Description]]
 
 RegexXP is an educational app for [[JavaScript]] developers trying to improve their regular expression skills. The app allows users to create challenges and solve the challenges created by other users. It also contains a brief tutorial, covering the principal features of [[regex]] in [[JavaScript]].
 
 !! [[Tech Stack]]
 
-* [[React]] - UI framework
+* [[React]] - [[UI]] framework
 * [[Redux]] - global state management
-* [[Bootstrap]] - CSS framework
+* [[Bootstrap]] - [[CSS]] framework
 * [[Express]] - RESTful api
 * [[Node.js]] - server runtime
 * [[MongoDB]] - database
@@ -12965,7 +12967,7 @@ RegexXP is an educational app for [[JavaScript]] developers trying to improve th
 
 !! [[Overview]]
 
-I started this project because I wanted to brush up on my [[regex]] skills. Originally, the UI was intended to be done in [[Handlebars]]. I quickly found that was an inadequate solution for creating the textareas that feature regex highlighting. I needed something a bit more powerful and reached for React (using the new Hooks API), leaving much of the [[Bootstrap]] styling in place.
+I started this project because I wanted to brush up on my [[regex]] skills. Originally, the [[UI]] was intended to be done in [[Handlebars]]. I quickly found that was an inadequate solution for creating the textareas that feature regex highlighting. I needed something a bit more powerful and reached for React (using the new Hooks API), leaving much of the [[Bootstrap]] styling in place.
 
 The app was also originally deployed to [[Heroku]]. I have since deployed it with [[Now]], instead, because I was curious about serverless and because [[Now]] makes https certification simple with custom domains.
 
@@ -13061,7 +13063,7 @@ In contrast to [[React]], [[Sinuous]] is much faster, simpler, and smaller.</pre
 * bullet
 </pre>
 </div>
-<div _blurb="An alternative view syntax for [[Sinuous]]. Inspired by [[Hiccup]]." author="[[Adam Sherwood]]" created="20210424071410127" demo="https://codesandbox.io/s/sinuous-simple-todo-qj0n3" github="https://github.com/theSherwood/sinuous-frame" modified="20210429234158211" npm="https://www.npmjs.com/package/sinuous-frame" tags="2020 Library Project UI Sinuous JavaScript" title="sinuous-frame">
+<div _blurb="An alternative view syntax for [[Sinuous]]. Inspired by [[Hiccup]]." author="[[Adam Sherwood]]" created="20210424071410127" demo="https://codesandbox.io/s/sinuous-simple-todo-qj0n3" github="https://github.com/theSherwood/sinuous-frame" modified="20210429235947602" npm="https://www.npmjs.com/package/sinuous-frame" tags="2020 Library Project UI Sinuous JavaScript" title="sinuous-frame">
 <pre>[img[https://img.badgesize.io/https://unpkg.com/sinuous-frame/dist/min.js?v=1&amp;compression=gzip&amp;label=gzip&amp;style=flat-square]]
 
 !! [[Description]]
@@ -13077,6 +13079,11 @@ Like [[Sinuous]], itself, [[sinuous-frame]] is very lightweight: under 400 bytes
 !! [[Overview]]
 
 After a bit of exposure to [[ClojureScript]] and [[Reagent]], I thought I'd take a swing at a [[Hiccup]]-like syntax for [[Sinuous]].
+
+There are a couple of demos here:
+
+* Counter: https://codesandbox.io/s/sinuous-counters-lhqjk
+* Simple TODO: https://codesandbox.io/s/sinuous-simple-todo-qj0n3
 
 !! Smooth Sailing
 
@@ -13105,8 +13112,10 @@ To be fair, the [[UI]] syntax options in [[JavaScript]] leave something to be de
 Good ideas from one language might not translate to another language.
 </pre>
 </div>
-<div _blurb="Scoped styles for [[Sinuous]] à la [[styled-jsx]]." author="[[Adam Sherwood]]" created="20210424071236904" github="https://github.com/theSherwood/sinuous-style" modified="20210429231803352" npm="https://www.npmjs.com/package/sinuous-style" tags="2020 Library Project UI Sinuous JavaScript" title="sinuous-style">
+<div _blurb="Scoped styles for [[Sinuous]] à la [[styled-jsx]]." author="[[Adam Sherwood]]" created="20210424071236904" demo="https://codesandbox.io/s/sinuous-style-esm-tkf5d" github="https://github.com/theSherwood/sinuous-style" modified="20210430002051661" npm="https://www.npmjs.com/package/sinuous-style" tags="2020 Library Project UI Sinuous JavaScript" title="sinuous-style">
 <pre>!! [[Description]]
+
+Scoped styles for [[Sinuous]] à la [[styled-jsx]].
 
 !! [[Tech Stack]]
 
@@ -13130,6 +13139,9 @@ Good ideas from one language might not translate to another language.
 </pre>
 </div>
 <div created="20210423015037117" modified="20210423021846223" title="Skeleton" website="http://getskeleton.com/">
+<pre></pre>
+</div>
+<div created="20210430002116832" github="https://github.com/vercel/styled-jsx" modified="20210430002139476" tags="UI CSS" title="styled-jsx">
 <pre></pre>
 </div>
 <div created="20210423014625807" modified="20210429234707031" tags="JavaScript Library UI" title="Svelte" website="https://svelte.dev/">
