@@ -12443,7 +12443,7 @@ exports.Completion = Completion;
 <div created="20210425212732173" list="" modified="20210426161753717" title="$:/state/tag-backlinks-excluded">
 <pre></pre>
 </div>
-<div created="20210426162550495" list="" modified="20210429223215254" title="$:/state/tag-backlinks-excluded--1890935632">
+<div created="20210426162550495" list="" modified="20210501224340525" title="$:/state/tag-backlinks-excluded--1890935632">
 <pre></pre>
 </div>
 <div created="20210426162429487" list="" modified="20210429224309828" title="$:/state/tag-backlinks-excluded-726298926">
@@ -12467,7 +12467,7 @@ exports.Completion = Completion;
 <div created="20210425212452802" list="" modified="20210426161752524" title="$:/state/tag-backlinks-included">
 <pre></pre>
 </div>
-<div created="20210426162548831" list="" modified="20210429223214567" title="$:/state/tag-backlinks-included--1890935632">
+<div created="20210426162548831" list="" modified="20210501224339585" title="$:/state/tag-backlinks-included--1890935632">
 <pre></pre>
 </div>
 <div created="20210426162423639" list="" modified="20210429224308264" title="$:/state/tag-backlinks-included-726298926">
@@ -12479,7 +12479,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210429235419368" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project sinuous-style styled-jsx CSS RegexXP MongoDB" modified="20210430002321735" title="$:/StoryList">
+<div created="20210429235419368" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project sinuous-style styled-jsx CSS RegexXP MongoDB $:/AdvancedSearch demo" modified="20210501224404527" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Fields]] [[View Data Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210429234809469" title="$:/tags/ViewTemplate">
@@ -13159,7 +13159,7 @@ Scoped styles for [[Sinuous]] à la [[styled-jsx]].
 <div created="20210429233653621" modified="20210429233653621" title="UI">
 <pre></pre>
 </div>
-<div created="20210424074853252" modified="20210429223303436" tags="$:/tags/ViewTemplate" title="View Backlinks">
+<div created="20210424074853252" modified="20210501224209959" tags="$:/tags/ViewTemplate" title="View Backlinks">
 <pre>\define details-start(open-attribute)
 &lt;details $open-attribute$ &gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;$link mode=inline /&gt;&lt;/summary&gt;
@@ -13174,7 +13174,7 @@ Scoped styles for [[Sinuous]] à la [[styled-jsx]].
 &lt;$set name=excluded value=&lt;&lt;qualify $:/state/backlinks-excluded&gt;&gt; &gt;
 &lt;$list filter=&quot;[all[current]backlinks[]!title&lt;currentTiddler&gt;] +[limit[1]]&quot; variable=_ &gt;
 &lt;div class=&quot;backlinks-wrapper&quot;&gt;
-&lt;details open&gt;
+&lt;details&gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Links to this note&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
 &lt;!-- start filters --&gt;
@@ -13284,7 +13284,7 @@ Scoped styles for [[Sinuous]] à la [[styled-jsx]].
 
 </pre>
 </div>
-<div created="20210423054644610" modified="20210429223250847" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
+<div created="20210423054644610" modified="20210501224249954" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
 <pre>\define details-start(open-attribute)
 &lt;details $open-attribute$ &gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;$link mode=inline /&gt;&lt;/summary&gt;
@@ -13300,7 +13300,7 @@ Scoped styles for [[Sinuous]] à la [[styled-jsx]].
 &lt;$set name=excluded value=&lt;&lt;qualify $:/state/tag-backlinks-excluded&gt;&gt; &gt;
 &lt;$list filter=&quot;[all[tiddlers]tag&lt;title&gt;] +[limit[1]]&quot; variable=_ &gt;
 &lt;div class=&quot;backlinks-wrapper&quot;&gt;
-&lt;details open&gt;
+&lt;details&gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the {{!!title||$:/core/ui/TagTemplate}} tag&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
 &lt;!-- start filters --&gt;
