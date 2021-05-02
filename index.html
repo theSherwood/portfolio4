@@ -451,6 +451,8 @@ Error message and password prompt
 
 <li>Svelte</li>
 
+<li>Syntax</li>
+
 <li>Tech Stack</li>
 
 <li>TiddlyWiki</li>
@@ -12519,7 +12521,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210429235419368" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project styled-jsx CSS RegexXP MongoDB sinuous-style [[Scoped Styles]] Svelte $:/AdvancedSearch sinuous-frame [[Adam Sherwood]]" modified="20210501235918941" title="$:/StoryList">
+<div created="20210429235419368" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project styled-jsx CSS RegexXP MongoDB sinuous-style [[Scoped Styles]] Svelte $:/AdvancedSearch sinuous-bind" modified="20210502000419017" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Fields]] [[View Data Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210429234809469" title="$:/tags/ViewTemplate">
@@ -13070,14 +13072,65 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 
 In contrast to [[React]], [[Sinuous]] is much faster, simpler, and smaller.</pre>
 </div>
-<div _blurb="Brings the `bind` element directives of [[Svelte]] to [[Sinuous]]." author="[[Adam Sherwood]]" created="20210424072008463" github="https://github.com/theSherwood/sinuous-bind" modified="20210429231702488" npm="https://www.npmjs.com/package/sinuous-bind" tags="2020 JavaScript Library Project Sinuous UI" title="sinuous-bind">
+<div _blurb="Brings the `bind` element directives of [[Svelte]] to [[Sinuous]]." author="[[Adam Sherwood]]" created="20210424072008463" demo="https://codesandbox.io/s/sinuous-bind-esm-4e48b" github="https://github.com/theSherwood/sinuous-bind" modified="20210502004935562" npm="https://www.npmjs.com/package/sinuous-bind" tags="2020 JavaScript Library Project Sinuous UI Syntax" title="sinuous-bind">
 <pre>!! [[Description]]
+
+Brings the `bind` element directives of [[Svelte]] to [[Sinuous]].
+
+For those unfamiliar with [[Svelte]]'s bind directives, [[sinuous-bind]] provides a syntax for easy two-way binding between [[UI]] and data.
+
+[[sinuous-bind]] is actually composed of 4 separate packages, but those 4 packages can also be imported separately.
+
+| !package                                                                                                                                                 | !size |
+|`sinuous-bind` | [img[https://img.badgesize.io/https://unpkg.com/sinuous-bind@latest/dist/all.min.js?v=1&amp;compression=gzip&amp;label=gzip&amp;style=flat-square]]|
+|`sinuous-bind/bind` | [img[https://img.badgesize.io/https://unpkg.com/sinuous-bind@latest/dist/bind.min.js?v=1&amp;compression=gzip&amp;label=gzip&amp;style=flat-square]]|
+|`sinuous-bind/bindArea` | [img[https://img.badgesize.io/https://unpkg.com/sinuous-bind@latest/dist/bindArea.min.js?v=1&amp;compression=gzip&amp;label=gzip&amp;style=flat-square]]|
+|`sinuous-bind/bindGroup` | [img[https://img.badgesize.io/https://unpkg.com/sinuous-bind@latest/dist/bindGroup.min.js?v=1&amp;compression=gzip&amp;label=gzip&amp;style=flat-square]]|
+|`sinuous-bind/bindMedia` | [img[https://img.badgesize.io/https://unpkg.com/sinuous-bind@latest/dist/bindMedia.min.js?v=1&amp;compression=gzip&amp;label=gzip&amp;style=flat-square]]|
+
+You can see demos of all 4 packages here:
+
+* https://codesandbox.io/s/sinuous-bind-esm-4e48b
 
 !! [[Tech Stack]]
 
-* bullet
+* [[JavaScript]]
 
 !! [[Overview]]
+
+Coming from [[React]], two-way binding might sound heretical, but I find it's pretty effective at concisely expressing intent in a declarative fashion. In the common case, it allows one to avoid writing any syncing code as one would have to do as a matter of course in [[React]].
+
+Where reasonable, [[sinuous-bind]] will handle the coercion from string on the DOM side to [[JavaScript]] numbers and vice versa.
+
+!!! `sinuous-bind/bind`
+
+This package provides the simplest bind functionality for the following simple cases:
+
+* `input`s of type `text`
+* `input`s of type `range`
+* `input`s of type `checkbox`
+* `input`s of type `radio`
+* `div`s with `contentEditable`
+* `select` elements without the `multiple` attribute
+* and provides a way to get a `ref` of an element
+
+!!! `sinuous-bind/bindArea`
+
+This package provides ''read-only'' bindings to `clientWidth`, `clientHeight`, `offsetWidth`, `offsetHeight`, `scrollLeft`, and `scrollTop`.
+
+It also allows the user to easily listen to `resize` and `scroll` events on arbitrary DOM elements.
+
+!!! `sinuous-bind/bindGroup`
+
+Whereas `sinuous-bind/bind` provides a means to bind to individual elements, this package is for binding to things that are best understood as groups:
+
+* `radio` `input` group
+* `checkbox` `input` group
+* `select`s with the `multiple` attribute
+
+!!! `sinuous-bind/bindMedia`
+
+This package provides a means to create two-way bindings with various attributes and properties of the `video` and `audio` elements
 
 !! Smooth Sailing
 
@@ -13220,6 +13273,9 @@ I took great pains to comment this library well. I'm sure the code could be clea
 <pre></pre>
 </div>
 <div created="20210423014625807" modified="20210501235645069" tags="JavaScript Library UI [[Scoped Styles]]" title="Svelte" website="https://svelte.dev/">
+<pre></pre>
+</div>
+<div created="20210502000414105" modified="20210502000414105" title="Syntax">
 <pre></pre>
 </div>
 <div created="20210422234943285" modified="20210422234943285" title="Tech Stack">
