@@ -293,6 +293,8 @@ Error message and password prompt
 
 <li>$:/state/tag-backlinks-excluded</li>
 
+<li>$:/state/tag-backlinks-excluded--1187375934</li>
+
 <li>$:/state/tag-backlinks-excluded--1276141852</li>
 
 <li>$:/state/tag-backlinks-excluded--1890935632</li>
@@ -458,6 +460,8 @@ Error message and password prompt
 <li>Red Utilities / Series</li>
 
 <li>Red Utilities / Transducer</li>
+
+<li>Red Utilities / Watch</li>
 
 <li>Redux</li>
 
@@ -12521,6 +12525,9 @@ exports.Completion = Completion;
 <div created="20210425212732173" list="" modified="20210426161753717" title="$:/state/tag-backlinks-excluded">
 <pre></pre>
 </div>
+<div created="20210503201159240" list="" modified="20210503201317055" title="$:/state/tag-backlinks-excluded--1187375934">
+<pre></pre>
+</div>
 <div created="20210501224950674" list="" modified="20210503200052271" title="$:/state/tag-backlinks-excluded--1276141852">
 <pre></pre>
 </div>
@@ -12554,7 +12561,7 @@ exports.Completion = Completion;
 <div created="20210425212452802" list="" modified="20210426161752524" title="$:/state/tag-backlinks-included">
 <pre></pre>
 </div>
-<div created="20210503195853684" list="[[Programming Language]]" modified="20210503195853684" title="$:/state/tag-backlinks-included--1187375934">
+<div created="20210503195853684" list="" modified="20210503201211639" title="$:/state/tag-backlinks-included--1187375934">
 <pre></pre>
 </div>
 <div created="20210501224945005" list="" modified="20210503200051270" title="$:/state/tag-backlinks-included--1276141852">
@@ -12578,7 +12585,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210429235419368" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project styled-jsx CSS RegexXP sinuous-context [[Red Utilities]] [[Red Utilities / Transducer]] Red ClojureScript Clojure $:/AdvancedSearch React" modified="20210503201101767" title="$:/StoryList">
+<div created="20210429235419368" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project styled-jsx CSS RegexXP sinuous-context [[Red Utilities]] [[Red Utilities / Watch]]" modified="20210503203113142" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Fields]] [[View Data Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210429234809469" title="$:/tags/ViewTemplate">
@@ -13086,7 +13093,7 @@ Most of these technologies I had used before. So it wasn’t tremendously diffic
 
 Consider a freeform section where developers can play with configuring [[ReconJS]] itself, rather than simply trying to beat it. Though this may belong in another demo. I’m not sure. This website feels adequate to its purpose.</pre>
 </div>
-<div created="20210503175908049" modified="20210503200940020" tags="[[Programming Language]] [[Functional Programming]] [[Imperative Programming]] [[Reactive Programming]]" title="Red">
+<div created="20210503175908049" github="https://github.com/red/red" modified="20210503201529184" tags="[[Programming Language]] [[Functional Programming]] [[Imperative Programming]] [[Reactive Programming]]" title="Red">
 <pre>The reincarnation of the [[Rebol]] programming language.</pre>
 </div>
 <div created="20210503175835090" modified="20210503182516063" tags="Red 2020" title="Red Utilities">
@@ -13225,12 +13232,14 @@ Most [[Red]] code //need not// make so much use of its [[Metaprogramming]] featu
 
 But I can't escape the feeling that there is, in fact, a certain advantage to having some membrane or separation between [[Metaprogramming]] and the domain or business logic. Most languages of which I'm aware which allow [[Metaprogramming]] at all, only support it as a compile-time construct, such as [[Rust]] and [[Clojure]]. That seems to provide enough separation.</pre>
 </div>
-<div _blurb="[[Functional Programming]] [[transducers|Transducer]] in [[Red]]" author="[[Adam Sherwood]]" created="20210503191941972" github="https://github.com/theSherwood/red-utils/tree/master/transducer" modified="20210503200531084" tags="Red 2020 Utility [[Functional Programming]] Project" title="Red Utilities / Transducer">
+<div _blurb="[[Functional Programming]] [[transducers|Transducer]] in [[Red]]" author="[[Adam Sherwood]]" created="20210503191941972" github="https://github.com/theSherwood/red-utils/tree/master/transducer" modified="20210503201413006" tags="Red 2020 Utility [[Functional Programming]] Project" title="Red Utilities / Transducer">
 <pre>!! [[Description]]
 
 [[Functional Programming]] [[transducers|Transducer]] in [[Red]].
 
 !! [[Overview]]
+
+One of my [[Red Utilities]].
 
 One of the common purposes of [[transducers|Transducer]] is to allow for more efficient looping over collections by consolidating logic that might otherwise be smeared across multiple iterations. That is, rather than filtering a collection (one iteration) and then mapping the resulting collection (a second iteration), [[transducers|Transducer]] make it possible to filter and map in the same iteration.
 
@@ -13242,6 +13251,23 @@ One of the common purposes of [[transducers|Transducer]] is to allow for more ef
 
 While functions in [[Red]] are values as in [[Functional Programming]] languages, there are some complexities that make implementing [[transducers|Transducer]] somewhat awkward. Consequently, there is currently the limitation that operators cannot be used as functions and I had to resort to using `compose` to make the function passing work at all.
 </pre>
+</div>
+<div _blurb="A simple file-watcher in [[Red]]" author="[[Adam Sherwood]]" created="20210503201350199" github="https://github.com/theSherwood/red-utils/tree/master/watch" modified="20210503203048597" tags="Red 2020 Utility Project" title="Red Utilities / Watch">
+<pre>!! [[Description]]
+
+A simple file-watcher in [[Red]].
+
+!! [[Overview]]
+
+One of my [[Red Utilities]].
+
+There are actually two parts to this utility. `watch.red` is a generic file watcher  that can be given an action to call when a watched file changes. `watch-deps.red`, on the other hand, will also track the dependencies if a watched file  has the `.red` extension. It will then call the action on that file any time that file or any of its dependencies change.
+
+[[Red]] is young and the ecosystem and tooling are still developing. I wanted a light-weight tool for testing [[Red Utilities]] as I developed them. To facilitate this, I needed a file watcher.
+
+!! [[Pain Points]]
+
+At the time, [[Red]] didn't have any ability to register these kinds of callbacks with the operating system. So instead, these utilities rely on a daemon that polls the files in the relevant directory for the timestamp of their last change and checks it against a hash-table of recorded timestamps. Not a tremendous problem, but slightly annoying.</pre>
 </div>
 <div created="20210422235231955" modified="20210422235231955" title="Redux">
 <pre></pre>
