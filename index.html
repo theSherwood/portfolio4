@@ -397,6 +397,8 @@ Error message and password prompt
 
 <li>Mentat</li>
 
+<li>Metaprogramming</li>
+
 <li>MongoDB</li>
 
 <li>NextJS</li>
@@ -441,6 +443,8 @@ Error message and password prompt
 
 <li>Red Utilities / Series</li>
 
+<li>Red Utilities / Transducer</li>
+
 <li>Redux</li>
 
 <li>regex</li>
@@ -452,6 +456,8 @@ Error message and password prompt
 <li>Rich Harris</li>
 
 <li>RollupJS</li>
+
+<li>Rust</li>
 
 <li>Ryan Carniato</li>
 
@@ -12547,7 +12553,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210429235419368" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project styled-jsx CSS RegexXP sinuous-context $:/AdvancedSearch [[Red Utilities]] [[Red Utilities / Series]]" modified="20210503191424690" title="$:/StoryList">
+<div created="20210429235419368" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project styled-jsx CSS RegexXP sinuous-context $:/AdvancedSearch [[Red Utilities]] [[Red Utilities / Series]]" modified="20210503193735712" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Fields]] [[View Data Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210429234809469" title="$:/tags/ViewTemplate">
@@ -12847,6 +12853,9 @@ There was no smooth sailing.
 * Recursion. At present, window tiddlers cannot contain other window tiddlers.
 * Cloud dashboard. The current state of Mentat has made great use of Volant tiddlers that are fixed to the screen. Those Volant tiddlers that are not fixed to the screen could use some love.</pre>
 </div>
+<div created="20210503193740623" modified="20210503193740623" title="Metaprogramming">
+<pre></pre>
+</div>
 <div created="20210423012213697" modified="20210423012213697" title="MongoDB">
 <pre></pre>
 </div>
@@ -13057,7 +13066,7 @@ I put together a small handful of utilities in [[Red]]:
 
 As these utilities were more experimental than anything, they are largely undocumented apart from some code comments and test cases that may be used as examples. Best of luck!</pre>
 </div>
-<div _blurb="[[Python]]-inspired chained comparison operators" author="[[Adam Sherwood]]" created="20210503182910829" github="https://github.com/theSherwood/red-utils/tree/master/compare" modified="20210503184214131" tags="Red Utility 2020 Project" title="Red Utilities / Compare">
+<div _blurb="[[Python]]-inspired chained comparison operators" author="[[Adam Sherwood]]" created="20210503182910829" github="https://github.com/theSherwood/red-utils/tree/master/compare" modified="20210503191831666" tags="Red Utility 2020 Project Syntax" title="Red Utilities / Compare">
 <pre>!! [[Description]]
 
 [[Python]]-inspired chained comparison operators. 
@@ -13088,12 +13097,14 @@ compare [1 = 1 - 2 - 1 + 3 = 1.0 = to-integer &quot;1&quot;]
 compare [c: a - 1 &lt; b &lt; a * 2 &lt;= c * 6]  ;== true
 ```</pre>
 </div>
-<div _blurb="Series comprehensions inspired by [[Python]] list comprehensions" author="[[Adam Sherwood]]" created="20210503184110117" github="https://github.com/theSherwood/red-utils/tree/master/series" modified="20210503191438315" tags="2020 Red Project Utility" title="Red Utilities / Series">
+<div _blurb="Series comprehensions inspired by [[Python]] list comprehensions" author="[[Adam Sherwood]]" created="20210503184110117" github="https://github.com/theSherwood/red-utils/tree/master/series" modified="20210503193827951" tags="2020 Red Project Utility Syntax" title="Red Utilities / Series">
 <pre>!! [[Description]]
 
 Series comprehensions inspired by [[Python]] list comprehensions.
 
 !! [[Overview]]
+
+One of my [[Red Utilities]].
 
 In [[Red]], a `series` is quite an abstract notion of groups of values, whether that be groups of characters in the form of a string, groups of numbers in a `block` (array), or even a block of heterogenous data. Given the flexibility of `series` in [[Red]], series comprehensions end up being far more expressive than what is possible with [[Python]] list comprehensions.
 
@@ -13168,7 +13179,17 @@ series/only/into [
 ] []
 ;== [[#&quot;b&quot; -1] [#&quot;b&quot; 3] [#&quot;d&quot; 5] [#&quot;d&quot; 13]]
 ```
-</pre>
+
+!! [[Pain Points]]
+
+In [[Red]], `parse` and `compose` are separately very powerful. Together, they are an absolute powerhouse that enables unparalleled expressivity. Herein lies the problem. They are perhaps too expressive to the point of being very difficult to reason about with any kind of exactitude. As a result, writing the code to enable series comprehensions required a great deal more trial and error than I am comfortable with.
+
+Most [[Red]] code //need not// make so much use of its [[Metaprogramming]] features as I have in this utility. But I find that much idiomatic [[Red]] code does engage in some [[Metaprogramming]] hanky-panky. This is part of what allows [[Red]] code to be so unbelievably concise. I suspect that with time, this approach would become more familiar and easier to reason about.
+
+But I can't escape the feeling that there is, in fact, a certain advantage to having some membrane or separation between [[Metaprogramming]] and the domain or business logic. Most languages of which I'm aware which allow [[Metaprogramming]] at all, only support it as a compile-time construct, such as [[Rust]] and [[Clojure]].</pre>
+</div>
+<div author="[[Adam Sherwood]]" created="20210503191941972" github="https://github.com/theSherwood/red-utils/tree/master/transducer" modified="20210503192100659" tags="Red 2020 Utility [[Functional Programming]]" title="Red Utilities / Transducer">
+<pre></pre>
 </div>
 <div created="20210422235231955" modified="20210422235231955" title="Redux">
 <pre></pre>
@@ -13239,6 +13260,9 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 <pre></pre>
 </div>
 <div author="[[Rich Harris]]" created="20210423014831296" modified="20210502005422516" title="RollupJS" website="https://www.rollupjs.org/guide/en/">
+<pre></pre>
+</div>
+<div created="20210503193730572" modified="20210503193731932" tags="Language" title="Rust">
 <pre></pre>
 </div>
 <div created="20210503161406810" modified="20210503161406810" title="Ryan Carniato">
