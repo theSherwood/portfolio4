@@ -439,6 +439,8 @@ Error message and password prompt
 
 <li>Red Utilities / Compare</li>
 
+<li>Red Utilities / Series</li>
+
 <li>Redux</li>
 
 <li>regex</li>
@@ -12545,7 +12547,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210429235419368" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project styled-jsx CSS RegexXP sinuous-context $:/AdvancedSearch [[Red Utilities]] [[Red Utilities / Compare]] Python" modified="20210503183659998" title="$:/StoryList">
+<div created="20210429235419368" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project styled-jsx CSS RegexXP sinuous-context $:/AdvancedSearch [[Red Utilities]] [[Red Utilities / Series]]" modified="20210503191424690" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Fields]] [[View Data Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210429234809469" title="$:/tags/ViewTemplate">
@@ -13055,7 +13057,7 @@ I put together a small handful of utilities in [[Red]]:
 
 As these utilities were more experimental than anything, they are largely undocumented apart from some code comments and test cases that may be used as examples. Best of luck!</pre>
 </div>
-<div _blurb="[[Python]]-inspired chained comparison operators" created="20210503182910829" github="https://github.com/theSherwood/red-utils/tree/master/compare" modified="20210503183831799" tags="Red Utility 2020 Project" title="Red Utilities / Compare">
+<div _blurb="[[Python]]-inspired chained comparison operators" author="[[Adam Sherwood]]" created="20210503182910829" github="https://github.com/theSherwood/red-utils/tree/master/compare" modified="20210503184214131" tags="Red Utility 2020 Project" title="Red Utilities / Compare">
 <pre>!! [[Description]]
 
 [[Python]]-inspired chained comparison operators. 
@@ -13085,6 +13087,88 @@ compare [1 = 1 - 2 - 1 + 3 = 1.0 = to-integer &quot;1&quot;]
 ; Variable bindings
 compare [c: a - 1 &lt; b &lt; a * 2 &lt;= c * 6]  ;== true
 ```</pre>
+</div>
+<div _blurb="Series comprehensions inspired by [[Python]] list comprehensions" author="[[Adam Sherwood]]" created="20210503184110117" github="https://github.com/theSherwood/red-utils/tree/master/series" modified="20210503191438315" tags="2020 Red Project Utility" title="Red Utilities / Series">
+<pre>!! [[Description]]
+
+Series comprehensions inspired by [[Python]] list comprehensions.
+
+!! [[Overview]]
+
+In [[Red]], a `series` is quite an abstract notion of groups of values, whether that be groups of characters in the form of a string, groups of numbers in a `block` (array), or even a block of heterogenous data. Given the flexibility of `series` in [[Red]], series comprehensions end up being far more expressive than what is possible with [[Python]] list comprehensions.
+
+!!! Stuff [[Python]] Can Do
+
+Simple:
+
+```
+series [a * 2 for a in [3 4 5]] ;== [6 8 10]
+```
+
+Get the index:
+
+```
+series [a * idx for a idx in [3 4 5]] ;== [3 8 15]
+```
+
+Filter with `if` clauses:
+
+```
+series [a for a in [3 4 5] if odd? a] ;== [3 5]
+```
+
+Draw from multiple series at once:
+
+```
+series [rejoin [a b] for a in [3 4 5] for b in &quot;abc&quot;]
+;== [&quot;3a&quot; &quot;3b&quot; &quot;3c&quot; &quot;4a&quot; &quot;4b&quot; &quot;4c&quot; &quot;5a&quot; &quot;5b&quot; &quot;5c&quot;]
+```
+
+!!! Stuff [[Python]] Can't Do
+
+Pump data into an existing data structure without intermediate data structures:
+
+```
+series/into [a * 2 for a in [3 4 5]] &quot;&quot; ;== &quot;6810&quot;
+```
+
+Draw in multiple values per iteration:
+
+```
+series [a + b for [a b] in [3 4 5 6]] ;== [7 11]
+```
+
+Additionally, there is a `/only` attribute that follows the convention of [[Red]] functions in providing special handling for nested blocks:
+
+```
+a: [3 4 5]
+
+series [reduce [a'] for a' in a]
+;== [3 4 5]
+
+series/only [reduce [a'] for a' in a]
+;== [[3] [4] [5]]
+```
+
+!!! Everything At Once
+
+Altogether, we can see that it is capable of some very powerful expressions that obviate the need for explicit looping as would be required in many other languages:
+
+```
+a: &quot;abcd&quot;
+b: [3 4 5 6]
+c: [7 8]
+
+series/only/into [
+	reduce [a'' b' * a-idx - c']
+	for [a' a''] a-idx in a
+	for [b' b'']       in b
+	for c'       c-idx in c
+	if even? c-idx + b'
+] []
+;== [[#&quot;b&quot; -1] [#&quot;b&quot; 3] [#&quot;d&quot; 5] [#&quot;d&quot; 13]]
+```
+</pre>
 </div>
 <div created="20210422235231955" modified="20210422235231955" title="Redux">
 <pre></pre>
