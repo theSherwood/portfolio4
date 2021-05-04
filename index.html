@@ -12575,7 +12575,7 @@ exports.Completion = Completion;
 <div created="20210501224950674" list="" modified="20210503200052271" title="$:/state/tag-backlinks-excluded--1276141852">
 <pre></pre>
 </div>
-<div created="20210426162550495" list="" modified="20210503214157678" title="$:/state/tag-backlinks-excluded--1890935632">
+<div created="20210426162550495" list="" modified="20210504000155807" title="$:/state/tag-backlinks-excluded--1890935632">
 <pre></pre>
 </div>
 <div created="20210426162429487" list="" modified="20210429224309828" title="$:/state/tag-backlinks-excluded-726298926">
@@ -12614,7 +12614,7 @@ exports.Completion = Completion;
 <div created="20210501225107860" list="Library" modified="20210501225107860" title="$:/state/tag-backlinks-included--1486639886">
 <pre></pre>
 </div>
-<div created="20210426162548831" list="" modified="20210503214155399" title="$:/state/tag-backlinks-included--1890935632">
+<div created="20210426162548831" list="" modified="20210504000153248" title="$:/state/tag-backlinks-included--1890935632">
 <pre></pre>
 </div>
 <div created="20210426162423639" list="" modified="20210429224308264" title="$:/state/tag-backlinks-included-726298926">
@@ -12629,10 +12629,10 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210503232257860" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project styled-jsx CSS RegexXP sinuous-context [[Red Utilities]] Hugo Go [[View Field Backlinks]] [[View Case Insensitive]] $:/AdvancedSearch github GitHub" modified="20210503233902726" title="$:/StoryList">
+<div created="20210504000111246" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Mentat Project React styled-jsx" modified="20210504003157442" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Fields]] [[View Case Insensitive]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] [[View Field Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210503233823600" title="$:/tags/ViewTemplate">
+<div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] [[View Field Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210503235154110" title="$:/tags/ViewTemplate">
 <pre></pre>
 </div>
 <div created="20210422042409319" modified="20210422042434260" title="$:/theme">
@@ -13697,8 +13697,8 @@ I took great pains to comment this library well. I'm sure the code could be clea
 <div created="20210503161359861" modified="20210503161359861" title="Solid">
 <pre></pre>
 </div>
-<div created="20210430002116832" github="https://github.com/vercel/styled-jsx" modified="20210503205633481" tags="UI CSS [[Scoped Styles]]" title="styled-jsx">
-<pre>Provides [[Scoped Styles]] for [[React]] and the default styling solution for [[NextJS]].</pre>
+<div created="20210430002116832" github="https://github.com/vercel/styled-jsx" modified="20210504003226963" tags="UI CSS [[Scoped Styles]] Library" title="styled-jsx">
+<pre>The default styling solution for [[NextJS]]. Provides [[Scoped Styles]] for [[React]].</pre>
 </div>
 <div author="[[Rich Harris]]" created="20210423014625807" modified="20210503201037913" tags="JavaScript Library UI [[Scoped Styles]] [[Reactive Programming]]" title="Svelte" website="https://svelte.dev/">
 <pre></pre>
@@ -13721,13 +13721,27 @@ I took great pains to comment this library well. I'm sure the code could be clea
 <div created="20210429233653621" modified="20210429233653621" title="UI">
 <pre></pre>
 </div>
-<div created="20210424074853252" modified="20210503213838412" tags="$:/tags/ViewTemplate" title="View Backlinks">
-<pre>\define details-start(open-attribute)
+<div created="20210424074853252" modified="20210504003141890" tags="$:/tags/ViewTemplate" title="View Backlinks">
+<pre>\define truncate-regex() (^.{0,100})(.*)
+
+\define details-start(open-attribute)
 &lt;details $open-attribute$ &gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;$link mode=inline /&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 10px&quot; &gt;
 {{||$:/core/ui/ViewTemplate/tags}}
+&lt;$reveal type=nomatch default={{!!_blurb}} text=&quot;&quot; &gt;
 {{!!_blurb}}
+&lt;/$reveal&gt;
+&lt;$reveal type=match default={{!!_blurb}} text=&quot;&quot; &gt;
+&lt;$list filter=&quot;[all[current]get[text]search-replace:gi:regexp&lt;truncate-regex&gt;,[$1]]&quot; variable=&quot;truncated-text&quot; &gt;
+&lt;&lt;truncated-text&gt;&gt;
+&lt;$list filter=&quot;[all[current]get[text]length[]]&quot; variable=&quot;text-length&quot; &gt;
+&lt;$reveal type=gt default=&lt;&lt;text-length&gt;&gt; text=100 &gt;
+...
+&lt;/$reveal&gt;
+&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;/$reveal&gt;
 &lt;/div&gt;
 &lt;/details&gt;
 \end
@@ -13876,13 +13890,27 @@ I took great pains to comment this library well. I'm sure the code could be clea
 
 </pre>
 </div>
-<div created="20210423054644610" modified="20210503214129135" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
-<pre>\define details-start(open-attribute)
+<div created="20210423054644610" modified="20210504003038505" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
+<pre>\define truncate-regex() (^.{0,100})(.*)
+
+\define details-start(open-attribute)
 &lt;details $open-attribute$ &gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;$link mode=inline /&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 10px&quot; &gt;
 {{||$:/core/ui/ViewTemplate/tags}}
+&lt;$reveal type=nomatch default={{!!_blurb}} text=&quot;&quot; &gt;
 {{!!_blurb}}
+&lt;/$reveal&gt;
+&lt;$reveal type=match default={{!!_blurb}} text=&quot;&quot; &gt;
+&lt;$list filter=&quot;[all[current]get[text]search-replace:gi:regexp&lt;truncate-regex&gt;,[$1]]&quot; variable=&quot;truncated-text&quot; &gt;
+&lt;&lt;truncated-text&gt;&gt;
+&lt;$list filter=&quot;[all[current]get[text]length[]]&quot; variable=&quot;text-length&quot; &gt;
+&lt;$reveal type=gt default=&lt;&lt;text-length&gt;&gt; text=100 &gt;
+...
+&lt;/$reveal&gt;
+&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;/$reveal&gt;
 &lt;/div&gt;
 &lt;/details&gt;
 \end
