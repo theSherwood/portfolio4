@@ -12683,7 +12683,7 @@ exports.Completion = Completion;
 <div created="20210501224950674" list="" modified="20210503200052271" title="$:/state/tag-backlinks-excluded--1276141852">
 <pre></pre>
 </div>
-<div created="20210426162550495" list="" modified="20210518210030446" title="$:/state/tag-backlinks-excluded--1890935632">
+<div created="20210426162550495" list="" modified="20210518210505042" title="$:/state/tag-backlinks-excluded--1890935632">
 <pre></pre>
 </div>
 <div created="20210426162429487" list="" modified="20210429224309828" title="$:/state/tag-backlinks-excluded-726298926">
@@ -12728,7 +12728,7 @@ exports.Completion = Completion;
 <div created="20210501225107860" list="Library" modified="20210501225107860" title="$:/state/tag-backlinks-included--1486639886">
 <pre></pre>
 </div>
-<div created="20210426162548831" list="TiddlyWiki UI" modified="20210518210031878" title="$:/state/tag-backlinks-included--1890935632">
+<div created="20210426162548831" list="" modified="20210518210504200" title="$:/state/tag-backlinks-included--1890935632">
 <pre></pre>
 </div>
 <div created="20210426162423639" list="" modified="20210429224308264" title="$:/state/tag-backlinks-included-726298926">
@@ -12743,7 +12743,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210518205449566" list="$:/core/ui/SideBar/Open [[Adam Sherwood]] author $:/AdvancedSearch Project [[7GUIs / React]] React" modified="20210518210037777" title="$:/StoryList">
+<div created="20210518210251194" list="$:/core/ui/SideBar/Open [[Adam Sherwood]] $:/AdvancedSearch" modified="20210518212105928" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Field Value Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] [[View Field Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210518193858111" title="$:/tags/ViewTemplate">
@@ -13141,13 +13141,13 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 &lt;$link to=&quot;&quot;&quot;$text$&quot;&quot;&quot;&gt;&lt;code&gt;$text$&lt;/code&gt;&lt;/$link&gt;
 \end</pre>
 </div>
-<div created="20210518201758611" modified="20210518205952499" tags="$:/tags/Macro" title="Filter By Tag">
+<div created="20210518201758611" modified="20210518211701227" tags="$:/tags/Macro" title="Filter By Tag">
 <pre>\define truncate-regex() (^.{0,100})(.*)
 
 \define details-start(open-attribute)
 &lt;details $open-attribute$ &gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;$link mode=inline /&gt;&lt;/summary&gt;
-&lt;div style=&quot;margin-left: 10px&quot; &gt;
+&lt;div style=&quot;margin-left: 20px&quot; &gt;
 {{||$:/core/ui/ViewTemplate/tags}}
 &lt;$reveal type=nomatch default={{!!_blurb}} text=&quot;&quot; &gt;
 {{!!_blurb}}
@@ -14125,10 +14125,10 @@ I took great pains to comment this library well. I'm sure the code could be clea
 <div created="20210429233653621" modified="20210429233653621" title="UI">
 <pre></pre>
 </div>
-<div created="20210424074853252" modified="20210518205221560" tags="$:/tags/ViewTemplate" title="View Backlinks">
+<div created="20210424074853252" modified="20210518211901435" tags="$:/tags/ViewTemplate" title="View Backlinks">
 <pre>&lt;$set name=title value={{!!title}} &gt;
-&lt;$set name=included value=&lt;&lt;qualify $:/state/backlinks-included&gt;&gt; &gt;
-&lt;$set name=excluded value=&lt;&lt;qualify $:/state/backlinks-excluded&gt;&gt; &gt;
+&lt;$set name=included value=&lt;&lt;qualify $:/temp/backlinks-included&gt;&gt; &gt;
+&lt;$set name=excluded value=&lt;&lt;qualify $:/temp/backlinks-excluded&gt;&gt; &gt;
 &lt;$set name=filter value=&quot;[all[current]backlinks[]!title&lt;currentTiddler&gt;]&quot; &gt;
 &lt;$list filter=&quot;[subfilter&lt;filter&gt;count[]]&quot; variable=count &gt;
 &lt;$reveal default=&lt;&lt;count&gt;&gt; type=&quot;nomatch&quot; text=&quot;0&quot; &gt;
@@ -14165,13 +14165,13 @@ excluded=&lt;&lt;excluded&gt;&gt;
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210423054125933" modified="20210518195642304" tags="$:/tags/ViewTemplate" title="View Field Backlinks">
+<div created="20210423054125933" modified="20210518211924766" tags="$:/tags/ViewTemplate" title="View Field Backlinks">
 <pre>\define details(open-attribute)
 &lt;details $open-attribute$ &gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the &lt;&lt;field-link &quot;&quot;&quot;$(title-lowercase)$&quot;&quot;&quot; &gt;&gt; field ($(count)$)&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
-&lt;$set name=included value=&lt;&lt;qualify $:/state/field-values-included&gt;&gt; &gt;
-&lt;$set name=excluded value=&lt;&lt;qualify $:/state/field-values-excluded&gt;&gt; &gt;
+&lt;$set name=included value=&lt;&lt;qualify $:/temp/field-values-included&gt;&gt; &gt;
+&lt;$set name=excluded value=&lt;&lt;qualify $:/temp/field-values-excluded&gt;&gt; &gt;
 
 &lt;!-- start filters --&gt;
 &lt;$list filter=&quot;[!is[system]get&lt;title-lowercase&gt;] +[unique[]] +[enlist-input[]is[tiddler]count[]]&quot; variable=count&gt;
@@ -14253,7 +14253,7 @@ excluded=&lt;&lt;excluded&gt;&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;</pre>
 </div>
-<div created="20210518180824787" modified="20210518194739958" tags="$:/tags/ViewTemplate" title="View Field Value Backlinks">
+<div created="20210518180824787" modified="20210518211937638" tags="$:/tags/ViewTemplate" title="View Field Value Backlinks">
 <pre>\define field-values(val)
 &lt;$list filter=&quot;[all[tiddlers]contains:$(field)$[$(currentTiddler)$]!is[system]count[]]&quot; variable=count&gt;
 &lt;$reveal type=nomatch default=&lt;&lt;count&gt;&gt; text=0 &gt;
@@ -14265,9 +14265,19 @@ Notes where &lt;$link /&gt; is in the &lt;&lt;field-link &quot;&quot;&quot;$(fie
 &lt;/strong&gt;
 &lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px;&quot;&gt;
-&lt;$list filter=&quot;[all[tiddlers]contains:$(field)$[$(currentTiddler)$]!is[system]]&quot;&gt;
+&lt;$set name=included value=&lt;&lt;qualify $:/temp/tag-backlinks-included&gt;&gt; &gt;
+&lt;$set name=excluded value=&lt;&lt;qualify $:/temp/tag-backlinks-excluded&gt;&gt; &gt;
+&lt;$set name=filter value=&quot;[all[tiddlers]contains:$(field)$[$(currentTiddler)$]!is[system]]&quot; &gt;
 
-&lt;/$list&gt;
+&lt;$macrocall $name=&quot;filter-by-tag&quot;
+filter=&lt;&lt;filter&gt;&gt;
+included=&lt;&lt;included&gt;&gt;
+excluded=&lt;&lt;excluded&gt;&gt;
+/&gt;
+
+&lt;/$set&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;
 &lt;/div&gt;
 &lt;/details&gt;
 &lt;/div&gt;
@@ -14301,10 +14311,10 @@ Notes where &lt;$link /&gt; is in the &lt;&lt;field-link &quot;&quot;&quot;$(fie
 
 </pre>
 </div>
-<div created="20210423054644610" modified="20210518205037536" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
+<div created="20210423054644610" modified="20210518211851027" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
 <pre>&lt;$set name=title value={{!!title}} &gt;
-&lt;$set name=included value=&lt;&lt;qualify $:/state/tag-backlinks-included&gt;&gt; &gt;
-&lt;$set name=excluded value=&lt;&lt;qualify $:/state/tag-backlinks-excluded&gt;&gt; &gt;
+&lt;$set name=included value=&lt;&lt;qualify $:/temp/tag-backlinks-included&gt;&gt; &gt;
+&lt;$set name=excluded value=&lt;&lt;qualify $:/temp/tag-backlinks-excluded&gt;&gt; &gt;
 &lt;$set name=filter value=&quot;[all[tiddlers]tag&lt;title&gt;]&quot; &gt;
 &lt;$list filter=&quot;[subfilter&lt;filter&gt;count[]]&quot; variable=count &gt;
 &lt;$reveal default=&lt;&lt;count&gt;&gt; type=nomatch text=&quot;0&quot; &gt;
