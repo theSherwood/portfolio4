@@ -261,6 +261,10 @@ Error message and password prompt
 
 <li>$:/state/dropdown/keyboardshortcut/list-bullet-286565879</li>
 
+<li>$:/state/field-values-excluded--1683758720</li>
+
+<li>$:/state/field-values-included--1683758720</li>
+
 <li>$:/state/folded/ting</li>
 
 <li>$:/state/palettemanager/$:/palettes/Blanca/blockquote-bar</li>
@@ -12521,6 +12525,12 @@ exports.Completion = Completion;
 <div created="20210422231746854" modified="20210422231830060" title="$:/state/dropdown/keyboardshortcut/list-bullet-286565879">
 <pre>close</pre>
 </div>
+<div created="20210518000020374" list="" modified="20210518002308249" title="$:/state/field-values-excluded--1683758720">
+<pre></pre>
+</div>
+<div created="20210518000019449" list="" modified="20210518002306857" title="$:/state/field-values-included--1683758720">
+<pre></pre>
+</div>
 <div created="20210422052457493" modified="20210422052501141" title="$:/state/folded/ting">
 <pre>show</pre>
 </div>
@@ -12611,8 +12621,8 @@ exports.Completion = Completion;
 <div created="20210501225125471" modified="20210501225125471" title="$:/state/tag-backlinks-expanded--1486639886">
 <pre>not-open</pre>
 </div>
-<div created="20210425203620641" modified="20210512191358645" title="$:/state/tag-backlinks-expanded--1890935632">
-<pre>open</pre>
+<div created="20210425203620641" modified="20210518002238278" title="$:/state/tag-backlinks-expanded--1890935632">
+<pre>not-open</pre>
 </div>
 <div created="20210425205610496" modified="20210425205612612" title="$:/state/tag-backlinks-expanded-593591298">
 <pre>open</pre>
@@ -12647,7 +12657,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210517230822951" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Project [[7GUIs: A GUI Programming Benchmark]] [[7GUIs Implementations]] [[7GUIs / Sinuous with Sinuous-Style]] [[Iframe Macros]]" modified="20210517232520618" title="$:/StoryList">
+<div created="20210517232643148" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Project [[7GUIs: A GUI Programming Benchmark]] [[7GUIs Implementations]] [[7GUIs / Sinuous with Sinuous-Style]] demo author [[View Field Backlinks]] [[View Tag Backlinks]]" modified="20210517233952383" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] [[View Field Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210503235154110" title="$:/tags/ViewTemplate">
@@ -14049,16 +14059,76 @@ I took great pains to comment this library well. I'm sure the code could be clea
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210423054125933" modified="20210503231415162" tags="$:/tags/ViewTemplate" title="View Field Backlinks">
+<div created="20210423054125933" modified="20210518002012625" tags="$:/tags/ViewTemplate" title="View Field Backlinks">
 <pre>\define details(open-attribute)
 &lt;details $open-attribute$ &gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the &lt;code&gt;$(title-lowercase)$&lt;/code&gt; field ($(count)$)&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
-&lt;$list filter=&quot;[all[tiddlers]has&lt;title-lowercase&gt;sort[title]]&quot;&gt;
-&lt;$link mode=inline /&gt; : 
-&lt;$transclude field=$(title-lowercase)$ mode=inline /&gt;
-&lt;br/&gt;
+&lt;$set name=included value=&lt;&lt;qualify $:/state/field-values-included&gt;&gt; &gt;
+&lt;$set name=excluded value=&lt;&lt;qualify $:/state/field-values-excluded&gt;&gt; &gt;
+
+&lt;!-- start filters --&gt;
+&lt;$list filter=&quot;[!is[system]get&lt;title-lowercase&gt;] +[unique[]] +[enlist-input[]is[tiddler]count[]]&quot; variable=count&gt;
+&lt;$reveal default=&lt;&lt;count&gt;&gt; type=nomatch text=&quot;0&quot;&gt;
+&lt;strong&gt;Filter by field value&lt;/strong&gt;
+&lt;div class=&quot;filters-container&quot; &gt;
+&lt;$list filter=&quot;[!is[system]get&lt;title-lowercase&gt;sort[title]] +[unique[]] +[enlist-input[]is[tiddler]]&quot; variable=title&gt;
+&lt;$list filter=&quot;[&lt;included&gt;contains&lt;title&gt;]&quot; variable=_ &gt;
+&lt;span class=&quot;tc-tag-list-item&quot;&gt;
+&lt;span class=&quot;tc-tag-label tc-tag-label-included&quot;&gt;
+&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$action-listops $tiddler=&lt;&lt;included&gt;&gt; $subfilter=&quot;-[&lt;title&gt;]&quot;/&gt;
+&lt;$action-listops $tiddler=&lt;&lt;excluded&gt;&gt; $subfilter=&quot;[&lt;title&gt;]&quot;/&gt;
+&lt;&lt;title&gt;&gt;
+&lt;/$button&gt;
+&lt;/span&gt;
+&lt;/span&gt;
 &lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;excluded&gt;contains&lt;title&gt;]&quot; variable=_ &gt;
+&lt;span class=&quot;tc-tag-list-item&quot;&gt;
+&lt;span class=&quot;tc-tag-label tc-tag-label-excluded&quot;&gt;
+&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$action-listops $tiddler=&lt;&lt;excluded&gt;&gt; $subfilter=&quot;-[&lt;title&gt;]&quot;/&gt;
+&lt;&lt;title&gt;&gt;
+&lt;/$button&gt;
+&lt;/span&gt;
+&lt;/span&gt;
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;included&gt;!contains&lt;title&gt;then[true]] :intersection[&lt;excluded&gt;!contains&lt;title&gt;then[true]]&quot; variable=_ &gt;
+&lt;span class=&quot;tc-tag-list-item&quot;&gt;
+&lt;span class=&quot;tc-tag-label tc-tag-label-neutral&quot;&gt;
+&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$action-listops $tiddler=&lt;&lt;included&gt;&gt; $subfilter=&quot;[&lt;title&gt;]&quot;/&gt;
+&lt;&lt;title&gt;&gt;
+&lt;/$button&gt;
+&lt;/span&gt;
+&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+&lt;/$reveal&gt;
+&lt;/$list&gt;
+&lt;!-- end filters --&gt;
+
+&lt;$reveal type=match stateTitle=&lt;&lt;included&gt;&gt; stateField=&quot;list&quot; text=&quot;&quot;&gt;
+&lt;$list filter=&quot;[!is[system]has&lt;title-lowercase&gt;sort[title]] -[list&lt;excluded&gt;listed&lt;title-lowercase&gt;]&quot;&gt;
+&lt;$link mode=inline /&gt; : 
+&lt;div style=&quot;margin-left: 20px&quot; &gt;
+&lt;$transclude field=$(title-lowercase)$ mode=inline /&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+&lt;/$reveal&gt;
+&lt;$reveal type=nomatch stateTitle=&lt;&lt;included&gt;&gt; stateField=&quot;list&quot; text=&quot;&quot;&gt;
+&lt;$list filter=&quot;[!is[system]has&lt;title-lowercase&gt;sort[title]] :intersection[list&lt;included&gt;listed&lt;title-lowercase&gt;] -[list&lt;excluded&gt;listed&lt;title-lowercase&gt;]&quot;&gt;
+&lt;$link mode=inline /&gt; : 
+&lt;div style=&quot;margin-left: 20px&quot; &gt;
+&lt;$transclude field=$(title-lowercase)$ mode=inline /&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+&lt;/$reveal&gt;
+
+&lt;/$set&gt;
+&lt;/$set&gt;
 &lt;/div&gt;
 &lt;/details&gt;
 \end
@@ -14066,7 +14136,7 @@ I took great pains to comment this library well. I'm sure the code could be clea
 &lt;$set name=title value={{!!title}} &gt;
 &lt;$set name=&quot;open-if-lowercase&quot; filter=&quot;[all[current]] :intersection[all[current]lowercase[]]&quot; value=open emptyValue=&quot;&quot; &gt;
 &lt;$list filter=&quot;[all[current]lowercase[]]&quot; variable=&quot;title-lowercase&quot; &gt;
-&lt;$list filter=&quot;[all[tiddlers]has&lt;title-lowercase&gt;count[]]&quot; variable=count &gt;
+&lt;$list filter=&quot;[!is[system]has&lt;title-lowercase&gt;count[]]&quot; variable=count &gt;
 &lt;$reveal default=&lt;&lt;count&gt;&gt; type=nomatch text=&quot;0&quot; &gt;
 &lt;div class=&quot;backlinks-wrapper&quot;&gt;
 &lt;$macrocall $name=&quot;details&quot; open-attribute=&lt;&lt;open-if-lowercase&gt;&gt; /&gt;
@@ -14099,7 +14169,7 @@ I took great pains to comment this library well. I'm sure the code could be clea
 
 </pre>
 </div>
-<div created="20210423054644610" modified="20210504003038505" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
+<div created="20210423054644610" modified="20210518002226641" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
 <pre>\define truncate-regex() (^.{0,100})(.*)
 
 \define details-start(open-attribute)
@@ -14134,6 +14204,7 @@ I took great pains to comment this library well. I'm sure the code could be clea
 &lt;details&gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the {{!!title||$:/core/ui/TagTemplate}} tag (&lt;&lt;count&gt;&gt;)&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
+
 &lt;!-- start filters --&gt;
 &lt;strong&gt;Filter by tag&lt;/strong&gt;
 &lt;div class=&quot;filters-container&quot; &gt;
@@ -14172,6 +14243,7 @@ I took great pains to comment this library well. I'm sure the code could be clea
 &lt;/$list&gt;
 &lt;/div&gt;
 &lt;!-- end filters --&gt;
+
 &lt;!-- start controls --&gt;
 &lt;div&gt;
 &lt;$button tooltip=&quot;Collapse all&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
