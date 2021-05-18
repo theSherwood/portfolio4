@@ -175,6 +175,8 @@ Error message and password prompt
 
 <li>$:/core</li>
 
+<li>$:/core/modules/filters/contains.js</li>
+
 <li>$:/core/ui/PageTemplate/pagecontrols</li>
 
 <li>$:/core/ui/TagTemplate</li>
@@ -237,6 +239,8 @@ Error message and password prompt
 
 <li>$:/state/backlinks-expanded-1185306184</li>
 
+<li>$:/state/backlinks-expanded-1299073386</li>
+
 <li>$:/state/backlinks-expanded-1559724438</li>
 
 <li>$:/state/backlinks-included</li>
@@ -278,6 +282,8 @@ Error message and password prompt
 <li>$:/state/plugin-info--896887961-$:/plugins/rmnvsl/krystal</li>
 
 <li>$:/state/plugin-info-749868030-$:/plugins/rmnvsl/krystal---432838930</li>
+
+<li>$:/state/showeditpreview</li>
 
 <li>$:/state/ShowPaletteEditor</li>
 
@@ -418,6 +424,8 @@ Error message and password prompt
 <li>Example</li>
 
 <li>Express</li>
+
+<li>Field Macro</li>
 
 <li>Firefox</li>
 
@@ -564,6 +572,8 @@ Error message and password prompt
 <li>View Case Insensitive</li>
 
 <li>View Field Backlinks</li>
+
+<li>View Field Value Backlinks</li>
 
 <li>View Fields</li>
 
@@ -10501,6 +10511,54 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20210518175908268" modified="20210518180749104" module-type="filteroperator" title="$:/core/modules/filters/contains.js" type="application/javascript">
+<pre>/*\
+title: $:/core/modules/filters/contains.js
+type: application/javascript
+module-type: filteroperator
+
+Filter operator for finding values in array fields
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+&quot;use strict&quot;;
+
+/*
+Export our filter function
+*/
+exports.contains = function(source,operator,options) {
+	var results = [],
+		fieldname = (operator.suffix || &quot;list&quot;).toLowerCase();
+	if(operator.prefix === &quot;!&quot;) {
+		source(function(tiddler,title) {
+			if(tiddler) {
+				var list = tiddler.getFieldList(fieldname);
+				if(list.indexOf(operator.operand) === -1) {
+					results.push(title);
+				}
+			} else {
+				results.push(title);
+			}
+		});
+	} else {
+		source(function(tiddler,title) {
+			if(tiddler) {
+				var list = tiddler.getFieldList(fieldname);
+				if(list &amp;&amp; list.indexOf(operator.operand) !== -1) {
+					results.push(title);
+				}
+			}
+		});
+	}
+	return results;
+};
+
+})();
+</pre>
+</div>
 <div created="20210422041715719" modified="20210422041727801" title="$:/core/ui/PageTemplate/pagecontrols">
 <pre>\whitespace trim
 \define config-title()
@@ -12462,7 +12520,7 @@ exports.Completion = Completion;
 <div created="20210422043416094" modified="20210422043416094" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.23/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.23/index.html/$:/plugins/tiddlywiki/freelinks">
 <pre>yes</pre>
 </div>
-<div created="20210422041645291" modified="20210425220035455" title="$:/state/advancedsearch/currentTab">
+<div created="20210422041645291" modified="20210518191337723" title="$:/state/advancedsearch/currentTab">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
 </div>
 <div created="20210426161340972" list="" modified="20210426161742365" title="$:/state/backlinks-excluded">
@@ -12488,6 +12546,9 @@ exports.Completion = Completion;
 </div>
 <div created="20210425205105494" modified="20210425205107248" title="$:/state/backlinks-expanded-1185306184">
 <pre>open</pre>
+</div>
+<div created="20210518195711515" modified="20210518195718747" title="$:/state/backlinks-expanded-1299073386">
+<pre>not-open</pre>
 </div>
 <div created="20210425205126915" modified="20210429234639431" title="$:/state/backlinks-expanded-1559724438">
 <pre>open</pre>
@@ -12552,6 +12613,9 @@ exports.Completion = Completion;
 <div created="20210422045658438" modified="20210422045741176" title="$:/state/plugin-info-749868030-$:/plugins/rmnvsl/krystal---432838930">
 <pre>settings</pre>
 </div>
+<div created="20210518180701244" modified="20210518192339859" title="$:/state/showeditpreview">
+<pre>no</pre>
+</div>
 <div created="20210423153029836" modified="20210425220236013" title="$:/state/ShowPaletteEditor">
 <pre>yes</pre>
 </div>
@@ -12561,7 +12625,7 @@ exports.Completion = Completion;
 <div created="20210422041350172" modified="20210422043322574" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
 </div>
-<div created="20210422041645291" modified="20210425220035456" title="$:/state/tab--1498284803">
+<div created="20210422041645291" modified="20210518191337724" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Standard</pre>
 </div>
 <div created="20210422043732159" modified="20210423153025124" title="$:/state/tab--1963855381">
@@ -12657,10 +12721,10 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210517232643148" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent Project [[7GUIs: A GUI Programming Benchmark]] [[7GUIs Implementations]] [[7GUIs / Sinuous with Sinuous-Style]] demo author [[View Field Backlinks]] [[View Tag Backlinks]]" modified="20210517233952383" title="$:/StoryList">
+<div created="20210518195746019" list="$:/core/ui/SideBar/Open $:/core/ui/SideBar/Recent [[Adam Sherwood]] Project [[Portfolio Website 2]]" modified="20210518195931497" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] [[View Field Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210503235154110" title="$:/tags/ViewTemplate">
+<div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Field Value Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] [[View Field Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210518193858111" title="$:/tags/ViewTemplate">
 <pre></pre>
 </div>
 <div created="20210422042409319" modified="20210422042434260" title="$:/theme">
@@ -13050,6 +13114,11 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 <div created="20210422235515309" modified="20210422235515309" title="Express">
 <pre></pre>
 </div>
+<div created="20210518194353938" modified="20210518194556611" tags="$:/tags/Macro" title="Field Macro">
+<pre>\define field-link(text)
+&lt;$link to=&quot;&quot;&quot;$text$&quot;&quot;&quot;&gt;&lt;code&gt;$text$&lt;/code&gt;&lt;/$link&gt;
+\end</pre>
+</div>
 <div created="20210422235146730" modified="20210422235146730" title="Firefox">
 <pre></pre>
 </div>
@@ -13100,7 +13169,7 @@ style=&quot;width:100%; height:500px; border-radius: 4px; overflow:hidden; borde
 <div created="20210422235212827" modified="20210422235212827" title="Lessons Learned">
 <pre></pre>
 </div>
-<div _blurb="Mentat is actually a series of 4 plugins ([[Repopup]], [[Volant]], [[Engine]], and [[Mentat]]) for the [[TiddlyWiki]] platform. Each plugin builds on the last. Together, they create a platform for users to radically configure the UI/UX of their wiki intuitively and with speed. They also form a base from which even more adventurous UI/UX solutions can be developed." created="20210422234117124" demo="https://thesherwood.github.io/Mentat/" github="https://github.com/theSherwood/Mentat" modified="20210503210947223" tags="Project 2019 Plugin JavaScript UI TiddlyWiki" title="Mentat" website="https://thesherwood.github.io/Mentat/">
+<div _blurb="Mentat is actually a series of 4 plugins ([[Repopup]], [[Volant]], [[Engine]], and [[Mentat]]) for the [[TiddlyWiki]] platform. Each plugin builds on the last. Together, they create a platform for users to radically configure the UI/UX of their wiki intuitively and with speed. They also form a base from which even more adventurous UI/UX solutions can be developed." author="[[Adam Sherwood]]" created="20210422234117124" demo="https://thesherwood.github.io/Mentat/" github="https://github.com/theSherwood/Mentat" modified="20210518195546048" tags="Project 2019 Plugin JavaScript UI TiddlyWiki" title="Mentat" website="https://thesherwood.github.io/Mentat/">
 <pre>!! [[Description]]
 
 Mentat is actually a series of 4 plugins (''Repopup'', ''Volant'', ''Engine'', and [[Mentat]]) for the [[TiddlyWiki]] platform. Each plugin builds on the last. Together, they create a platform for users to radically configure the UI/UX of their wiki intuitively and with speed. They also form a base from which even more adventurous UI/UX solutions can be developed.
@@ -13192,7 +13261,7 @@ There was no smooth sailing.
 <div created="20210423001542699" modified="20210423001542699" title="Pain Points">
 <pre></pre>
 </div>
-<div _blurb="A simple website portfolio [[SPA]] to curate a few of my projects." created="20210423014016560" github="https://github.com/theSherwood/portfolio2" modified="20210501234932860" tags="Project 2019 JavaScript Svelte" title="Portfolio Website 2">
+<div _blurb="A simple website portfolio [[SPA]] to curate a few of my projects." author="[[Adam Sherwood]]" created="20210423014016560" github="https://github.com/theSherwood/portfolio2" modified="20210518195956380" tags="Project 2019 JavaScript Svelte" title="Portfolio Website 2">
 <pre>!! [[Description]]
 
 A simple website portfolio [[SPA]] to curate a few of my projects.
@@ -13265,7 +13334,7 @@ Things have been reasonably smooth. [[Svelte]] is pretty ergonomic, [[Skeleton]]
 <div created="20210503180246699" modified="20210503195958239" tags="[[Programming Language]] [[Functional Programming]] [[Imperative Programming]]" title="Rebol">
 <pre></pre>
 </div>
-<div _blurb="[[ReconJS]] is a tool for statically checking arbitrary Javascript code for security threats. Analyze code for safety before you run it." created="20210423001904393" demo="https://reconjs-site.thesherwood.vercel.app/" github="https://github.com/theSherwood/ReconJS" modified="20210504223827488" npm="https://www.npmjs.com/package/@thesherwood/reconjs" tags="Project 2019 Library JavaScript" title="ReconJS">
+<div _blurb="[[ReconJS]] is a tool for statically checking arbitrary Javascript code for security threats. Analyze code for safety before you run it." author="[[Adam Sherwood]]" created="20210423001904393" demo="https://reconjs-site.thesherwood.vercel.app/" github="https://github.com/theSherwood/ReconJS" modified="20210518195925443" npm="https://www.npmjs.com/package/@thesherwood/reconjs" tags="Project 2019 Library JavaScript" title="ReconJS">
 <pre>!! [[Description]]
 
 [[ReconJS]] is a tool for statically checking arbitrary Javascript code for security threats. Analyze code for safety before you run it.
@@ -13316,7 +13385,7 @@ Once I had [[AcornJS]] building the AST, it was pretty straightforward. Prior to
 * Using [[ReconJS]] to check files, as a command line tool, rather than using it programmatically and passing in strings of code.
 * Add tests.</pre>
 </div>
-<div _blurb="The ReconJS Site is a gamified, adversarial demo of [[ReconJS]]." created="20210423011414633" github="https://github.com/theSherwood/reconjs-site" modified="20210504223842128" tags="Project 2019 [[Web App]] JavaScript React NextJS" title="ReconJS Site" website="https://reconjs-site.thesherwood.vercel.app/">
+<div _blurb="The ReconJS Site is a gamified, adversarial demo of [[ReconJS]]." author="[[Adam Sherwood]]" created="20210423011414633" github="https://github.com/theSherwood/reconjs-site" modified="20210518195902427" tags="Project 2019 [[Web App]] JavaScript React NextJS" title="ReconJS Site" website="https://reconjs-site.thesherwood.vercel.app/">
 <pre>!! [[Description]]
 
 The ReconJS Site is a gamified, adversarial demo of [[ReconJS]]. The purpose is two-fold:
@@ -13589,7 +13658,7 @@ At the time, [[Red]] didn't have any ability to register these kinds of callback
 <div created="20210423001516654" modified="20210423021752990" title="Regex101" website="https://regex101.com/">
 <pre></pre>
 </div>
-<div _blurb="RegexXP is an educational app for [[JavaScript]] developers trying to improve their regular expression skills. The app allows users to create challenges and solve the challenges created by other users. It also contains a brief tutorial, covering the principal features of [[regex]] in [[JavaScript]]." created="20210422230856028" github="https://github.com/theSherwood/RegexXP" modified="20210501231101477" tags="Project 2019 React [[Web App]] JavaScript" title="RegexXP" website="https://www.regexxp.online/">
+<div _blurb="RegexXP is an educational app for [[JavaScript]] developers trying to improve their regular expression skills. The app allows users to create challenges and solve the challenges created by other users. It also contains a brief tutorial, covering the principal features of [[regex]] in [[JavaScript]]." author="[[Adam Sherwood]]" created="20210422230856028" github="https://github.com/theSherwood/RegexXP" modified="20210518195831989" tags="Project 2019 React [[Web App]] JavaScript" title="RegexXP" website="https://www.regexxp.online/">
 <pre>!! [[Description]]
 
 RegexXP is an educational app for [[JavaScript]] developers trying to improve their regular expression skills. The app allows users to create challenges and solve the challenges created by other users. It also contains a brief tutorial, covering the principal features of [[regex]] in [[JavaScript]].
@@ -14059,10 +14128,10 @@ I took great pains to comment this library well. I'm sure the code could be clea
 &lt;/$list&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20210423054125933" modified="20210518002012625" tags="$:/tags/ViewTemplate" title="View Field Backlinks">
+<div created="20210423054125933" modified="20210518195642304" tags="$:/tags/ViewTemplate" title="View Field Backlinks">
 <pre>\define details(open-attribute)
 &lt;details $open-attribute$ &gt;
-&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the &lt;code&gt;$(title-lowercase)$&lt;/code&gt; field ($(count)$)&lt;/strong&gt;&lt;/summary&gt;
+&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the &lt;&lt;field-link &quot;&quot;&quot;$(title-lowercase)$&quot;&quot;&quot; &gt;&gt; field ($(count)$)&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
 &lt;$set name=included value=&lt;&lt;qualify $:/state/field-values-included&gt;&gt; &gt;
 &lt;$set name=excluded value=&lt;&lt;qualify $:/state/field-values-excluded&gt;&gt; &gt;
@@ -14147,7 +14216,33 @@ I took great pains to comment this library well. I'm sure the code could be clea
 &lt;/$set&gt;
 &lt;/$set&gt;</pre>
 </div>
-<div created="20210423015529529" modified="20210503212920251" tags="$:/tags/ViewTemplate" title="View Fields">
+<div created="20210518180824787" modified="20210518194739958" tags="$:/tags/ViewTemplate" title="View Field Value Backlinks">
+<pre>\define field-values(val)
+&lt;$list filter=&quot;[all[tiddlers]contains:$(field)$[$(currentTiddler)$]!is[system]count[]]&quot; variable=count&gt;
+&lt;$reveal type=nomatch default=&lt;&lt;count&gt;&gt; text=0 &gt;
+&lt;div class=&quot;backlinks-wrapper&quot;&gt;
+&lt;details&gt;
+&lt;summary style=&quot;outline: none;&quot;&gt;
+&lt;strong&gt;
+Notes where &lt;$link /&gt; is in the &lt;&lt;field-link &quot;&quot;&quot;$(field)$&quot;&quot;&quot;&gt;&gt; field (&lt;&lt;count&gt;&gt;)
+&lt;/strong&gt;
+&lt;/summary&gt;
+&lt;div style=&quot;margin-left: 20px;&quot;&gt;
+&lt;$list filter=&quot;[all[tiddlers]contains:$(field)$[$(currentTiddler)$]!is[system]]&quot;&gt;
+
+&lt;/$list&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;
+&lt;/$reveal&gt;
+&lt;/$list&gt;
+\end
+
+&lt;$list filter=&quot;[all[tiddlers]fields[]!prefix[_]] +[unique[]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]&quot; variable=field &gt;
+&lt;&lt;field-values&gt;&gt;
+&lt;/$list&gt;</pre>
+</div>
+<div created="20210423015529529" modified="20210518195322453" tags="$:/tags/ViewTemplate" title="View Fields">
 <pre>&lt;$set name=filter value=&quot;[all[current]fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]&quot; &gt;
 &lt;$list filter=&quot;[subfilter&lt;filter&gt;count[]]&quot; variable=count &gt;
 &lt;$reveal default=&lt;&lt;count&gt;&gt; type=&quot;nomatch&quot; text=&quot;0&quot;&gt;
@@ -14156,7 +14251,7 @@ I took great pains to comment this library well. I'm sure the code could be clea
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Fields&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px;&quot;&gt;
 &lt;$list filter=&lt;&lt;filter&gt;&gt; variable=&quot;title&quot;&gt;
-&lt;$link to=&lt;&lt;title&gt;&gt; mode=inline/&gt; :
+&lt;$macrocall $name=&quot;field-link&quot; text=&lt;&lt;title&gt;&gt; /&gt; :
 &lt;$transclude field=&lt;&lt;title&gt;&gt; mode=inline /&gt;
 &lt;br/&gt;
 &lt;/$list&gt;
