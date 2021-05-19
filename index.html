@@ -12745,7 +12745,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210518212342528" list="$:/core/ui/SideBar/Open [[Adam Sherwood]] author [[Nick Mudge]] github [[Wesley Luyten]] sinuous-context Solid Library" modified="20210518212839780" title="$:/StoryList">
+<div created="20210519193511853" list="$:/core/ui/SideBar/Open [[Adam Sherwood]] author [[Filter By Tag]] $:/AdvancedSearch Project" modified="20210519193901251" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Field Value Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] [[View Field Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210518193858111" title="$:/tags/ViewTemplate">
@@ -13143,7 +13143,7 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 &lt;$link to=&quot;&quot;&quot;$text$&quot;&quot;&quot;&gt;&lt;code&gt;$text$&lt;/code&gt;&lt;/$link&gt;
 \end</pre>
 </div>
-<div created="20210518201758611" modified="20210518211701227" tags="$:/tags/Macro" title="Filter By Tag">
+<div created="20210518201758611" modified="20210519193852450" tags="$:/tags/Macro" title="Filter By Tag">
 <pre>\define truncate-regex() (^.{0,100})(.*)
 
 \define details-start(open-attribute)
@@ -13151,6 +13151,25 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;$link mode=inline /&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot; &gt;
 {{||$:/core/ui/ViewTemplate/tags}}
+&lt;!-- start fields --&gt;
+&lt;$set name=filter value=&quot;[all[current]fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]&quot; &gt;
+&lt;$list filter=&quot;[subfilter&lt;filter&gt;count[]]&quot; variable=count &gt;
+&lt;$reveal default=&lt;&lt;count&gt;&gt; type=&quot;nomatch&quot; text=&quot;0&quot;&gt;
+&lt;details&gt;
+&lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Fields&lt;/strong&gt;&lt;/summary&gt;
+&lt;div style=&quot;margin-left: 20px;&quot;&gt;
+&lt;$list filter=&lt;&lt;filter&gt;&gt; variable=&quot;title&quot;&gt;
+&lt;$macrocall $name=&quot;field-link&quot; text=&lt;&lt;title&gt;&gt; /&gt; :
+&lt;$transclude field=&lt;&lt;title&gt;&gt; mode=inline /&gt;
+&lt;br/&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/$reveal&gt;
+&lt;/$list&gt;
+&lt;/$set&gt;
+&lt;!-- end fields --&gt;
+&lt;!-- start blurb --&gt;
 &lt;$reveal type=nomatch default={{!!_blurb}} text=&quot;&quot; &gt;
 {{!!_blurb}}
 &lt;/$reveal&gt;
@@ -13164,6 +13183,7 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 &lt;/$list&gt;
 &lt;/$list&gt;
 &lt;/$reveal&gt;
+&lt;!-- end blurb --&gt;
 &lt;/div&gt;
 &lt;/details&gt;
 \end
