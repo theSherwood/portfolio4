@@ -435,7 +435,7 @@ Error message and password prompt
 
 <li>Field Macro</li>
 
-<li>Filter By Tag</li>
+<li>Filter List</li>
 
 <li>Firefox</li>
 
@@ -12745,7 +12745,7 @@ exports.Completion = Completion;
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210519215524621" list="$:/core/ui/SideBar/Open [[Adam Sherwood]] [[Filter By Tag]] Library React [[View Tag Backlinks]]" modified="20210519220845247" title="$:/StoryList">
+<div created="20210519223019241" list="$:/core/ui/SideBar/Open [[Adam Sherwood]] [[Filter List]] Library React [[View Tag Backlinks]] $:/AdvancedSearch [[View Field Value Backlinks]]" modified="20210519223330812" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Field Value Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] [[View Field Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210518193858111" title="$:/tags/ViewTemplate">
@@ -13143,10 +13143,10 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 &lt;$link to=&quot;&quot;&quot;$text$&quot;&quot;&quot;&gt;&lt;code&gt;$text$&lt;/code&gt;&lt;/$link&gt;
 \end</pre>
 </div>
-<div created="20210518201758611" modified="20210519222622735" tags="$:/tags/Macro" title="Filter By Tag">
-<pre>\define truncate-regex() (^.{0,100})(.*)
+<div created="20210518201758611" modified="20210519224426846" tags="$:/tags/Macro" title="Filter List">
+<pre>\define _truncate-regex() (^.{0,100})(.*)
 
-\define details-start(open-attribute)
+\define _details-start(open-attribute)
 &lt;details $open-attribute$&gt;
   &lt;summary style=&quot;outline: none !important;&quot;&gt;
     &lt;$link mode=inline /&gt;
@@ -13176,7 +13176,7 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
       {{!!_blurb}}
     &lt;/$reveal&gt;
     &lt;$reveal type=match default={{!!_blurb}} text=&quot;&quot;&gt;
-      &lt;$list filter=&quot;[all[current]get[text]search-replace:gi:regexp&lt;truncate-regex&gt;,[$1]]&quot; variable=&quot;truncated-text&quot;&gt;
+      &lt;$list filter=&quot;[all[current]get[text]search-replace:gi:regexp&lt;_truncate-regex&gt;,[$1]]&quot; variable=&quot;truncated-text&quot;&gt;
         &lt;&lt;truncated-text&gt;&gt;
           &lt;$list filter=&quot;[all[current]get[text]length[]]&quot; variable=&quot;text-length&quot;&gt;
             &lt;$reveal type=gt default=&lt;&lt;text-length&gt;&gt; text=100 &gt;
@@ -13190,7 +13190,7 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 &lt;/details&gt;
 \end
 
-\define filter-by-tag(filter:&quot;&quot; included:&quot;&quot; excluded:&quot;&quot;)
+\define filter-list(list:&quot;&quot; included:&quot;&quot; excluded:&quot;&quot;)
 &lt;!-- start filters --&gt;
 &lt;!-- start filter by tag --&gt;
 &lt;details&gt;
@@ -13198,7 +13198,7 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
     &lt;strong&gt;Filter by tag&lt;/strong&gt;
   &lt;/summary&gt;
   &lt;div class=&quot;filters-container&quot;&gt;
-    &lt;$list filter=&quot;[subfilter&lt;__filter__&gt;tags[]sort[]] -[[$(currentTiddler)$]]&quot; variable=title&gt;
+    &lt;$list filter=&quot;[subfilter&lt;__list__&gt;tags[]sort[]] -[[$(currentTiddler)$]]&quot; variable=title&gt;
 &lt;$set name=tagging filter=&quot;[title&lt;title&gt;tagging[]]&quot; &gt;
       &lt;$list filter=&quot;[&lt;__included__&gt;contains&lt;title&gt;]&quot; variable=_&gt;
         &lt;span class=&quot;tc-tag-list-item&quot;&gt;
@@ -13206,8 +13206,8 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
             &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
               &lt;$action-listops $tiddler=&lt;&lt;__included__&gt;&gt; $subfilter=&quot;-[&lt;title&gt;]&quot;/&gt;
                   &lt;$action-listops $tiddler=&lt;&lt;__excluded__&gt;&gt; $subfilter=&quot;[&lt;title&gt;]&quot;/&gt;
-&lt;$action-listops $tiddler=&lt;&lt;__included__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$(included)$!!_list}remove&lt;tagging&gt;]&quot;/&gt;
-&lt;$action-listops $tiddler=&lt;&lt;__excluded__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$(excluded)$!!_list}append&lt;tagging&gt;]&quot;/&gt;
+&lt;$action-listops $tiddler=&lt;&lt;__included__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$included$!!_list}remove&lt;tagging&gt;]&quot;/&gt;
+&lt;$action-listops $tiddler=&lt;&lt;__excluded__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$excluded$!!_list}append&lt;tagging&gt;]&quot;/&gt;
                       &lt;&lt;title&gt;&gt;
             &lt;/$button&gt;
           &lt;/span&gt;
@@ -13218,7 +13218,7 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
           &lt;span class=&quot;tc-tag-label tc-tag-label-excluded&quot;&gt;
             &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
               &lt;$action-listops $tiddler=&lt;&lt;__excluded__&gt;&gt; $subfilter=&quot;-[&lt;title&gt;]&quot;/&gt;
-&lt;$action-listops $tiddler=&lt;&lt;__excluded__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$(excluded)$!!_list}remove&lt;tagging&gt;]&quot;/&gt;
+&lt;$action-listops $tiddler=&lt;&lt;__excluded__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$excluded$!!_list}remove&lt;tagging&gt;]&quot;/&gt;
                   &lt;&lt;title&gt;&gt;
             &lt;/$button&gt;
           &lt;/span&gt;
@@ -13229,7 +13229,7 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
           &lt;span class=&quot;tc-tag-label tc-tag-label-neutral&quot;&gt;
             &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 &lt;$action-listops $tiddler=&lt;&lt;__included__&gt;&gt; $subfilter=&quot;[&lt;title&gt;]&quot;/&gt;
-&lt;$action-listops $tiddler=&lt;&lt;__included__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$(included)$!!_list}append&lt;tagging&gt;]&quot;/&gt;
+&lt;$action-listops $tiddler=&lt;&lt;__included__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$included$!!_list}append&lt;tagging&gt;]&quot;/&gt;
                   &lt;&lt;title&gt;&gt;
             &lt;/$button&gt;
           &lt;/span&gt;
@@ -13241,31 +13241,31 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 &lt;/details&gt;
 &lt;!-- end filter by tag --&gt;
 &lt;!-- start filter by field --&gt;
-&lt;$list filter=&quot;[subfilter&lt;__filter__&gt;fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]] +[count[]]&quot; variable=count&gt;
+&lt;$list filter=&quot;[subfilter&lt;__list__&gt;fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]] +[count[]]&quot; variable=count&gt;
   &lt;$reveal type=nomatch default=&lt;&lt;count&gt;&gt; text=&quot;0&quot; &gt;
     &lt;details&gt;
       &lt;summary style=&quot;outline: none;&quot;&gt;
         &lt;strong&gt;Filter by field&lt;/strong&gt;
       &lt;/summary&gt;
       &lt;div style=&quot;margin-left: 20px;&quot;&gt;
-        &lt;$list filter=&quot;[subfilter&lt;__filter__&gt;fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]&quot; variable=field&gt;
-          &lt;$list filter=&quot;[subfilter&lt;__filter__&gt;get&lt;field&gt;] +[unique[]] +[enlist-input[]is[tiddler]count[]]&quot; variable=count&gt;
+        &lt;$list filter=&quot;[subfilter&lt;__list__&gt;fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]&quot; variable=field&gt;
+          &lt;$list filter=&quot;[subfilter&lt;__list__&gt;get&lt;field&gt;] +[unique[]] +[enlist-input[]is[tiddler]count[]]&quot; variable=count&gt;
             &lt;$reveal default=&lt;&lt;count&gt;&gt; type=nomatch text=&quot;0&quot;&gt;
               &lt;details&gt;
                 &lt;summary style=&quot;outline: none;&quot;&gt;
                   Filter by &lt;$macrocall $name=&quot;field-link&quot; text=&lt;&lt;field&gt;&gt; /&gt;
                 &lt;/summary&gt;
                 &lt;div class=&quot;filters-container&quot;&gt;
-                  &lt;$list filter=&quot;[subfilter&lt;__filter__&gt;get&lt;field&gt;sort[title]] +[unique[]] +[enlist-input[]is[tiddler]]&quot; variable=title&gt;
-&lt;$set name=&quot;has-field-value&quot; filter=&quot;[subfilter&lt;__filter__&gt;] :filter[get&lt;field&gt;enlist-input[]match&lt;title&gt;]&quot; &gt;
+                  &lt;$list filter=&quot;[subfilter&lt;__list__&gt;get&lt;field&gt;sort[title]] +[unique[]] +[enlist-input[]is[tiddler]]&quot; variable=title&gt;
+&lt;$set name=&quot;has-field-value&quot; filter=&quot;[subfilter&lt;__list__&gt;] :filter[get&lt;field&gt;enlist-input[]match&lt;title&gt;]&quot; &gt;
                     &lt;$list filter=&quot;[&lt;__included__&gt;contains&lt;title&gt;]&quot; variable=_&gt;
                       &lt;span class=&quot;tc-tag-list-item&quot;&gt;
                         &lt;span class=&quot;tc-tag-label tc-tag-label-included&quot;&gt;
                           &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
                             &lt;$action-listops $tiddler=&lt;&lt;__included__&gt;&gt; $subfilter=&quot;-[&lt;title&gt;]&quot;/&gt;
                                 &lt;$action-listops $tiddler=&lt;&lt;__excluded__&gt;&gt; $subfilter=&quot;[&lt;title&gt;]&quot;/&gt;
-&lt;$action-listops $tiddler=&lt;&lt;__included__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$(included)$!!_list}remove&lt;has-field-value&gt;]&quot;/&gt;
-&lt;$action-listops $tiddler=&lt;&lt;__excluded__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$(excluded)$!!_list}append&lt;has-field-value&gt;]&quot;/&gt;
+&lt;$action-listops $tiddler=&lt;&lt;__included__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$included$!!_list}remove&lt;has-field-value&gt;]&quot;/&gt;
+&lt;$action-listops $tiddler=&lt;&lt;__excluded__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$excluded$!!_list}append&lt;has-field-value&gt;]&quot;/&gt;
                                     &lt;&lt;title&gt;&gt;
                           &lt;/$button&gt;
                         &lt;/span&gt;
@@ -13276,7 +13276,7 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
                         &lt;span class=&quot;tc-tag-label tc-tag-label-excluded&quot;&gt;
                           &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
                             &lt;$action-listops $tiddler=&lt;&lt;__excluded__&gt;&gt; $subfilter=&quot;-[&lt;title&gt;]&quot;/&gt;
-&lt;$action-listops $tiddler=&lt;&lt;__excluded__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$(excluded)$!!_list}remove&lt;has-field-value&gt;]&quot;/&gt;
+&lt;$action-listops $tiddler=&lt;&lt;__excluded__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$excluded$!!_list}remove&lt;has-field-value&gt;]&quot;/&gt;
                                 &lt;&lt;title&gt;&gt;
                           &lt;/$button&gt;
                         &lt;/span&gt;
@@ -13287,7 +13287,7 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
                         &lt;span class=&quot;tc-tag-label tc-tag-label-neutral&quot;&gt;
                           &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
                             &lt;$action-listops $tiddler=&lt;&lt;__included__&gt;&gt; $subfilter=&quot;[&lt;title&gt;]&quot;/&gt;
-&lt;$action-listops $tiddler=&lt;&lt;__included__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$(included)$!!_list}append&lt;has-field-value&gt;]&quot;/&gt;
+&lt;$action-listops $tiddler=&lt;&lt;__included__&gt;&gt; $field=&quot;_list&quot; $filter=&quot;[enlist:raw{$included$!!_list}append&lt;has-field-value&gt;]&quot;/&gt;
                                 &lt;&lt;title&gt;&gt;
                           &lt;/$button&gt;
                         &lt;/span&gt;
@@ -13310,29 +13310,29 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 &lt;!-- start controls --&gt;
 &lt;div&gt;
   &lt;$button tooltip=&quot;Collapse all&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt; style=&quot;outline: none;&quot;&gt;
-    &lt;$action-setfield $tiddler=&lt;&lt;qualify $:/temp/$(currentTiddler)$-backlinks-expanded&gt;&gt; text=&quot;not-open&quot;/&gt;
+    &lt;$action-setfield $tiddler=&lt;&lt;qualify $:/temp/$(currentTiddler)$-list-expanded&gt;&gt; text=&quot;not-open&quot;/&gt;
       {{$:/core/images/fold-button}}
   &lt;/$button&gt;
   &lt;$button tooltip=&quot;Expand all&quot; class=&lt;&lt;tv-config-toolbar-class&gt;&gt; style=&quot;outline: none;&quot;&gt;
-    &lt;$action-setfield $tiddler=&lt;&lt;qualify $:/temp/$(currentTiddler)$-backlinks-expanded&gt;&gt; text=&quot;open&quot;/&gt;
+    &lt;$action-setfield $tiddler=&lt;&lt;qualify $:/temp/$(currentTiddler)$-list-expanded&gt;&gt; text=&quot;open&quot;/&gt;
       {{$:/core/images/unfold-button}}
   &lt;/$button&gt;
 &lt;/div&gt;
 &lt;!-- end controls --&gt;
-&lt;!-- start backlinks --&gt;
-&lt;$set tiddler=&lt;&lt;qualify $:/temp/$(currentTiddler)$-backlinks-expanded&gt;&gt; name=open emptyValue=&quot;open&quot; &gt;
+&lt;!-- start list --&gt;
+&lt;$set tiddler=&lt;&lt;qualify $:/temp/$(currentTiddler)$-list-expanded&gt;&gt; name=open emptyValue=&quot;open&quot; &gt;
   &lt;$reveal type=match stateTitle=&lt;&lt;__included__&gt;&gt; stateField=&quot;_list&quot; text=&quot;&quot;&gt;
-    &lt;$list filter=&quot;[subfilter&lt;__filter__&gt;sort[title]] -[title&lt;__excluded__&gt;get[_list]enlist-input[]]&quot;&gt;
-      &lt;$macrocall $name=&quot;details-start&quot; open-attribute=&lt;&lt;open&gt;&gt; /&gt;
+    &lt;$list filter=&quot;[subfilter&lt;__list__&gt;sort[title]] -[title&lt;__excluded__&gt;get[_list]enlist-input[]]&quot; emptyMessage=&quot;No results to display&quot; &gt;
+      &lt;$macrocall $name=&quot;_details-start&quot; open-attribute=&lt;&lt;open&gt;&gt; /&gt;
     &lt;/$list&gt;
   &lt;/$reveal&gt;
   &lt;$reveal type=nomatch stateTitle=&lt;&lt;__included__&gt;&gt; stateField=&quot;_list&quot; text=&quot;&quot;&gt;
-    &lt;$list filter=&quot;[subfilter&lt;__filter__&gt;sort[title]] :intersection[title&lt;__included__&gt;get[_list]enlist-input[]] -[title&lt;__excluded__&gt;get[_list]enlist-input[]]&quot;&gt;
-      &lt;$macrocall $name=&quot;details-start&quot; open-attribute=&lt;&lt;open&gt;&gt; /&gt;
+    &lt;$list filter=&quot;[subfilter&lt;__list__&gt;sort[title]] :intersection[title&lt;__included__&gt;get[_list]enlist-input[]] -[title&lt;__excluded__&gt;get[_list]enlist-input[]]&quot; emptyMessage=&quot;No results to display&quot; &gt;
+      &lt;$macrocall $name=&quot;_details-start&quot; open-attribute=&lt;&lt;open&gt;&gt; /&gt;
     &lt;/$list&gt;
   &lt;/$reveal&gt;
 &lt;/$set&gt;
-&lt;!-- end backlinks --&gt;
+&lt;!-- end list --&gt;
 \end</pre>
 </div>
 <div created="20210422235146730" modified="20210422235146730" title="Firefox">
@@ -14228,20 +14228,20 @@ I took great pains to comment this library well. I'm sure the code could be clea
 <div created="20210429233653621" modified="20210429233653621" title="UI">
 <pre></pre>
 </div>
-<div created="20210424074853252" modified="20210518211901435" tags="$:/tags/ViewTemplate" title="View Backlinks">
+<div created="20210424074853252" modified="20210519223326857" tags="$:/tags/ViewTemplate" title="View Backlinks">
 <pre>&lt;$set name=title value={{!!title}} &gt;
 &lt;$set name=included value=&lt;&lt;qualify $:/temp/backlinks-included&gt;&gt; &gt;
 &lt;$set name=excluded value=&lt;&lt;qualify $:/temp/backlinks-excluded&gt;&gt; &gt;
-&lt;$set name=filter value=&quot;[all[current]backlinks[]!title&lt;currentTiddler&gt;]&quot; &gt;
-&lt;$list filter=&quot;[subfilter&lt;filter&gt;count[]]&quot; variable=count &gt;
+&lt;$set name=list filter=&quot;[all[current]backlinks[]!title&lt;currentTiddler&gt;]&quot; &gt;
+&lt;$list filter=&quot;[subfilter&lt;list&gt;count[]]&quot; variable=count &gt;
 &lt;$reveal default=&lt;&lt;count&gt;&gt; type=&quot;nomatch&quot; text=&quot;0&quot; &gt;
 &lt;div class=&quot;backlinks-wrapper&quot;&gt;
 &lt;details&gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Links to this note (&lt;&lt;count&gt;&gt;)&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
 
-&lt;$macrocall $name=&quot;filter-by-tag&quot;
-filter=&lt;&lt;filter&gt;&gt;
+&lt;$macrocall $name=&quot;filter-list&quot;
+list=&lt;&lt;list&gt;&gt;
 included=&lt;&lt;included&gt;&gt;
 excluded=&lt;&lt;excluded&gt;&gt;
 /&gt;
@@ -14356,7 +14356,7 @@ excluded=&lt;&lt;excluded&gt;&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;</pre>
 </div>
-<div created="20210518180824787" modified="20210518211937638" tags="$:/tags/ViewTemplate" title="View Field Value Backlinks">
+<div created="20210518180824787" modified="20210519223359456" tags="$:/tags/ViewTemplate" title="View Field Value Backlinks">
 <pre>\define field-values(val)
 &lt;$list filter=&quot;[all[tiddlers]contains:$(field)$[$(currentTiddler)$]!is[system]count[]]&quot; variable=count&gt;
 &lt;$reveal type=nomatch default=&lt;&lt;count&gt;&gt; text=0 &gt;
@@ -14370,10 +14370,10 @@ Notes where &lt;$link /&gt; is in the &lt;&lt;field-link &quot;&quot;&quot;$(fie
 &lt;div style=&quot;margin-left: 20px;&quot;&gt;
 &lt;$set name=included value=&lt;&lt;qualify $:/temp/tag-backlinks-included&gt;&gt; &gt;
 &lt;$set name=excluded value=&lt;&lt;qualify $:/temp/tag-backlinks-excluded&gt;&gt; &gt;
-&lt;$set name=filter value=&quot;[all[tiddlers]contains:$(field)$[$(currentTiddler)$]!is[system]]&quot; &gt;
+&lt;$set name=list filter=&quot;[all[tiddlers]contains:$(field)$[$(currentTiddler)$]!is[system]]&quot; &gt;
 
-&lt;$macrocall $name=&quot;filter-by-tag&quot;
-filter=&lt;&lt;filter&gt;&gt;
+&lt;$macrocall $name=&quot;filter-list&quot;
+list=&lt;&lt;list&gt;&gt;
 included=&lt;&lt;included&gt;&gt;
 excluded=&lt;&lt;excluded&gt;&gt;
 /&gt;
@@ -14414,20 +14414,20 @@ excluded=&lt;&lt;excluded&gt;&gt;
 
 </pre>
 </div>
-<div created="20210423054644610" modified="20210519221728575" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
+<div created="20210423054644610" modified="20210519223251790" tags="$:/tags/ViewTemplate" title="View Tag Backlinks">
 <pre>&lt;$set name=title value={{!!title}} &gt;
 &lt;$set name=included value=&lt;&lt;qualify $:/temp/tag-backlinks-included&gt;&gt; &gt;
 &lt;$set name=excluded value=&lt;&lt;qualify $:/temp/tag-backlinks-excluded&gt;&gt; &gt;
-&lt;$set name=filter filter=&quot;[all[tiddlers]tag&lt;title&gt;]&quot; &gt;
-&lt;$list filter=&quot;[subfilter&lt;filter&gt;count[]]&quot; variable=count &gt;
+&lt;$set name=list filter=&quot;[all[tiddlers]tag&lt;title&gt;]&quot; &gt;
+&lt;$list filter=&quot;[subfilter&lt;list&gt;count[]]&quot; variable=count &gt;
 &lt;$reveal default=&lt;&lt;count&gt;&gt; type=nomatch text=&quot;0&quot; &gt;
 &lt;div class=&quot;backlinks-wrapper&quot;&gt;
 &lt;details&gt;
 &lt;summary style=&quot;outline: none !important;&quot;&gt;&lt;strong&gt;Notes with the {{!!title||$:/core/ui/TagTemplate}} tag (&lt;&lt;count&gt;&gt;)&lt;/strong&gt;&lt;/summary&gt;
 &lt;div style=&quot;margin-left: 20px&quot;&gt;
 
-&lt;$macrocall $name=&quot;filter-by-tag&quot;
-filter=&lt;&lt;filter&gt;&gt;
+&lt;$macrocall $name=&quot;filter-list&quot;
+list=&lt;&lt;list&gt;&gt;
 included=&lt;&lt;included&gt;&gt;
 excluded=&lt;&lt;excluded&gt;&gt;
 /&gt;
