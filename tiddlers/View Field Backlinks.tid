@@ -1,5 +1,5 @@
 created: 20210423054125933
-modified: 20210520141524967
+modified: 20210520211418553
 tags: $:/tags/ViewTemplate
 title: View Field Backlinks
 type: text/vnd.tiddlywiki
@@ -10,67 +10,23 @@ type: text/vnd.tiddlywiki
 <div style="margin-left: 20px">
 <$set name=included value=<<qualify $:/temp/field-values-included>> >
 <$set name=excluded value=<<qualify $:/temp/field-values-excluded>> >
+<$set name=list filter="[!is[system]has<title-lowercase>sort[title]]" >
 
-<!-- start filters -->
-<$list filter="[!is[system]get<title-lowercase>] +[unique[]] +[enlist-input[]is[tiddler]count[]]" variable=count>
-<$reveal default=<<count>> type=nomatch text="0">
-<strong>Filter by field value</strong>
-<div class="filters-container" >
-<$list filter="[!is[system]get<title-lowercase>sort[title]] +[unique[]] +[enlist-input[]is[tiddler]]" variable=title>
-<$list filter="[<included>contains<title>]" variable=_ >
-<span class="tc-tag-list-item">
-<span class="tc-tag-label tc-tag-label-included">
-<$button class=<<tv-config-toolbar-class>>>
-<$action-listops $tiddler=<<included>> $subfilter="-[<title>]"/>
-<$action-listops $tiddler=<<excluded>> $subfilter="[<title>]"/>
-<<title>>
-</$button>
-</span>
-</span>
-</$list>
-<$list filter="[<excluded>contains<title>]" variable=_ >
-<span class="tc-tag-list-item">
-<span class="tc-tag-label tc-tag-label-excluded">
-<$button class=<<tv-config-toolbar-class>>>
-<$action-listops $tiddler=<<excluded>> $subfilter="-[<title>]"/>
-<<title>>
-</$button>
-</span>
-</span>
-</$list>
-<$list filter="[<included>!contains<title>then[true]] :intersection[<excluded>!contains<title>then[true]]" variable=_ >
-<span class="tc-tag-list-item">
-<span class="tc-tag-label tc-tag-label-neutral">
-<$button class=<<tv-config-toolbar-class>>>
-<$action-listops $tiddler=<<included>> $subfilter="[<title>]"/>
-<<title>>
-</$button>
-</span>
-</span>
-</$list>
-</$list>
-</div>
-</$reveal>
-</$list>
-<!-- end filters -->
+<$macrocall $name="filter-list"
+list=<<list>>
+included=<<included>>
+excluded=<<excluded>>
+individual-field-filter=<<title-lowercase>>
+individual-field-filter-open="open"
+show-tag-filters="false"
+show-field-filters="false"
+show-list-tags="false"
+show-list-blurb="false"
+toggle-fields="false"
+list-items-open="false"
+/>
 
-<$reveal type=match stateTitle=<<included>> stateField="list" text="">
-<$list filter="[!is[system]has<title-lowercase>sort[title]] -[list<excluded>listed<title-lowercase>]">
-<$link mode=inline /> : 
-<div style="margin-left: 20px" >
-<$transclude field=$(title-lowercase)$ mode=inline />
-</div>
-</$list>
-</$reveal>
-<$reveal type=nomatch stateTitle=<<included>> stateField="list" text="">
-<$list filter="[!is[system]has<title-lowercase>sort[title]] :intersection[list<included>listed<title-lowercase>] -[list<excluded>listed<title-lowercase>]">
-<$link mode=inline /> : 
-<div style="margin-left: 20px" >
-<$transclude field=$(title-lowercase)$ mode=inline />
-</div>
-</$list>
-</$reveal>
-
+</$set>
 </$set>
 </$set>
 </div>

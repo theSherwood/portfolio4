@@ -1,5 +1,5 @@
 created: 20210518180824787
-modified: 20210520141524928
+modified: 20210520210040183
 tags: $:/tags/ViewTemplate
 title: View Field Value Backlinks
 type: text/vnd.tiddlywiki
@@ -15,8 +15,8 @@ Notes where <$link /> is in the <<field-link """$(field)$""">> field (<<count>>)
 </strong>
 </summary>
 <div style="margin-left: 20px;">
-<$set name=included value=<<qualify $:/temp/tag-backlinks-included>> >
-<$set name=excluded value=<<qualify $:/temp/tag-backlinks-excluded>> >
+<$set name=included value=<<qualify $:/temp/field-value-backlinks-included>> >
+<$set name=excluded value=<<qualify $:/temp/field-value-backlinks-excluded>> >
 <$set name=list filter="[all[tiddlers]contains:$(field)$[$(currentTiddler)$]!is[system]]" >
 
 <$macrocall $name="filter-list"
