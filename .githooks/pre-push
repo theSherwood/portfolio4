@@ -1,5 +1,8 @@
 #!/bin/bash
 
 branch=$(git rev-parse --abbrev-ref HEAD)
-echo "$branch" > foo.txt
+if [$branch == "main"]
+then
+git subtree push --prefix output origin gh-pages
+fi
 exit
