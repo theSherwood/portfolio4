@@ -1,0 +1,28 @@
+_blurb: A simple test framework for [[Red]] code
+author: [[Adam Sherwood]]
+created: 20210503203444950
+github: https://github.com/theSherwood/red-utils/blob/master/test-framework.red
+modified: 20210520141759792
+tags: 2020 Red Project Testing Utility
+title: Red Utilities / Test Framework
+type: text/vnd.tiddlywiki
+
+!! [[Description]]
+
+A simple test framework for [[Red]] code.
+
+!! [[Overview]]
+
+One of my [[Red Utilities]].
+
+This utility is simple enough. It provides a means of running and logging a hierarchy of testing functions: `suite`, `test`, and `assert`. It has 3 different levels of verbosity. Not much else to it, really.
+
+This utility was used in the development and [[testing|Testing]] of some of the other [[Red Utilities]], and proved very useful.
+
+!!! [[Examples|Example]]
+
+You can see it how it is used at the following links:
+
+* https://github.com/theSherwood/red-utils/blob/master/series/series.test.red
+* https://github.com/theSherwood/red-utils/blob/master/transducer/transducer.test.red
+* https://github.com/theSherwood/red-utils/blob/master/compare/compare.test.red

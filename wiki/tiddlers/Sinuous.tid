@@ -1,0 +1,13 @@
+_blurb: Light. Fast. Reactive. Sinuous is a low-level UI library with a tiny footprint.
+author: [[Wesley Luyten]]
+created: 20210424072640051
+github: https://github.com/luwes/sinuous
+modified: 20210520141945786
+tags: UI JavaScript Library [[Reactive Programming]] [[Functional Programming]]
+title: Sinuous
+type: text/vnd.tiddlywiki
+website: https://sinuous.dev/
+
+My favorite [[JavaScript]] front-end framework.
+
+In contrast to [[React]], [[Sinuous]] is much faster, simpler, and smaller.

@@ -1,0 +1,30 @@
+author: [[Adam Sherwood]]
+created: 20210517185204083
+demo: https://thesherwood.github.io/7_GUIs/svelte/public/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/svelte
+github: https://github.com/theSherwood/7_GUIs/tree/master/svelte
+modified: 20210520141620172
+tags: Svelte 7GUIs UI Project 2020 JavaScript
+title: 7GUIs / Svelte 3
+type: text/vnd.tiddlywiki
+
+!! [[Description]]
+
+!! [[Demo]]
+
+<<codesandbox "https://codesandbox.io/embed/github/theSherwood/7_GUIs/tree/master/svelte">>
+
+!! [[Tech Stack]]
+
+* [[JavaScript]]
+* [[Svelte]]
+
+!! [[Overview]]
+
+One of my [[7GUIs Implementations]].
+
+!! Smooth Sailing
+
+!! [[Pain Points]]
+
+!! [[Lessons Learned]]
+

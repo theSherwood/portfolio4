@@ -1,0 +1,183 @@
+created: 20210518201758611
+modified: 20210520141134022
+tags: $:/tags/Macro
+title: Filter List
+type: text/vnd.tiddlywiki
+
+\define _truncate-regex() (^.{0,100})(.*)
+
+\define _list-item(open fields-open show-tags show-fields show-blurb)
+<details $open$>
+  <summary style="outline: none !important;">
+    <$link mode=inline />
+  </summary>
+  <div style="margin-left: 20px">
+    <$reveal type=match default=<<__show-tags__>> text=true >
+      {{||$:/core/ui/ViewTemplate/tags}}
+    </$reveal>
+    <!-- start fields -->
+    <$reveal type=match default=<<__show-fields__>> text=true >
+      <$set name=filter value="[all[current]fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]">
+        <$list filter="[subfilter<filter>count[]]" variable=count>
+          <$reveal default=<<count>> type="nomatch" text="0">
+            <details $fields-open$>
+              <summary style="outline: none !important;"><strong>Fields</strong></summary>
+              <div style="margin-left: 20px;">
+                <$list filter=<<filter>> variable="title">
+                  <$macrocall $name="field-link" text=<<title>> /> :
+                    <$transclude field=<<title>> mode=inline />
+                      <br />
+                </$list>
+              </div>
+            </details>
+          </$reveal>
+        </$list>
+      </$set>
+    </$reveal>
+    <!-- end fields -->
+    <!-- start blurb -->
+    <$reveal type=match default=<<__show-blurb__>> text=true >
+      <$reveal type=nomatch default={{!!_blurb}} text="">
+        {{!!_blurb}}
+      </$reveal>
+      <$reveal type=match default={{!!_blurb}} text="">
+        <$list filter="[all[current]get[text]search-replace:gi:regexp<_truncate-regex>,[$1]]" variable="truncated-text">
+          <<truncated-text>>
+            <$list filter="[all[current]get[text]length[]]" variable="text-length">
+              <$reveal type=gt default=<<text-length>> text=100 >
+                ...
+              </$reveal>
+            </$list>
+        </$list>
+      </$reveal>
+    </$reveal>
+    <!-- end blurb -->
+  </div>
+</details>
+\end
+
+\define _filter-pill(title included excluded pills)
+<$list filter="[<__included__>contains<__title__>]" variable=_>
+  <span class="tc-tag-list-item">
+    <span class="tc-tag-label tc-tag-label-included">
+      <$button class=<<tv-config-toolbar-class>>>
+        <$action-listops $tiddler=<<__included__>> $subfilter="-[<__title__>]"/>
+        <$action-listops $tiddler=<<__excluded__>> $subfilter="[<__title__>]"/>
+        <$action-listops $tiddler=<<__excluded__>> $field="_list" $filter="[enlist:raw{$excluded$!!_list}append<__pills__>]"/>
+        <$action-listops $tiddler=<<__included__>> $field="_list" $filter="[enlist:raw{$included$!!_list}remove<__pills__>]"/>
+        <<__title__>>
+      </$button>
+    </span>
+  </span>
+</$list>
+<$list filter="[<__excluded__>contains<__title__>]" variable=_>
+  <span class="tc-tag-list-item">
+    <span class="tc-tag-label tc-tag-label-excluded">
+      <$button class=<<tv-config-toolbar-class>>>
+        <$action-listops $tiddler=<<__excluded__>> $subfilter="-[<__title__>]"/>
+        <$action-listops $tiddler=<<__excluded__>> $field="_list" $filter="[enlist:raw{$excluded$!!_list}remove<__pills__>]"/>
+        <<__title__>>
+      </$button>
+    </span>
+  </span>
+</$list>
+<$list filter="[<__included__>!contains<__title__>then[true]] :intersection[<__excluded__>!contains<__title__>then[true]]" variable=_>
+  <span class="tc-tag-list-item">
+    <span class="tc-tag-label tc-tag-label-neutral">
+      <$button class=<<tv-config-toolbar-class>>>
+        <$action-listops $tiddler=<<__included__>> $subfilter="[<__title__>]"/>
+        <$action-listops $tiddler=<<__included__>> $field="_list" $filter="[enlist:raw{$included$!!_list}append<__pills__>]"/>
+        <<__title__>>
+      </$button>
+    </span>
+  </span>
+</$list>
+\end
+
+\define filter-list(list:"" included:"" excluded:"" tag-filter-open:"" field-filter-open:"" inner-field-filters-open:"" list-items-open:"open" list-fields-open:"" show-list-fields:"true" show-list-tags:"true" show-list-blurb:"true" )
+<!-- start filters -->
+<!-- start filter by tag -->
+<details $tag-filter-open$ >
+  <summary style="outline: none;">
+    <strong>Filter by tag</strong>
+  </summary>
+  <div class="filters-container">
+    <$list filter="[subfilter<__list__>tags[]sort[]] -[[$(currentTiddler)$]]" variable=title>
+      <$set name=tagging filter="[title<title>tagging[]]" >
+        <$macrocall $name="_filter-pill"
+          title=<<title>>
+          included=<<__included__>>
+          excluded=<<__excluded__>>
+          pills=<<tagging>>
+        />
+      </$set>
+    </$list>
+  </div>
+</details>
+<!-- end filter by tag -->
+<!-- start filter by field -->
+<$list filter="[subfilter<__list__>fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]] +[count[]]" variable=count>
+  <$reveal type=nomatch default=<<count>> text="0" >
+    <details $field-filter-open$>
+      <summary style="outline: none;">
+        <strong>Filter by field</strong>
+      </summary>
+      <div style="margin-left: 20px;">
+        <$list filter="[subfilter<__list__>fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]" variable=field>
+          <$list filter="[subfilter<__list__>get<field>] +[unique[]] +[enlist-input[]is[tiddler]count[]]" variable=count>
+            <$reveal default=<<count>> type=nomatch text="0">
+              <details $inner-field-filters-open$>
+                <summary style="outline: none;">
+                  Filter by <$macrocall $name="field-link" text=<<field>> />
+                </summary>
+                <div class="filters-container">
+                  <$list filter="[subfilter<__list__>get<field>sort[title]] +[unique[]] +[enlist-input[]is[tiddler]]" variable=title>
+                    <$set name="has-field-value" filter="[subfilter<__list__>] :filter[get<field>enlist-input[]match<title>]" >
+                      <$macrocall $name="_filter-pill"
+                        title=<<title>>
+                        included=<<__included__>>
+                        excluded=<<__excluded__>>
+                        pills=<<has-field-value>>
+                      />
+                    </$set>
+                  </$list>
+                </div>
+              </details>
+            </$reveal>
+          </$list>
+        </$list>
+      </div>
+    </details>
+  </$reveal>
+</$list>
+<!-- end filter by field -->
+<!-- end filters -->
+
+<!-- start controls -->
+<div>
+  <$button tooltip="Collapse all" class=<<tv-config-toolbar-class>> style="outline: none;">
+    <$action-setfield $tiddler=<<qualify $:/temp/$(currentTiddler)$-list-expanded>> text="not-open"/>
+      {{$:/core/images/fold-button}}
+  </$button>
+  <$button tooltip="Expand all" class=<<tv-config-toolbar-class>> style="outline: none;">
+    <$action-setfield $tiddler=<<qualify $:/temp/$(currentTiddler)$-list-expanded>> text="open"/>
+      {{$:/core/images/unfold-button}}
+  </$button>
+</div>
+<!-- end controls -->
+
+<!-- start list -->
+<$set tiddler=<<qualify $:/temp/$(currentTiddler)$-list-expanded>> name=open emptyValue=<<__list-items-open__>> >
+  <$reveal type=match stateTitle=<<__included__>> stateField="_list" text="">
+    <$list filter="[subfilter<__list__>sort[title]] -[title<__excluded__>get[_list]enlist-input[]]" emptyMessage="No results to display" >
+      <$macrocall $name="_list-item" open=<<open>> fields-open=<<__list-fields-open__>> show-tags=<<__show-list-tags__>> show-fields=<<__show-list-fields__>> show-blurb=<<__show-list-blurb__>> />
+    </$list>
+  </$reveal>
+  <$reveal type=nomatch stateTitle=<<__included__>> stateField="_list" text="">
+    <$list filter="[subfilter<__list__>sort[title]] :intersection[title<__included__>get[_list]enlist-input[]] -[title<__excluded__>get[_list]enlist-input[]]" emptyMessage="No results to display" >
+      <$macrocall $name="_list-item" open=<<open>> fields-open=<<__list-fields-open__>> show-tags=<<__show-list-tags__>> show-fields=<<__show-list-fields__>> show-blurb=<<__show-list-blurb__>> />
+    </$list>
+  </$reveal>
+</$set>
+<!-- end list -->
+\end

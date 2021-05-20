@@ -1,0 +1,30 @@
+author: [[Adam Sherwood]]
+created: 20210517185736545
+demo: https://thesherwood.github.io/7_GUIs/solid/build/index.html
+github: https://github.com/theSherwood/7_GUIs/tree/master/solid
+modified: 20210520141620141
+tags: 2020 7GUIs Project JavaScript Solid UI
+title: 7GUIs / Solid
+type: text/vnd.tiddlywiki
+
+!! [[Description]]
+
+!! [[Demo]]
+
+<<iframe "https://thesherwood.github.io/7_GUIs/solid/build/index.html" >>
+
+!! [[Tech Stack]]
+
+* [[JavaScript]]
+* [[Solid]]
+
+!! [[Overview]]
+
+One of my [[7GUIs Implementations]].
+
+!! Smooth Sailing
+
+!! [[Pain Points]]
+
+!! [[Lessons Learned]]
+

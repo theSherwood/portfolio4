@@ -1,0 +1,58 @@
+_blurb: Scoped styles for [[Sinuous]] à la [[styled-jsx]].
+author: [[Adam Sherwood]]
+created: 20210424071236904
+demo: https://codesandbox.io/s/sinuous-style-esm-tkf5d
+github: https://github.com/theSherwood/sinuous-style
+modified: 20210520141945885
+npm: https://www.npmjs.com/package/sinuous-style
+tags: 2020 Library Project UI Sinuous JavaScript [[Scoped Styles]]
+title: sinuous-style
+type: text/vnd.tiddlywiki
+
+[img[https://img.badgesize.io/https://unpkg.com/sinuous-style/dist/min.js?v=1&compression=gzip&label=gzip&style=flat-square]]
+
+!! [[Description]]
+
+Scoped styles for [[Sinuous]] à la [[styled-jsx]].
+
+!! [[Demo]]
+
+<<codesandbox "https://codesandbox.io/embed/sinuous-style-esm-tkf5d">>
+
+!! [[Tech Stack]]
+
+* [[JavaScript]]
+
+!! [[Overview]]
+
+One of my [[Sinuous Libraries]].
+
+After using [[styled-jsx]] with [[NextJS]], I wanted to bring the convenience of [[Scoped Styles]] to my favorite front-end library, [[Sinuous]].
+
+Other than [[Sinuous]], there are no dependencies.
+
+!! Smooth Sailing
+
+[[Sinuous]] provides an api that is easy to customize by the user. Its api is made available as an object called `api`. Internally, [[Sinuous]] calls the appropriate functions from that api object. The makes it trivial to wrap (or entirely replace) the built-in api functions with functions of one's own make. [[Sinuous]] will then call these functions internally. In this way, [[sinuous-style]] is able to override [[Sinuous]]' handling of style tags to scope them to user-provided namespaces.
+
+!! [[Pain Points]]
+
+!!! Additional Runtime Overhead
+
+One of the great advantages of [[Sinuous]] relative to other [[UI]] libraries is that it can do everything it does in under 4 kb of code (gzipped). No build tools necessary. Contrast this with [[React]], which is some 40 kb at runtime and typical usage relies on enormous and complex build tools like [[Babel]] for transpiling the [[JSX]].
+
+[[styled-jsx] takes advantage of [[Babel]] to scope styling at compile-time. [[sinuous-style]], in contrast, would undermine a major advantage of [[Sinuous]] by relying on [[Babel]] or some other compile-time system. So it does what it does all its processing at runtime. This entails additional runtime cost relative to [[styled-jsx]]. Since [[Sinuous]] is so much faster than [[React]] anyway, I figured I had some cushion. But the cost is there.
+
+!!! Size
+
+[[Sinuous]], itself, is under 4 kb gzipped. [[sinuous-style]] is a little over 1 kb gzipped. While not a big library by any stretch of the imagination, being over 1/4th the size of [[Sinuous]] is unfortunate.
+
+!! [[Lessons Learned]]
+
+!!! Code Comments
+
+I took great pains to comment this library well. I'm sure the code could be clearer in any number of ways, but making commenting my code a priority has made an enormous difference to my ability to understand my own code after the fact. 
+
+!! [[TODO]]
+
+* Benchmark to ascertain the runtime costs.

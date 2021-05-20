@@ -1,0 +1,25 @@
+created: 20210423015529529
+modified: 20210520141525009
+tags: $:/tags/ViewTemplate
+title: View Fields
+type: text/vnd.tiddlywiki
+
+<$set name=filter value="[all[current]fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]" >
+<$list filter="[subfilter<filter>count[]]" variable=count >
+<$reveal default=<<count>> type="nomatch" text="0">
+<div class="backlinks-wrapper">
+<details open>
+<summary style="outline: none !important;"><strong>Fields</strong></summary>
+<div style="margin-left: 20px;">
+<$list filter=<<filter>> variable="title">
+<$macrocall $name="field-link" text=<<title>> /> :
+<$transclude field=<<title>> mode=inline />
+<br/>
+</$list>
+</div>
+</details>
+</div>
+</$reveal>
+</$list>
+</$set>
+

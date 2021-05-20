@@ -1,0 +1,7 @@
+created: 20210429235001553
+modified: 20210520141945805
+tags: [[Programming Language]] [[Functional Programming]] [[Reactive Programming]]
+title: ClojureScript
+type: text/vnd.tiddlywiki
+
+A version of [[Clojure]] that compiles to [[JavaScript]].

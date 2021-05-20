@@ -1,0 +1,26 @@
+_blurb: [[Functional Programming]] [[transducers|Transducer]] in [[Red]]
+author: [[Adam Sherwood]]
+created: 20210503191941972
+github: https://github.com/theSherwood/red-utils/tree/master/transducer
+modified: 20210520141945765
+tags: Red 2020 Utility [[Functional Programming]] Project
+title: Red Utilities / Transducer
+type: text/vnd.tiddlywiki
+
+!! [[Description]]
+
+[[Functional Programming]] [[transducers|Transducer]] in [[Red]].
+
+!! [[Overview]]
+
+One of my [[Red Utilities]].
+
+One of the common purposes of [[transducers|Transducer]] is to allow for more efficient looping over collections by consolidating logic that might otherwise be smeared across multiple iterations. That is, rather than filtering a collection (one iteration) and then mapping the resulting collection (a second iteration), [[transducers|Transducer]] make it possible to filter and map in the same iteration.
+
+[[Red]] flirts with the [[Functional Programming]] [[paradigm|Programming Paradigm]] at various points in its design. It seemed like it would be a good candidate for a trial [[transducer|Transducer]] implementation.
+
+!! [[Pain Points]]
+
+!!! Functions as Values
+
+While functions in [[Red]] are values as in [[Functional Programming]] languages, there are some complexities that make implementing [[transducers|Transducer]] somewhat awkward. Consequently, there is currently the limitation that operators cannot be used as functions and I had to resort to using `compose` to make the function passing work at all.

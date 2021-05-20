@@ -1,0 +1,62 @@
+_blurb: An alternative view syntax for [[Sinuous]]. Inspired by [[Hiccup]].
+author: [[Adam Sherwood]]
+created: 20210424071410127
+demo: https://codesandbox.io/s/sinuous-simple-todo-qj0n3
+github: https://github.com/theSherwood/sinuous-frame
+modified: 20210520141945879
+npm: https://www.npmjs.com/package/sinuous-frame
+tags: 2020 Library Project UI Sinuous JavaScript Syntax
+title: sinuous-frame
+type: text/vnd.tiddlywiki
+
+[img[https://img.badgesize.io/https://unpkg.com/sinuous-frame/dist/min.js?v=1&compression=gzip&label=gzip&style=flat-square]]
+
+!! [[Description]]
+
+An alternative view syntax for the [[Sinuous]] frontend framework. Inspired by [[Hiccup]].
+
+Like [[Sinuous]], itself, [[sinuous-frame]] is very lightweight: under 400 bytes gzipped.
+
+!! [[Demo]]s
+
+<<codesandbox "https://codesandbox.io/embed/sinuous-counters-lhqjk">>
+
+<<codesandbox "https://codesandbox.io/embed/sinuous-simple-todo-qj0n3">>
+
+!! [[Tech Stack]]
+
+* [[JavaScript]]
+
+!! [[Overview]]
+
+One of my [[Sinuous Libraries]].
+
+After a bit of exposure to [[ClojureScript]] and [[Reagent]], I thought I'd take a swing at a [[Hiccup]]-like syntax for [[Sinuous]].
+
+Other than [[Sinuous]], there are no dependencies.
+
+!! Smooth Sailing
+
+This was fairly simple to implement. Under 400 bytes gzipped, the documentation is more complex than the code.
+
+!! [[Pain Points]]
+
+!!! Bad Idea
+
+Turns out, [[Hiccup]] in [[JavaScript]] really sucks. Who wants to write something like the following?
+
+```
+let view = html([
+  'p',
+  { class: 'class-1' },
+  ['span', 'content'],
+  ' more content',
+  ['span', ' and more content'],
+]);
+```
+
+To be fair, the [[UI]] syntax options in [[JavaScript]] leave something to be desired. [[JSX]] is something of a mess, as is its cousin [[htm]]. [[HyperScript]] is another approach, but I think the best [[UI]] syntax in [[JavaScript]] is probably [[Webscript]].
+
+!! [[Lessons Learned]]
+
+Good ideas from one language might not translate to another language.

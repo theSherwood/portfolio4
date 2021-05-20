@@ -1,0 +1,33 @@
+created: 20210423062421389
+modified: 20210520141759763
+tags: $:/tags/Stylesheet
+title: Backlinks.css
+type: text/vnd.tiddlywiki
+
+.backlinks-wrapper {
+  background: <<color page-background>>;
+  padding: 10px;
+}
+.backlinks-wrapper .tc-tag-list-item {
+  margin-right: 3px;
+}
+.backlinks-wrapper .tc-tags-wrapper {
+  margin: 0;
+}
+.backlinks-wrapper .tc-tag-label .tc-btn-invisible {
+  color: inherit;
+  fill: inherit;
+}
+.backlinks-wrapper .tc-tag-label-neutral {
+  background: #eaeaea;
+}
+.backlinks-wrapper .tc-tag-label-included {
+  background: #DFF2BF;
+}
+.backlinks-wrapper .tc-tag-label-excluded {
+  background: #FFBABA;
+}
+.backlinks-wrapper .filters-container {
+  padding: 10px;
+  border: solid 1px #dddddd;
+}

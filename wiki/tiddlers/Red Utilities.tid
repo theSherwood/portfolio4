@@ -1,0 +1,18 @@
+created: 20210503175835090
+modified: 20210520141620185
+tags: Red 2020
+title: Red Utilities
+type: text/vnd.tiddlywiki
+
+In 2020, I did some contract work for [[Redlake Technologies]], helping them get some [[Hugo]] sites that they had laying around fixed up and ready to go live. [[Redlake|Redlake Technologies]] is the US arm of the team/organization behind the development of the [[Red]] programming language. During this time, I dabbled a little bit with [[Red]], including writing some regression tests for the compiler and interpreter.
+
+I put together a small handful of utilities in [[Red]]:
+
+|[[Red Utilities / Series]] | {{Red Utilities / Series!!_blurb}} |
+|[[Red Utilities / Watch]] | {{Red Utilities / Watch!!_blurb}} |
+|[[Red Utilities / Transducer]] | {{Red Utilities / Transducer!!_blurb}} |
+|[[Red Utilities / Compare]] | {{Red Utilities / Compare!!_blurb}} |
+|[[Red Utilities / Test Framework]] | {{Red Utilities / Test Framework!!_blurb}} |
+|[[Red Utilities / Test Runner]] | {{Red Utilities / Test Runner!!_blurb}} |
+
+As these utilities were more experimental than anything, they are largely undocumented apart from some code comments and test cases that may be used as examples. Best of luck!

@@ -1,0 +1,30 @@
+author: [[Adam Sherwood]]
+created: 20210517185801227
+demo: https://thesherwood.github.io/7_GUIs/react-vanilla/dist/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/react-vanilla
+github: https://github.com/theSherwood/7_GUIs/tree/master/react-vanilla
+modified: 20210520141620144
+tags: 2020 7GUIs JavaScript React UI Project
+title: 7GUIs / React
+type: text/vnd.tiddlywiki
+
+!! [[Description]]
+
+!! [[Demo]]
+
+<<codesandbox "https://codesandbox.io/embed/github/theSherwood/7_GUIs/tree/master/react-vanilla">>
+
+!! [[Tech Stack]]
+
+* [[JavaScript]]
+* [[React]]
+
+!! [[Overview]]
+
+One of my [[7GUIs Implementations]].
+
+!! Smooth Sailing
+
+!! [[Pain Points]]
+
+!! [[Lessons Learned]]
+

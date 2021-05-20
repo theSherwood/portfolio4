@@ -1,0 +1,92 @@
+created: 20210423054125933
+modified: 20210520141524967
+tags: $:/tags/ViewTemplate
+title: View Field Backlinks
+type: text/vnd.tiddlywiki
+
+\define details(open-attribute)
+<details $open-attribute$ >
+<summary style="outline: none !important;"><strong>Notes with the <<field-link """$(title-lowercase)$""" >> field ($(count)$)</strong></summary>
+<div style="margin-left: 20px">
+<$set name=included value=<<qualify $:/temp/field-values-included>> >
+<$set name=excluded value=<<qualify $:/temp/field-values-excluded>> >
+
+<!-- start filters -->
+<$list filter="[!is[system]get<title-lowercase>] +[unique[]] +[enlist-input[]is[tiddler]count[]]" variable=count>
+<$reveal default=<<count>> type=nomatch text="0">
+<strong>Filter by field value</strong>
+<div class="filters-container" >
+<$list filter="[!is[system]get<title-lowercase>sort[title]] +[unique[]] +[enlist-input[]is[tiddler]]" variable=title>
+<$list filter="[<included>contains<title>]" variable=_ >
+<span class="tc-tag-list-item">
+<span class="tc-tag-label tc-tag-label-included">
+<$button class=<<tv-config-toolbar-class>>>
+<$action-listops $tiddler=<<included>> $subfilter="-[<title>]"/>
+<$action-listops $tiddler=<<excluded>> $subfilter="[<title>]"/>
+<<title>>
+</$button>
+</span>
+</span>
+</$list>
+<$list filter="[<excluded>contains<title>]" variable=_ >
+<span class="tc-tag-list-item">
+<span class="tc-tag-label tc-tag-label-excluded">
+<$button class=<<tv-config-toolbar-class>>>
+<$action-listops $tiddler=<<excluded>> $subfilter="-[<title>]"/>
+<<title>>
+</$button>
+</span>
+</span>
+</$list>
+<$list filter="[<included>!contains<title>then[true]] :intersection[<excluded>!contains<title>then[true]]" variable=_ >
+<span class="tc-tag-list-item">
+<span class="tc-tag-label tc-tag-label-neutral">
+<$button class=<<tv-config-toolbar-class>>>
+<$action-listops $tiddler=<<included>> $subfilter="[<title>]"/>
+<<title>>
+</$button>
+</span>
+</span>
+</$list>
+</$list>
+</div>
+</$reveal>
+</$list>
+<!-- end filters -->
+
+<$reveal type=match stateTitle=<<included>> stateField="list" text="">
+<$list filter="[!is[system]has<title-lowercase>sort[title]] -[list<excluded>listed<title-lowercase>]">
+<$link mode=inline /> : 
+<div style="margin-left: 20px" >
+<$transclude field=$(title-lowercase)$ mode=inline />
+</div>
+</$list>
+</$reveal>
+<$reveal type=nomatch stateTitle=<<included>> stateField="list" text="">
+<$list filter="[!is[system]has<title-lowercase>sort[title]] :intersection[list<included>listed<title-lowercase>] -[list<excluded>listed<title-lowercase>]">
+<$link mode=inline /> : 
+<div style="margin-left: 20px" >
+<$transclude field=$(title-lowercase)$ mode=inline />
+</div>
+</$list>
+</$reveal>
+
+</$set>
+</$set>
+</div>
+</details>
+\end
+
+<$set name=title value={{!!title}} >
+<$set name="open-if-lowercase" filter="[all[current]] :intersection[all[current]lowercase[]]" value=open emptyValue="" >
+<$list filter="[all[current]lowercase[]]" variable="title-lowercase" >
+<$list filter="[!is[system]has<title-lowercase>count[]]" variable=count >
+<$reveal default=<<count>> type=nomatch text="0" >
+<div class="backlinks-wrapper">
+<$macrocall $name="details" open-attribute=<<open-if-lowercase>> />
+</div>
+</$reveal>
+</$list>
+</$list>
+</$set>
+</$set>

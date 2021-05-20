@@ -1,0 +1,38 @@
+_blurb: [[Python]]-inspired chained comparison operators
+author: [[Adam Sherwood]]
+created: 20210503182910829
+github: https://github.com/theSherwood/red-utils/tree/master/compare
+modified: 20210520141945865
+tags: Red Utility 2020 Project Syntax
+title: Red Utilities / Compare
+type: text/vnd.tiddlywiki
+
+!! [[Description]]
+
+[[Python]]-inspired chained comparison operators. 
+
+!! [[Overview]]
+
+One of my [[Red Utilities]].
+
+This honestly isn't a hugely useful utility. Just a small convenience function, really. It takes advantage of [[Red]]'s remarkable runtime parsing abilities to implement chained comparison operators so that you can do stuff like this:
+
+```
+; Simple expressions
+compare [1 >= 1 > 0.8 + 0.1 < 3 <= 3.1]  ;== true
+```
+
+... this:
+
+```
+; Somewhat more complex expressions
+compare [1 = 1 - 2 - 1 + 3 = 1.0 = to-integer "1"]
+;== true
+```
+
+... and even this:
+
+```
+; Variable bindings
+compare [c: a - 1 < b < a * 2 <= c * 6]  ;== true
+```

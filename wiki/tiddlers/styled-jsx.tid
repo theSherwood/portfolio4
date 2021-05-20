@@ -1,0 +1,8 @@
+created: 20210430002116832
+github: https://github.com/vercel/styled-jsx
+modified: 20210520141759741
+tags: UI CSS [[Scoped Styles]] Library
+title: styled-jsx
+type: text/vnd.tiddlywiki
+
+The default styling solution for [[NextJS]]. Provides [[Scoped Styles]] for [[React]].

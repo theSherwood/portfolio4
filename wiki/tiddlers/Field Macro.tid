@@ -1,0 +1,9 @@
+created: 20210518194353938
+modified: 20210520141525015
+tags: $:/tags/Macro
+title: Field Macro
+type: text/vnd.tiddlywiki
+
+\define field-link(text)
+<$link to="""$text$"""><code>$text$</code></$link>
+\end

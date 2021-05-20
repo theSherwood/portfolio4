@@ -1,0 +1,32 @@
+created: 20210423054644610
+modified: 20210520141524946
+tags: $:/tags/ViewTemplate
+title: View Tag Backlinks
+type: text/vnd.tiddlywiki
+
+<$set name=title value={{!!title}} >
+<$set name=included value=<<qualify $:/temp/tag-backlinks-included>> >
+<$set name=excluded value=<<qualify $:/temp/tag-backlinks-excluded>> >
+<$set name=list filter="[all[tiddlers]tag<title>]" >
+<$list filter="[subfilter<list>count[]]" variable=count >
+<$reveal default=<<count>> type=nomatch text="0" >
+<div class="backlinks-wrapper">
+<details>
+<summary style="outline: none !important;"><strong>Notes with the {{!!title||$:/core/ui/TagTemplate}} tag (<<count>>)</strong></summary>
+<div style="margin-left: 20px">
+
+<$macrocall $name="filter-list"
+list=<<list>>
+included=<<included>>
+excluded=<<excluded>>
+/>
+
+</div>
+</details>
+</div>
+</$reveal>
+</$list>
+</$set>
+</$set>
+</$set>
+</$set>

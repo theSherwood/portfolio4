@@ -1,0 +1,87 @@
+_blurb: Brings the `bind` element directives of [[Svelte]] to [[Sinuous]].
+author: [[Adam Sherwood]]
+created: 20210424072008463
+demo: https://codesandbox.io/s/sinuous-bind-esm-4e48b
+github: https://github.com/theSherwood/sinuous-bind
+modified: 20210520141945948
+npm: https://www.npmjs.com/package/sinuous-bind
+tags: 2020 JavaScript Library Project Sinuous UI Syntax
+title: sinuous-bind
+type: text/vnd.tiddlywiki
+
+!! [[Description]]
+
+Brings the `bind` element directives of [[Svelte]] to [[Sinuous]].
+
+For those unfamiliar with [[Svelte]]'s bind directives, [[sinuous-bind]] provides a syntax for easy two-way binding between [[UI]] and data.
+
+[[sinuous-bind]] is actually composed of 4 separate packages, but those 4 packages can also be imported separately.
+
+| !package                                                                                                                                                 | !size |
+|`sinuous-bind` | [img[https://img.badgesize.io/https://unpkg.com/sinuous-bind@latest/dist/all.min.js?v=1&compression=gzip&label=gzip&style=flat-square]]|
+|`sinuous-bind/bind` | [img[https://img.badgesize.io/https://unpkg.com/sinuous-bind@latest/dist/bind.min.js?v=1&compression=gzip&label=gzip&style=flat-square]]|
+|`sinuous-bind/bindArea` | [img[https://img.badgesize.io/https://unpkg.com/sinuous-bind@latest/dist/bindArea.min.js?v=1&compression=gzip&label=gzip&style=flat-square]]|
+|`sinuous-bind/bindGroup` | [img[https://img.badgesize.io/https://unpkg.com/sinuous-bind@latest/dist/bindGroup.min.js?v=1&compression=gzip&label=gzip&style=flat-square]]|
+|`sinuous-bind/bindMedia` | [img[https://img.badgesize.io/https://unpkg.com/sinuous-bind@latest/dist/bindMedia.min.js?v=1&compression=gzip&label=gzip&style=flat-square]]|
+
+!! [[Demo]]
+
+<<codesandbox "https://codesandbox.io/embed/sinuous-bind-esm-4e48b">>
+
+!! [[Tech Stack]]
+
+* [[JavaScript]]
+
+!! [[Overview]]
+
+One of my [[Sinuous Libraries]].
+
+Coming from [[React]], two-way binding might sound heretical, but I find it's pretty effective at concisely expressing intent in a declarative fashion. In the common case, it allows one to avoid writing any syncing code as one would have to do as a matter of course in [[React]].
+
+Where reasonable, [[sinuous-bind]] will handle the coercion from string on the DOM side to [[JavaScript]] numbers and vice versa.
+
+Other than [[Sinuous]], there are no dependencies.
+
+!!! `sinuous-bind/bind`
+
+This package provides the simplest bind functionality for the following simple cases:
+
+* `input`s of type `text`
+* `input`s of type `range`
+* `input`s of type `checkbox`
+* `input`s of type `radio`
+* `div`s with `contentEditable`
+* `select` elements without the `multiple` attribute
+* and provides a way to get a `ref` of an element
+
+!!! `sinuous-bind/bindArea`
+
+This package provides ''read-only'' bindings to `clientWidth`, `clientHeight`, `offsetWidth`, `offsetHeight`, `scrollLeft`, and `scrollTop`.
+
+It also allows the user to easily listen to `resize` and `scroll` events on arbitrary DOM elements.
+
+!!! `sinuous-bind/bindGroup`
+
+Whereas `sinuous-bind/bind` provides a means to bind to individual elements, this package is for binding to things that are best understood as groups:
+
+* `radio` `input` group
+* `checkbox` `input` group
+* `select`s with the `multiple` attribute
+
+!!! `sinuous-bind/bindMedia`
+
+This package provides a means to create two-way bindings with various attributes and properties of the `video` and `audio` elements
+
+!! Smooth Sailing
+
+The implementation of these packages was fairly simple. I used the same basic approach to extending [[Sinuous]] that I had used in [[sinuous-style]] and [[sinuous-context]].
+
+!! [[Pain Points]]
+
+!!! `contentEditable`
+
+Working with `contentEditable` is zero fun. Be smart, don't start.
+
+!! [[Lessons Learned]]
+
+It is apparently possible to listen to DOM element resize and scroll events without `ResizeObserver`. I used the same trick that [[Svelte]] uses to achieve this. [[Svelte]] learned this trick [[here|http://www.backalleycoder.com/2013/03/18/cross-browser-event-based-element-resize-detection/]], in its turn.

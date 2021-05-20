@@ -1,0 +1,16 @@
+created: 20210503231419346
+modified: 20210520141759749
+tags: $:/tags/ViewTemplate
+title: View Case Insensitive
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]lowercase[]]" variable="lower" >
+<$list filter="[all[tiddlers]!title<currentTiddler>] :filter[lowercase[]match<lower>] +[count[]]" variable=count >
+<$reveal default=<<count>> type=nomatch text="0" >
+''See also''
+<$list filter="[all[tiddlers]!title<currentTiddler>] :filter[lowercase[]match<lower>]" >
+<$link />
+</$list>
+</$reveal>
+</$list>
+</$list>

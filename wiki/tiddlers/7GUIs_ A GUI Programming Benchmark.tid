@@ -1,0 +1,14 @@
+author: [[Eugen Kiss]]
+created: 20210512191506437
+github: https://github.com/eugenkiss/7guis
+modified: 20210520141620196
+tags: 7GUIs
+title: 7GUIs: A GUI Programming Benchmark
+type: text/vnd.tiddlywiki
+website: https://eugenkiss.github.io/7guis/
+
+[[Description]] from the [[website|https://eugenkiss.github.io/7guis/]]:
+
+> There are countless GUI toolkits in different languages and with diverse approaches to GUI development. Yet, diligent comparisons between them are rare. Whereas in a traditional benchmark competing implementations are compared in terms of their resource consumption, here implementations are compared in terms of their notation. To that end, 7GUIs defines seven tasks that represent typical challenges in GUI programming. In addition, 7GUIs provides a recommended set of evaluation dimensions.
+
+I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a means of learning some new programming language or [[UI]] framework. I have a number of [[implementations|7GUIs Implementations]].

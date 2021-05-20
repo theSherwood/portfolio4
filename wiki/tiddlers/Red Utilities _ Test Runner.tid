@@ -1,0 +1,22 @@
+_blurb: A simple script for running [[Red]] test files
+author: [[Adam Sherwood]]
+created: 20210503204613028
+github: https://github.com/theSherwood/red-utils/blob/master/test-runner.red
+modified: 20210520141759784
+tags: 2020 Red Utility Project Testing
+title: Red Utilities / Test Runner
+type: text/vnd.tiddlywiki
+
+!! [[Description]]
+
+A simple script for running [[Red]] test files.
+
+!! [[Tech Stack]]
+
+* [[Red Utilities / Watch]]
+
+!! [[Overview]]
+
+One of my [[Red Utilities]].
+
+Not much to say about this. It's a useful example of how to use [[Red Utilities / Watch]] to run test files. Simple enough but proved useful in the development of [[Red Utilities]].

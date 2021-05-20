@@ -1,0 +1,40 @@
+created: 20210518180824787
+modified: 20210520141524928
+tags: $:/tags/ViewTemplate
+title: View Field Value Backlinks
+type: text/vnd.tiddlywiki
+
+\define field-values(val)
+<$list filter="[all[tiddlers]contains:$(field)$[$(currentTiddler)$]!is[system]count[]]" variable=count>
+<$reveal type=nomatch default=<<count>> text=0 >
+<div class="backlinks-wrapper">
+<details>
+<summary style="outline: none;">
+<strong>
+Notes where <$link /> is in the <<field-link """$(field)$""">> field (<<count>>)
+</strong>
+</summary>
+<div style="margin-left: 20px;">
+<$set name=included value=<<qualify $:/temp/tag-backlinks-included>> >
+<$set name=excluded value=<<qualify $:/temp/tag-backlinks-excluded>> >
+<$set name=list filter="[all[tiddlers]contains:$(field)$[$(currentTiddler)$]!is[system]]" >
+
+<$macrocall $name="filter-list"
+list=<<list>>
+included=<<included>>
+excluded=<<excluded>>
+/>
+
+</$set>
+</$set>
+</$set>
+</div>
+</details>
+</div>
+</$reveal>
+</$list>
+\end
+
+<$list filter="[all[tiddlers]fields[]!prefix[_]] +[unique[]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]" variable=field >
+<<field-values>>
+</$list>

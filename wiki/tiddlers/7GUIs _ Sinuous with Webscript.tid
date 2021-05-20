@@ -1,0 +1,31 @@
+author: [[Adam Sherwood]]
+created: 20210517185619672
+demo: https://thesherwood.github.io/7_GUIs/sinuous-webscript/dist/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/sinuous-webscript
+github: https://github.com/theSherwood/7_GUIs/tree/master/sinuous-webscript
+modified: 20210520141620163
+tags: 2020 Project JavaScript Sinuous UI 7GUIs Webscript
+title: 7GUIs / Sinuous with Webscript
+type: text/vnd.tiddlywiki
+
+!! [[Description]]
+
+!! [[Demo]]
+
+<<codesandbox "https://codesandbox.io/embed/github/theSherwood/7_GUIs/tree/master/sinuous-webscript">>
+
+!! [[Tech Stack]]
+
+* [[JavaScript]]
+* [[Sinuous]]
+* [[Webscript]]
+
+!! [[Overview]]
+
+One of my [[7GUIs Implementations]].
+
+!! Smooth Sailing
+
+!! [[Pain Points]]
+
+!! [[Lessons Learned]]
+

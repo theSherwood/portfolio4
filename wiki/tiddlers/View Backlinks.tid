@@ -1,0 +1,32 @@
+created: 20210424074853252
+modified: 20210520141524941
+tags: $:/tags/ViewTemplate
+title: View Backlinks
+type: text/vnd.tiddlywiki
+
+<$set name=title value={{!!title}} >
+<$set name=included value=<<qualify $:/temp/backlinks-included>> >
+<$set name=excluded value=<<qualify $:/temp/backlinks-excluded>> >
+<$set name=list filter="[all[current]backlinks[]!title<currentTiddler>]" >
+<$list filter="[subfilter<list>count[]]" variable=count >
+<$reveal default=<<count>> type="nomatch" text="0" >
+<div class="backlinks-wrapper">
+<details>
+<summary style="outline: none !important;"><strong>Links to this note (<<count>>)</strong></summary>
+<div style="margin-left: 20px">
+
+<$macrocall $name="filter-list"
+list=<<list>>
+included=<<included>>
+excluded=<<excluded>>
+/>
+
+</div>
+</details>
+</div>
+</$reveal>
+</$list>
+</$set>
+</$set>
+</$set>
+</$set>

@@ -1,0 +1,24 @@
+_blurb: A simple file-watcher in [[Red]]
+author: [[Adam Sherwood]]
+created: 20210503201350199
+github: https://github.com/theSherwood/red-utils/tree/master/watch
+modified: 20210520141759798
+tags: Red 2020 Utility Project
+title: Red Utilities / Watch
+type: text/vnd.tiddlywiki
+
+!! [[Description]]
+
+A simple file-watcher in [[Red]].
+
+!! [[Overview]]
+
+One of my [[Red Utilities]].
+
+There are actually two parts to this utility. `watch.red` is a generic file watcher  that can be given an action to call when a watched file changes. `watch-deps.red`, on the other hand, will also track the dependencies if a watched file  has the `.red` extension. It will then call the action on that file any time that file or any of its dependencies change.
+
+[[Red]] is young and the ecosystem and tooling are still developing. I wanted a light-weight tool for testing [[Red Utilities]] as I developed them. To facilitate this, I needed a file watcher.
+
+!! [[Pain Points]]
+
+At the time, [[Red]] didn't have any ability to register these kinds of callbacks with the operating system. So instead, these utilities rely on a daemon that polls the files in the relevant directory for the timestamp of their last change and checks it against a hash-table of recorded timestamps. Not a tremendous problem, but slightly annoying.

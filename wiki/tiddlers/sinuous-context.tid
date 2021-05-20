@@ -1,0 +1,62 @@
+_blurb: A light-weight, fast, and easy-to-use context api for [[Sinuous]].
+author: [[Adam Sherwood]]
+created: 20210424071118846
+demo: https://codesandbox.io/s/sinuous-context-cdn-lupwk
+github: https://github.com/theSherwood/sinuous-context
+modified: 20210520141945872
+npm: https://www.npmjs.com/package/sinuous-context
+tags: Library Project 2020 Sinuous UI JavaScript
+title: sinuous-context
+type: text/vnd.tiddlywiki
+
+[img[https://img.badgesize.io/https://unpkg.com/sinuous-context/dist/min.js?v=1&compression=gzip&label=gzip&style=flat-square]]
+
+!! [[Description]]
+
+A light-weight, fast, and easy-to-use context api for [[Sinuous]].
+
+!! [[Demo]]
+
+<<codesandbox "https://codesandbox.io/embed/sinuous-context-cdn-lupwk">>
+
+!! [[Tech Stack]]
+
+* [[JavaScript]]
+
+!! [[Overview]]
+
+One of my [[Sinuous Libraries]].
+
+The [[sinuous-context]] api is much more similar to the context api of [[Svelte]] than that of [[React]]. I found the provider/consumer pattern of [[React]] to be unnecessarily convoluted in comparison with [[Svelte]]'s.
+
+[[sinuous-context]] provides a `context` component that can be used quite simply to provide key-value pairs to descendants. The api also provides a `getContext` function, which, when called within a component, does the necessary lookup to grab the context. The mechanism maintains hierarchical shadowing (essentially [[Dynamic Scope]]).
+
+Other than [[Sinuous]], there are no dependencies.
+
+!! Smooth Sailing
+
+Fortunately, I was able to look at [[Sinuous]]' observable code in order to get some idea how to implement this.
+
+Both [[Wesley Luyten]] and [[Ryan Carniato]] (author of [[Solid]]) were indispensable and provided a ton of help and advice.
+
+!! [[Pain Points]]
+
+[[Svelte]]'s simple context api is made easy to implement by the fact that [[Svelte]] models its widget tree as a tree of [[JavaScript]] objects. Getting the context is as simple as climbing the tree to find an ancestor node with the relevant key.
+
+In a somewhat similar fashion, [[React]] can traverse its virtual DOM (I assume; I don't actually know anything about the implementation of [[React]]'s context system).
+
+In contrast, [[Sinuous]] does not maintain a model of the widget tree. There is only the browser DOM and [[Sinuous]]' [[reactive signal graph|Observer Pattern]], which it uses to update the DOM directly. So how do you manage a context api?
+
+My first though was to store context keys on DOM nodes directly. Those keys could then be used to lookup the relevant context in a big hash-table that stored all the contexts. But here's the problem, when a component function is called and produces a DOM node, that component has no idea where it will be injected in the DOM. So how could it know where to look to find the context. It would have to wait until after the node was injected (rendered) to perform the lookup and then re-render. Far from ideal.
+
+Thankfully, there was another option. Though the signal graph does not explicitly model the widget tree it does form an implicit model of the relevant parts. So my first attempt built the context api directly into [[Sinuous]]' reactive code. It ended up being shockingly small; under 200 bytes.
+
+Ultimately, [[Wesley Luyten]] made the understandable decision that [[Sinuous]] didn't need a context api in the core as one of the explicit goals of [[Sinuous]] is to be as light-weight as possible.
+
+I was kind of stumped for a time. But the final version is essentially a very pared down version of [[Sinuous]]' signal graph mechanism (which implicitly models the widget tree) with the context code tossed in. And it's still under 400 bytes, which I think is respectable.
+
+!! [[Lessons Learned]]
+
+!!! [[Dynamic Scope]]
+
+[[Sinuous]]' observable code demonstrates a pattern that can be used to simulate dynamic scope in some circumstances. I'm not sure I completely understand the pattern. It feels somewhat convoluted, as I would guess it would have to be in a lexically scoped language such as [[JavaScript]]. But it is potentially useful to know that the pattern exists.

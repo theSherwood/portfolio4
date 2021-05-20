@@ -1,0 +1,98 @@
+_blurb: Series comprehensions inspired by [[Python]] list comprehensions
+author: [[Adam Sherwood]]
+created: 20210503184110117
+github: https://github.com/theSherwood/red-utils/tree/master/series
+modified: 20210520141945855
+tags: 2020 Red Project Utility Syntax
+title: Red Utilities / Series
+type: text/vnd.tiddlywiki
+
+!! [[Description]]
+
+Series comprehensions inspired by [[Python]] list comprehensions.
+
+!! [[Overview]]
+
+One of my [[Red Utilities]].
+
+In [[Red]], a `series` is quite an abstract notion of groups of values, whether that be groups of characters in the form of a string, groups of numbers in a `block` (array), or even a block of heterogenous data. Given the flexibility of `series` in [[Red]], series comprehensions end up being far more expressive than what is possible with [[Python]] list comprehensions.
+
+!!! Stuff [[Python]] Can Do
+
+Simple:
+
+```
+series [a * 2 for a in [3 4 5]] ;== [6 8 10]
+```
+
+Get the index:
+
+```
+series [a * idx for a idx in [3 4 5]] ;== [3 8 15]
+```
+
+Filter with `if` clauses:
+
+```
+series [a for a in [3 4 5] if odd? a] ;== [3 5]
+```
+
+Draw from multiple series at once:
+
+```
+series [rejoin [a b] for a in [3 4 5] for b in "abc"]
+;== ["3a" "3b" "3c" "4a" "4b" "4c" "5a" "5b" "5c"]
+```
+
+!!! Stuff [[Python]] Can't Do
+
+Pump data into an existing data structure without intermediate data structures:
+
+```
+series/into [a * 2 for a in [3 4 5]] "" ;== "6810"
+```
+
+Draw in multiple values per iteration:
+
+```
+series [a + b for [a b] in [3 4 5 6]] ;== [7 11]
+```
+
+Additionally, there is a `/only` attribute that follows the convention of [[Red]] functions in providing special handling for nested blocks:
+
+```
+a: [3 4 5]
+
+series [reduce [a'] for a' in a]
+;== [3 4 5]
+
+series/only [reduce [a'] for a' in a]
+;== [[3] [4] [5]]
+```
+
+!!! Everything At Once
+
+Altogether, we can see that it is capable of some very powerful expressions that obviate the need for explicit looping as would be required in many other languages:
+
+```
+a: "abcd"
+b: [3 4 5 6]
+c: [7 8]
+
+series/only/into [
+	reduce [a'' b' * a-idx - c']
+	for [a' a''] a-idx in a
+	for [b' b'']       in b
+	for c'       c-idx in c
+	if even? c-idx + b'
+] []
+;== [[#"b" -1] [#"b" 3] [#"d" 5] [#"d" 13]]
+```
+
+!! [[Pain Points]]
+
+In [[Red]], `parse` and `compose` are separately very powerful. Together, they are an absolute powerhouse that enables unparalleled expressivity. Herein lies the problem. They are perhaps too expressive to the point of being very difficult to reason about with any kind of exactitude. As a result, writing the code to enable series comprehensions required a great deal more trial and error than I am comfortable with.
+
+Most [[Red]] code //need not// make so much use of its [[Metaprogramming]] features as I have in this utility. But I find that much idiomatic [[Red]] code does engage in some [[Metaprogramming]] hanky-panky. This is part of what allows [[Red]] code to be so unbelievably concise. I suspect that with time, this approach would become more familiar and easier to reason about.
+
+But I can't escape the feeling that there is, in fact, a certain advantage to having some membrane or separation between [[Metaprogramming]] and the domain or business logic. Most languages of which I'm aware which allow [[Metaprogramming]] at all, only support it as a compile-time construct, such as [[Rust]] and [[Clojure]]. That seems to provide enough separation.
