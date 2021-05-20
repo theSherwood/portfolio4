@@ -3,13 +3,13 @@
 branch=$(git rev-parse --abbrev-ref HEAD)
 if [ "$branch" == main ]
 then
-  if [ -z "$gh_push" ]
+  if [ -e .push ]
   then
-    echo "Deploying to gh-pages..."
-    gh_push=1
-    git subtree push --prefix output origin gh-pages
+    rm .push
   else
-    unset gh_push
+    echo "Deploying to gh-pages..."
+    touch .push
+    git subtree push --prefix output origin gh-pages
   fi
 fi
 exit
