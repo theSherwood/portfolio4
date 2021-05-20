@@ -189,6 +189,8 @@ Error message and password prompt
 
 <li>$:/plugins/rmnvsl/krystal</li>
 
+<li>$:/plugins/rmnvsl/krystal/references</li>
+
 <li>$:/plugins/snowgoon88/edit-comptext</li>
 
 <li>$:/plugins/snowgoon88/edit-comptext/config</li>
@@ -11562,6 +11564,21 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
+<div created="20210520212334391" modified="20210520212336775" tags="" title="$:/plugins/rmnvsl/krystal/references" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;$list filter=&quot;[!is[system]all[current]backlinks[]sort[title]] -[is[current]] +[limit[1]]&quot; variable=none&gt;
+&lt;ul class=&quot;krystal-references&quot;&gt;
+&lt;li class=&quot;krystal-references__title&quot;&gt;&lt;strong&gt;&lt;$transclude tiddler=&quot;$:/plugins/rmnvsl/krystal/referenceshere&quot; field=&quot;text&quot; mode=&quot;inline&quot; /&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;$list filter=&quot;[!is[system]all[current]backlinks[]sort[title]] -[is[current]]&quot;&gt;
+&lt;li class=&quot;krystal-references__reference&quot;&gt;
+&lt;$link&gt;
+&lt;b&gt;&lt;$view field=&quot;title&quot; /&gt;&lt;/b&gt;
+&lt;div class=&quot;krystal-references__content&quot;&gt;&lt;$transclude field=&quot;text&quot; mode=&quot;inline&quot; /&gt;&lt;/div&gt;
+&lt;/$link&gt;
+&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;
+&lt;/$list&gt;</pre>
+</div>
 <div author="AlainD" core-version="&gt;=5.1.13" created="20200304200257539" dependents="" description="Editor with some on-line completion capabilities" list="readme usage examples" modified="20210520144614935" plugin-type="plugin" source="https://github.com/snowgoon88/TW5-extendedit" tags="" title="$:/plugins/snowgoon88/edit-comptext" type="application/json" version="0.8.1" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -11718,7 +11735,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="$:/core/ui/SideBar/Recent [[Filter List]] [[Adam Sherwood]] author [[View Field Backlinks]]" title="$:/StoryList" revision="1" bag="default">
+<div list="$:/core/ui/SideBar/Recent [[Filter List]] [[Adam Sherwood]] author RegexXP React Sinuous $:/AdvancedSearch [[View Backlinks]] $:/plugins/rmnvsl/krystal/references" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Field Value Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin [[View Tag Backlinks]] [[View Backlinks]] [[View Field Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210520143021911" title="$:/tags/ViewTemplate" type="text/vnd.tiddlywiki" revision="0" bag="default">
