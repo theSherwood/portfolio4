@@ -1,0 +1,5 @@
+#!/bin/bash
+
+refname="$1"
+
+echo $refname > foo.txt
