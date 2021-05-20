@@ -1,3 +1,3 @@
 #!/bin/bash
 
-"somestuff" > ./foo.txt
+echo "somestuff" > ./foo.txt
