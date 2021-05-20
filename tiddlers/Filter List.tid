@@ -1,12 +1,19 @@
 created: 20210518201758611
-modified: 20210520141134022
+modified: 20210520204429448
 tags: $:/tags/Macro
 title: Filter List
 type: text/vnd.tiddlywiki
 
 \define _truncate-regex() (^.{0,100})(.*)
 
-\define _list-item(open fields-open show-tags show-fields show-blurb)
+\define _list-item(
+open
+fields-open
+toggle-fields
+show-fields
+show-tags
+show-blurb
+)
 <details $open$>
   <summary style="outline: none !important;">
     <$link mode=inline />
@@ -20,16 +27,25 @@ type: text/vnd.tiddlywiki
       <$set name=filter value="[all[current]fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]">
         <$list filter="[subfilter<filter>count[]]" variable=count>
           <$reveal default=<<count>> type="nomatch" text="0">
-            <details $fields-open$>
-              <summary style="outline: none !important;"><strong>Fields</strong></summary>
-              <div style="margin-left: 20px;">
-                <$list filter=<<filter>> variable="title">
-                  <$macrocall $name="field-link" text=<<title>> /> :
-                    <$transclude field=<<title>> mode=inline />
-                      <br />
-                </$list>
-              </div>
-            </details>
+            <$reveal default=<<__toggle-fields__>> type="match" text="true">
+              <details $fields-open$>
+                <summary style="outline: none !important;"><strong>Fields</strong></summary>
+                <div style="margin-left: 20px;">
+                  <$list filter=<<filter>> variable="title">
+                    <$macrocall $name="field-link" text=<<title>> /> :
+                      <$transclude field=<<title>> mode=inline />
+                        <br />
+                  </$list>
+                </div>
+              </details>
+            </$reveal>
+            <$reveal default=<<__toggle-fields__>> type="nomatch" text="true">
+              <$list filter=<<filter>> variable="title">
+                <$macrocall $name="field-link" text=<<title>> /> :
+                  <$transclude field=<<title>> mode=inline />
+                    <br />
+              </$list>
+            </$reveal>
           </$reveal>
         </$list>
       </$set>
@@ -94,7 +110,20 @@ type: text/vnd.tiddlywiki
 </$list>
 \end
 
-\define filter-list(list:"" included:"" excluded:"" tag-filter-open:"" field-filter-open:"" inner-field-filters-open:"" list-items-open:"open" list-fields-open:"" show-list-fields:"true" show-list-tags:"true" show-list-blurb:"true" )
+\define filter-list(
+list:""
+included:""
+excluded:""
+tag-filter-open:""
+field-filter-open:""
+inner-field-filters-open:""
+list-items-open:"open"
+list-fields-open:""
+toggle-fields:"true"
+show-list-fields:"true"
+show-list-tags:"true"
+show-list-blurb:"true"
+)
 <!-- start filters -->
 <!-- start filter by tag -->
 <details $tag-filter-open$ >
@@ -170,12 +199,26 @@ type: text/vnd.tiddlywiki
 <$set tiddler=<<qualify $:/temp/$(currentTiddler)$-list-expanded>> name=open emptyValue=<<__list-items-open__>> >
   <$reveal type=match stateTitle=<<__included__>> stateField="_list" text="">
     <$list filter="[subfilter<__list__>sort[title]] -[title<__excluded__>get[_list]enlist-input[]]" emptyMessage="No results to display" >
-      <$macrocall $name="_list-item" open=<<open>> fields-open=<<__list-fields-open__>> show-tags=<<__show-list-tags__>> show-fields=<<__show-list-fields__>> show-blurb=<<__show-list-blurb__>> />
+      <$macrocall $name="_list-item"
+        open=<<open>>
+        fields-open=<<__list-fields-open__>>
+        show-tags=<<__show-list-tags__>>
+        show-fields=<<__show-list-fields__>>
+        show-blurb=<<__show-list-blurb__>>
+        toggle-fields=<<__toggle-fields__>>
+      />
     </$list>
   </$reveal>
   <$reveal type=nomatch stateTitle=<<__included__>> stateField="_list" text="">
     <$list filter="[subfilter<__list__>sort[title]] :intersection[title<__included__>get[_list]enlist-input[]] -[title<__excluded__>get[_list]enlist-input[]]" emptyMessage="No results to display" >
-      <$macrocall $name="_list-item" open=<<open>> fields-open=<<__list-fields-open__>> show-tags=<<__show-list-tags__>> show-fields=<<__show-list-fields__>> show-blurb=<<__show-list-blurb__>> />
+      <$macrocall $name="_list-item"
+        open=<<open>>
+        fields-open=<<__list-fields-open__>>
+        show-tags=<<__show-list-tags__>>
+        show-fields=<<__show-list-fields__>>
+        show-blurb=<<__show-list-blurb__>>
+        toggle-fields=<<__toggle-fields__>>
+      />
     </$list>
   </$reveal>
 </$set>
