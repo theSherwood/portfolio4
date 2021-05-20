@@ -1,5 +1,5 @@
 #!/bin/bash
 
+echo "wtf" > fudge.txt
 refname="$1"
-
-echo $refname > foo.txt
+echo "$refname" > foo.txt
