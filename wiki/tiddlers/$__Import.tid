@@ -1,20 +1,10 @@
-created: 20210520143021327
-modified: 20210520143021327
+created: 20210520144614887
+modified: 20210520144614887
 status: complete
 title: $:/Import
 type: text/vnd.tiddlywiki
 
 The following tiddlers were imported:
 
-# [[$:/config/WikiParserRules/Inline/wikilink]]
-# [[$:/config/Toolbar/Text]]
-# [[$:/config/Toolbar/Icons]]
-# [[$:/config/Toolbar/ButtonClass]]
-# [[$:/config/Tiddlers/TitleLinks]]
-# [[$:/config/TiddlerInfo/Mode]]
-# [[$:/config/shortcuts/list-bullet]]
-# [[$:/config/shortcuts/linkify]]
-# [[$:/config/RelinkOnRename]]
-# [[$:/config/Navigation/UpdateHistory]]
-# [[$:/config/EditorTypeMappings/text/vnd.tiddlywiki]]
-# [[$:/tags/ViewTemplate]]
+# [[$:/plugins/snowgoon88/edit-comptext/config]]
+# [[$:/plugins/snowgoon88/edit-comptext]]
