@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# If we are pushing on `main` deploy to github pages
 branch=$(git rev-parse --abbrev-ref HEAD)
 if [ "$branch" == main ]
 then

@@ -1,3 +1,4 @@
 #!/bin/bash
 
+# Rebuild the "output" (distribution) file and add it to the commit
 tiddlywiki . --build index && git add ./output/index.html
