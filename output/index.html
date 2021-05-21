@@ -11775,7 +11775,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="[[Adam Sherwood]] Project [[7GUIs / Solid]] [[7GUIs Implementations]] [[7GUIs / Svelte 3]] TypeScript [[Programming Language]] J [[Arthur Whitney]]" title="$:/StoryList" revision="1" bag="default">
+<div list="[[Adam Sherwood]] Project [[7GUIs / Solid]] [[7GUIs Implementations]] [[7GUIs / ClojureScript with Reagent]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Tag Backlinks]] [[View Field Backlinks]] [[View Field Value Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin Spacer [[View Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210521220848437" title="$:/tags/ViewTemplate" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11896,7 +11896,7 @@ very-muted-foreground: #888888</pre>
 <div created="20210425205604293" modified="20210520142147093" title="2020" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div _blurb="Complete [[7GUIs: A GUI Programming Benchmark]] implementation in [[ClojureScript]] and using [[Reagent]]" author="[[Adam Sherwood]]" created="20210517185828779" demo="https://thesherwood.github.io/7_GUIs/clojurescript-reagent/resources/public/index.html" github="https://github.com/theSherwood/7_GUIs/tree/master/clojurescript-reagent" modified="20210521205745525" tags="2020 7GUIs ClojureScript UI Reagent Project" title="7GUIs / ClojureScript with Reagent" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div _blurb="Complete [[7GUIs: A GUI Programming Benchmark]] implementation in [[ClojureScript]] and using [[Reagent]]" author="[[Adam Sherwood]]" created="20210517185828779" demo="https://thesherwood.github.io/7_GUIs/clojurescript-reagent/resources/public/index.html" github="https://github.com/theSherwood/7_GUIs/tree/master/clojurescript-reagent" modified="20210521225350401" tags="2020 7GUIs ClojureScript UI Reagent Project" title="7GUIs / ClojureScript with Reagent" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! [[Description]]
 
 Complete [[7GUIs: A GUI Programming Benchmark]] implementation in [[ClojureScript]] and using [[Reagent]].
@@ -11914,12 +11914,27 @@ Complete [[7GUIs: A GUI Programming Benchmark]] implementation in [[ClojureScrip
 
 One of my [[7GUIs Implementations]].
 
+I came across [[Lisps|Lisp]] and was pretty immediately mesmerized. There was something seriously magical about them. I looked at various lisps to try to decide which to learn. I narrowed it down to [[Scheme]] and [[Clojure]]. [[Scheme]] had an appealing purity but the more I looked at [[Clojure]], the more impressed I was by the details of the design. The order of arguments in reducing functions alone was quite a convincing argument in [[Clojure]]'s favor. And ultimately, [[Clojure]] has [[JavaScript]] as a compile target. Winner.
+
+[[Reagent]] is the de facto king of [[UI]] frameworks in the [[ClojureScript]] ecosystem. So I figured I ought to give it a try since the majority of folks in the community have confidence in it. 
+
 !! [[Smooth Sailing]]
+
+I was seriously impressed with how expressive the language is. So much can be done in relatively little code.
 
 !! [[Pain Points]]
 
+While [[Reagent]] is more reactive than [[React]] in that there is more builtin support for the [[Observer Pattern]] through atoms and reactions, it is still fundamentally [[React]] at heart. What is more, it is even more complex than [[React]] on account of being a wrapper around [[React]]. The upshot is that patterns that worked well in [[Sinuous]], [[Solid]], and [[Svelte]] did not translate well to [[Reagent]]. [[Reagent]] and [[ClojureScript]] more generally simply do not like to work that way. So I tried to write it in a way more friendly to the paradigm. There were noticeable performance issues in the spreadsheet/cells task.
+
+Since working at [[Roam Research]], however, and using [[ClojureScript]] every day, I've become more comfortable with the paradigm.
+
+I ended up rewriting my implementation to be more idiomatic [[Reagent]] while still being performant enough. But I feel that the ceiling on performance is much lower in this paradigm than in the more reactive libraries.
+
+Part of me would like to take another wack at it using a different [[UI]] framework. But, honestly, [[Reagent]] is a good match for [[Clojure]]'s version of the [[functional paradigm|Functional Programming]].
+
 !! [[Lessons Learned]]
 
+There are things that [[Clojure]] and [[ClojureScript]] make incredibly convenient and easy to reason about. But there is a cost. Coming from an [[imperative paradigm|Imperative Programming]], you may notice that when you run into performance issues you have fewer tools to address them than you are used to.
 </pre>
 </div>
 <div _blurb="Partial implementation of [[7GUIs: A GUI Programming Benchmark]] in [[React]]" author="[[Adam Sherwood]]" created="20210517185801227" demo="https://thesherwood.github.io/7_GUIs/react-vanilla/dist/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/react-vanilla" github="https://github.com/theSherwood/7_GUIs/tree/master/react-vanilla" modified="20210521184202836" tags="2020 7GUIs JavaScript React UI Project" title="7GUIs / React" type="text/vnd.tiddlywiki" revision="0" bag="default">
