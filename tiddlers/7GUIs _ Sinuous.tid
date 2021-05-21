@@ -3,7 +3,7 @@ author: [[Adam Sherwood]]
 created: 20210517185452953
 demo: https://thesherwood.github.io/7_GUIs/sinuous/dist/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/sinuous
 github: https://github.com/theSherwood/7_GUIs/tree/master/sinuous
-modified: 20210521205804833
+modified: 20210521235715476
 tags: 2020 7GUIs Sinuous Project JavaScript UI
 title: 7GUIs / Sinuous
 type: text/vnd.tiddlywiki
@@ -83,4 +83,4 @@ In the spreadsheet/cells task, I ended up using some nested observables. This wa
 
 !! [[Lessons Learned]]
 
-Attempting to abstract over the DOM with something that treats the render as a pure function may not, in fact, make code simpler in the way [[React]] claims. The DOM is inherently stateful and trying to avoid dealing with that seems to lead to some impedence mismatches that can be avoided with a library like [[Sinuous]] that treats the DOM like what it is while providing means to handle stateful updates in a convenient way.
+Attempting to abstract over the DOM with something that treats the render as a pure function may not, in fact, make code simpler in the way [[React]] claims. The DOM is inherently stateful and trying to avoid dealing with that seems to lead to some impedance mismatches that can be avoided with a library like [[Sinuous]] that treats the DOM like what it is while providing means to handle stateful updates in a convenient way.
