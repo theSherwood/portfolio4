@@ -3,7 +3,7 @@ author: [[Adam Sherwood]]
 created: 20210517185535051
 demo: https://thesherwood.github.io/7_GUIs/sinuous-with-sinuous-style/dist/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/sinuous-with-sinuous-style
 github: https://github.com/theSherwood/7_GUIs/tree/master/sinuous-with-sinuous-style
-modified: 20210521194427128
+modified: 20210521205822660
 tags: Sinuous 7GUIs UI Project 2020 JavaScript [[Scoped Styles]]
 title: 7GUIs / Sinuous with Sinuous-Style
 type: text/vnd.tiddlywiki
@@ -28,7 +28,7 @@ One of my [[7GUIs Implementations]].
 
 I'll focus on how it was using [[sinuous-style]] as I've already written about the experience of using [[Sinuous]] [[here|7GUIs / Sinuous]].
 
-!! Smooth Sailing
+!! [[Smooth Sailing]]
 
 Fortunately, [[sinuous-style]] seems to work mostly as expected. [[Scoped Styles]] in [[Sinuous]]. Hooray!
 

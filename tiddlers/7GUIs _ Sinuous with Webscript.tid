@@ -3,7 +3,7 @@ author: [[Adam Sherwood]]
 created: 20210517185619672
 demo: https://thesherwood.github.io/7_GUIs/sinuous-webscript/dist/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/sinuous-webscript
 github: https://github.com/theSherwood/7_GUIs/tree/master/sinuous-webscript
-modified: 20210521202936574
+modified: 20210521205836775
 tags: 2020 Project JavaScript Sinuous UI 7GUIs Webscript
 title: 7GUIs / Sinuous with Webscript
 type: text/vnd.tiddlywiki
@@ -26,9 +26,13 @@ Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Sinuous]]
 
 One of my [[7GUIs Implementations]].
 
-!! Smooth Sailing
+I'll focus on how it was using [[Webscript]] as I've already written about the experience of using [[Sinuous]] [[here|7GUIs / Sinuous]].
+
+!! [[Smooth Sailing]]
+
+[[Webscript]] was a delight to use. Why have we been stuck trying to emulate [[HTML]] (looking at you [[JSX]]) for so long? In addition to eliminating all the angle brackets, [[Webscript]] eliminates the awkward barrier between [[JavaScript]] and markup.
 
 !! [[Pain Points]]
 
-!! [[Lessons Learned]]
+[[Webscript]] uses [[JavaScript]] proxies under the hood. So there may be performance costs to using [[Webscript]], but I didn't notice anything and didn't bother to do any performance benchmarking.
 

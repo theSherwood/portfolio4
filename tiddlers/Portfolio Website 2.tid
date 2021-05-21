@@ -2,7 +2,7 @@ _blurb: A simple website portfolio [[SPA]] to curate a few of my projects.
 author: [[Adam Sherwood]]
 created: 20210423014016560
 github: https://github.com/theSherwood/portfolio2
-modified: 20210520141524976
+modified: 20210521205938434
 tags: Project 2019 JavaScript Svelte
 title: Portfolio Website 2
 type: text/vnd.tiddlywiki
@@ -22,7 +22,7 @@ A simple website portfolio [[SPA]] to curate a few of my projects.
 
 I’d played with [[Svelte3|Svelte]] a little bit and wanted to make a simple project with it. I also wanted to flex my design skills a bit. I’ve been so focused on the code, generally speaking, that I haven’t done much of anything about design. This was an opportunity to give design a little bit of thought. I wanted to make something minimal yet rich, and I’d like to think I’ve done that.
 
-!! Smooth Sailing
+!! [[Smooth Sailing]]
 
 Things have been reasonably smooth. [[Svelte]] is pretty ergonomic, [[Skeleton]] is minimal and went largely unused, and I’ve used Rollup and [[Now]] with previous projects. [[Svelte]]’s built-in store system makes global state management stupidly easy. [[Svelte]] also makes simple transition animations much easier than is possible in [[React]]. I have to say, on the whole, I’m a fan.
 

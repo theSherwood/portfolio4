@@ -3,7 +3,7 @@ author: [[Adam Sherwood]]
 created: 20210424071410127
 demo: https://codesandbox.io/s/sinuous-simple-todo-qj0n3
 github: https://github.com/theSherwood/sinuous-frame
-modified: 20210520141945879
+modified: 20210521210224706
 npm: https://www.npmjs.com/package/sinuous-frame
 tags: 2020 Library Project UI Sinuous JavaScript Syntax
 title: sinuous-frame
@@ -17,7 +17,7 @@ An alternative view syntax for the [[Sinuous]] frontend framework. Inspired by [
 
 Like [[Sinuous]], itself, [[sinuous-frame]] is very lightweight: under 400 bytes gzipped.
 
-!! [[Demo]]s
+!! [[Demos|Demo]]
 
 <<codesandbox "https://codesandbox.io/embed/sinuous-counters-lhqjk">>
 
@@ -35,7 +35,7 @@ After a bit of exposure to [[ClojureScript]] and [[Reagent]], I thought I'd take
 
 Other than [[Sinuous]], there are no dependencies.
 
-!! Smooth Sailing
+!! [[Smooth Sailing]]
 
 This was fairly simple to implement. Under 400 bytes gzipped, the documentation is more complex than the code.
 

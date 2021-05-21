@@ -2,7 +2,7 @@ _blurb: The ReconJS Site is a gamified, adversarial demo of [[ReconJS]].
 author: [[Adam Sherwood]]
 created: 20210423011414633
 github: https://github.com/theSherwood/reconjs-site
-modified: 20210520141524986
+modified: 20210521210013597
 tags: Project 2019 [[Web App]] JavaScript React NextJS
 title: ReconJS Site
 type: text/vnd.tiddlywiki
@@ -31,7 +31,7 @@ The gamification of testing my security software seemed like a fun idea. So the 
 
 The goal was to gamify improving my [[ReconJS]] security package by creating a convenient way for other developers to try to beat it. Integrating my own little library into an app (even just a simple demo app) was a lot of fun.
 
-!! Smooth Sailing
+!! [[Smooth Sailing]]
 
 Most of these technologies I had used before. So it wasn’t tremendously difficult. The only exception is [[NextJS]] for [[SSR]]. That was new, but on the whole really enjoyable. Next actually reduces the amount of boilerplate that a typical [[React]] application would require. The built-in scoped [[CSS]] system of [[NextJS]] is also eminently sensible. After using scoped [[CSS]] with [[NextJS]] and with [[Svelte3|Svelte]] (on another project) I’m starting to think that scoped [[CSS]] is the way to go.
 

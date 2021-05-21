@@ -3,7 +3,7 @@ author: [[Adam Sherwood]]
 created: 20210422234117124
 demo: https://thesherwood.github.io/Mentat/
 github: https://github.com/theSherwood/Mentat
-modified: 20210520141524972
+modified: 20210521205923132
 tags: Project 2019 Plugin JavaScript UI TiddlyWiki
 title: Mentat
 type: text/vnd.tiddlywiki
@@ -32,7 +32,7 @@ This was my first real project in Javascript, and is, to this date, the most dif
 
 Do not be fooled by the spartan appearance, [[TiddlyWiki]] is intended to be largely unopinionated on styling issues.
 
-!! Smooth Sailing
+!! [[Smooth Sailing]]
 
 There was no smooth sailing.
 

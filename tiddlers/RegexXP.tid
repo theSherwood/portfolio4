@@ -2,7 +2,7 @@ _blurb: RegexXP is an educational app for [[JavaScript]] developers trying to im
 author: [[Adam Sherwood]]
 created: 20210422230856028
 github: https://github.com/theSherwood/RegexXP
-modified: 20210520141525005
+modified: 20210521210026293
 tags: Project 2019 React [[Web App]] JavaScript
 title: RegexXP
 type: text/vnd.tiddlywiki
@@ -30,7 +30,7 @@ I started this project because I wanted to brush up on my [[regex]] skills. Orig
 
 The app was also originally deployed to [[Heroku]]. I have since deployed it with [[Now]], instead, because I was curious about serverless and because [[Now]] makes https certification simple with custom domains.
 
-!! Smooth Sailing
+!! [[Smooth Sailing]]
 
 This was my first solo project using basically any of these technologies. [[React]] and [[Redux]] were straightforward. I’d used them before on some tutorials. I’d had previous experience with [[ORM]]s for dealing with relational databases, and [[Mongoose]] was reminiscent of that. Deploying to [[Heroku]] was also straightforward.
 

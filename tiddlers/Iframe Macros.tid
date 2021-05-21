@@ -1,5 +1,5 @@
 created: 20210502021439114
-modified: 20210520141620078
+modified: 20210521204129976
 tags: $:/tags/Macro
 title: Iframe Macros
 type: text/vnd.tiddlywiki
@@ -7,6 +7,7 @@ type: text/vnd.tiddlywiki
 \define codesandbox(src)
 <iframe src="""$src$"""
 style="width:100%; height:500px; border-radius: 4px; overflow:hidden; border: 1px solid gray;" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" />
+//This demo is an interactive [[CodeSandbox]]. Feel free to experiment by editing the code.//
 \end
 
 \define iframe(src)

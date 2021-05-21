@@ -3,7 +3,7 @@ author: [[Adam Sherwood]]
 created: 20210517185828779
 demo: https://thesherwood.github.io/7_GUIs/clojurescript-reagent/resources/public/index.html
 github: https://github.com/theSherwood/7_GUIs/tree/master/clojurescript-reagent
-modified: 20210521202830898
+modified: 20210521205745525
 tags: 2020 7GUIs ClojureScript UI Reagent Project
 title: 7GUIs / ClojureScript with Reagent
 type: text/vnd.tiddlywiki
@@ -25,7 +25,7 @@ Complete [[7GUIs: A GUI Programming Benchmark]] implementation in [[ClojureScrip
 
 One of my [[7GUIs Implementations]].
 
-!! Smooth Sailing
+!! [[Smooth Sailing]]
 
 !! [[Pain Points]]
 

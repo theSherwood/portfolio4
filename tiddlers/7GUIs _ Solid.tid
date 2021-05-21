@@ -3,7 +3,7 @@ author: [[Adam Sherwood]]
 created: 20210517185736545
 demo: https://thesherwood.github.io/7_GUIs/solid/build/index.html
 github: https://github.com/theSherwood/7_GUIs/tree/master/solid
-modified: 20210521203039531
+modified: 20210521205848515
 tags: 2020 7GUIs Project JavaScript Solid UI
 title: 7GUIs / Solid
 type: text/vnd.tiddlywiki
@@ -25,7 +25,7 @@ Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Solid]].
 
 One of my [[7GUIs Implementations]].
 
-!! Smooth Sailing
+!! [[Smooth Sailing]]
 
 !! [[Pain Points]]
 

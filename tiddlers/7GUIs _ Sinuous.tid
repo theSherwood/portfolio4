@@ -3,7 +3,7 @@ author: [[Adam Sherwood]]
 created: 20210517185452953
 demo: https://thesherwood.github.io/7_GUIs/sinuous/dist/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/sinuous
 github: https://github.com/theSherwood/7_GUIs/tree/master/sinuous
-modified: 20210521192839098
+modified: 20210521205804833
 tags: 2020 7GUIs Sinuous Project JavaScript UI
 title: 7GUIs / Sinuous
 type: text/vnd.tiddlywiki
@@ -27,7 +27,7 @@ One of my [[7GUIs Implementations]].
 
 This is one of my first [[7GUIs Implementations]] and there is a lot I would probably do differently now. However, it was a good opportunity to get more familiar with [[Sinuous]].
 
-!! Smooth Sailing
+!! [[Smooth Sailing]]
 
 [[Sinuous]]' implementation of the [[Observer Pattern]] is one of the most enjoyable I have used. Creating observables, computeds, and subscriptions is very simple and intuitive.
 

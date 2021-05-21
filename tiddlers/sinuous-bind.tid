@@ -3,7 +3,7 @@ author: [[Adam Sherwood]]
 created: 20210424072008463
 demo: https://codesandbox.io/s/sinuous-bind-esm-4e48b
 github: https://github.com/theSherwood/sinuous-bind
-modified: 20210520141945948
+modified: 20210521210042636
 npm: https://www.npmjs.com/package/sinuous-bind
 tags: 2020 JavaScript Library Project Sinuous UI Syntax
 title: sinuous-bind
@@ -72,7 +72,7 @@ Whereas `sinuous-bind/bind` provides a means to bind to individual elements, thi
 
 This package provides a means to create two-way bindings with various attributes and properties of the `video` and `audio` elements
 
-!! Smooth Sailing
+!! [[Smooth Sailing]]
 
 The implementation of these packages was fairly simple. I used the same basic approach to extending [[Sinuous]] that I had used in [[sinuous-style]] and [[sinuous-context]].
 

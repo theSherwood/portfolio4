@@ -3,7 +3,7 @@ author: [[Adam Sherwood]]
 created: 20210423001904393
 demo: https://reconjs-site.thesherwood.vercel.app/
 github: https://github.com/theSherwood/ReconJS
-modified: 20210520141524981
+modified: 20210521205951643
 npm: https://www.npmjs.com/package/@thesherwood/reconjs
 tags: Project 2019 Library JavaScript
 title: ReconJS
@@ -36,7 +36,7 @@ Ultimately, scope was too complex to sort out without a full-blown abstract synt
 
 This time I used [[AcornJS]] to build the AST, and built [[ReconJS]] directly on top of that.
 
-!! Smooth Sailing
+!! [[Smooth Sailing]]
 
 Once I had [[AcornJS]] building the AST, it was pretty straightforward. Prior to that, writing lots of tests kept the project manageable for quite some time (until I hit scope).
 
