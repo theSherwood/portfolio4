@@ -2,7 +2,7 @@ _blurb: RegexXP is an educational app for [[JavaScript]] developers trying to im
 author: [[Adam Sherwood]]
 created: 20210422230856028
 github: https://github.com/theSherwood/RegexXP
-modified: 20210521210026293
+modified: 20210521212049179
 tags: Project 2019 React [[Web App]] JavaScript
 title: RegexXP
 type: text/vnd.tiddlywiki
@@ -15,7 +15,7 @@ RegexXP is an educational app for [[JavaScript]] developers trying to improve th
 !! [[Tech Stack]]
 
 * [[React]] - [[UI]] framework
-* [[Redux]] - global state management
+* [[Redux]] - global [[State Management]]
 * [[Bootstrap]] - [[CSS]] framework
 * [[Express]] - RESTful api
 * [[NodeJS]] - server runtime

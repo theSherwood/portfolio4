@@ -3,7 +3,7 @@ author: [[Adam Sherwood]]
 created: 20210517185736545
 demo: https://thesherwood.github.io/7_GUIs/solid/build/index.html
 github: https://github.com/theSherwood/7_GUIs/tree/master/solid
-modified: 20210521205848515
+modified: 20210521212602656
 tags: 2020 7GUIs Project JavaScript Solid UI
 title: 7GUIs / Solid
 type: text/vnd.tiddlywiki
@@ -25,9 +25,14 @@ Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Solid]].
 
 One of my [[7GUIs Implementations]].
 
+[[Solid]] and [[Sinuous]] are very similar. So I was able to use the same patterns I had used in [[7GUIs / Sinuous]] for this implementation. The differences between the two implementations stem mostly from the fact that [[JSX]] is the most natural way to use [[Solid]] and that [[Solid]] has a much more full-featured [[State Management]] system (though, like [[Sinuous]], it uses the [[Observer Pattern]]).
+
 !! [[Smooth Sailing]]
 
-!! [[Pain Points]]
+It was all pretty smooth sailing, really. Most of the logic between my [[Solid]] and [[Sinuous]] implementations could remain the same (semantically). Syntax had to change but the logic was pretty similar.
+
+[[Solid]]'s more robust [[State Management]] solution also meant that I didn't have to monkey around with nested observables as I had to with my [[Sinuous]] implementation of the spreadsheet/cells task. This isn't the biggest thing in the world, but it was very convenient.
 
 !! [[Lessons Learned]]
 
+If I need to reach for a full-featured, robust [[UI]] framework for some application in future, I will definitely look to [[Solid]].
