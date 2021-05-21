@@ -235,6 +235,10 @@ Error message and password prompt
 
 <li>Adam Sherwood</li>
 
+<li>APL</li>
+
+<li>Array Programming</li>
+
 <li>author</li>
 
 <li>Babel</li>
@@ -277,9 +281,9 @@ Error message and password prompt
 
 <li>Functional Programming</li>
 
-<li>github</li>
-
 <li>GitHub</li>
+
+<li>github</li>
 
 <li>Go</li>
 
@@ -297,7 +301,11 @@ Error message and password prompt
 
 <li>Imperative Programming</li>
 
+<li>J</li>
+
 <li>JavaScript</li>
+
+<li>K</li>
 
 <li>Lessons Learned</li>
 
@@ -315,9 +323,9 @@ Error message and password prompt
 
 <li>NodeJS</li>
 
-<li>NPM</li>
-
 <li>npm</li>
+
+<li>NPM</li>
 
 <li>Observer Pattern</li>
 
@@ -383,6 +391,8 @@ Error message and password prompt
 
 <li>Scoped Styles</li>
 
+<li>Single File Components</li>
+
 <li>Sinuous</li>
 
 <li>Sinuous Libraries</li>
@@ -418,6 +428,8 @@ Error message and password prompt
 <li>TODO</li>
 
 <li>Transducer</li>
+
+<li>TypeScript</li>
 
 <li>UI</li>
 
@@ -12089,7 +12101,7 @@ It was all pretty smooth sailing, really. Most of the logic between my [[Solid]]
 If I need to reach for a full-featured, robust [[UI]] framework for some application in future, I will definitely look to [[Solid]].
 </pre>
 </div>
-<div _blurb="Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Svelte]]" author="[[Adam Sherwood]]" created="20210517185204083" demo="https://thesherwood.github.io/7_GUIs/svelte/public/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/svelte" github="https://github.com/theSherwood/7_GUIs/tree/master/svelte" modified="20210521205903420" tags="Svelte 7GUIs UI Project 2020 JavaScript" title="7GUIs / Svelte 3" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div _blurb="Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Svelte]]" author="[[Adam Sherwood]]" created="20210517185204083" demo="https://thesherwood.github.io/7_GUIs/svelte/public/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/svelte" github="https://github.com/theSherwood/7_GUIs/tree/master/svelte" modified="20210521214551342" tags="Svelte 7GUIs UI Project 2020 JavaScript" title="7GUIs / Svelte 3" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! [[Description]]
 
 Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Svelte]].
@@ -12107,12 +12119,25 @@ Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Svelte]].
 
 One of my [[7GUIs Implementations]].
 
+This one makes use of [[Svelte 3|Svelte]]. This was a pretty fun one. [[Svelte]] pays a lot of attention to developer experience, and I must say that it is much appreciated. It also handles state through and [[Observer Pattern]]. So much of the logic could be similar to that of [[7GUIs / Solid]] and [[7GUIs / Sinuous]].
+
 !! [[Smooth Sailing]]
+
+!!! [[Scoped Styles]]
+
+This is just a huge win over lots of other [[UI]] libraries/frameworks. It just comes with [[Svelte]]'s basic setup. You don't even have to think about it. I find this remarkably convenient.
+
+!!! Sparse [[Syntax]]
+
+Because [[Svelte]] makes use of a compiler, it is able to capture a lot of programmer intent with a minimum of characters. It even detects which variables are being used reactively and handles them appropriately. I've been a little bit surprised at what a big difference this sparse syntax made to my mood. I don't have a very rigorous argument as to why this is so much to be preferred, but I definitely preferred it.
+
+[[Rich Harris]] makes a point about the terseness being an approach that reduces bugs, which is the same argument used by the folks who use [[APL]], and the [[J]] and [[K]] languages. I'm not sure I'm totally convinced, but there's something definitely seductive about it. And my hunch is that given a choice between [[React]] with [[TypeScript]] or [[Svelte]] I could be safer and more productive with [[Svelte]].
 
 !! [[Pain Points]]
 
-!! [[Lessons Learned]]
+!!! [[Single File Components]]
 
+Generally, I really like [[Single File Components]]. But there are times when a component has no purpose other than to be used in a particular wrapper component. It would prefer sometimes to put the two components in the same file. The whole issue stems from the fact that [[Svelte]]'s reactive boundaries are at the component level. So sometimes a component must be split out not for reasons of usage but for reasons of performance, which is unfortunate.
 </pre>
 </div>
 <div created="20210512192539019" modified="20210521193243895" tags="7GUIs 2020 UI Syntax" title="7GUIs Implementations" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12133,6 +12158,12 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 </div>
 <div created="20210429231314393" github="https://github.com/theSherwood" modified="20210520142043145" title="Adam Sherwood" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>This is me.</pre>
+</div>
+<div created="20210521214632651" modified="20210521214650986" tags="[[Programming Language]] [[Functional Programming]] [[Array Programming]]" title="APL" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
+<div created="20210521214723721" modified="20210521214725538" tags="[[Programming Paradigm]]" title="Array Programming" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
 </div>
 <div created="20210429231003247" modified="20210520142043151" title="author" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
@@ -12477,10 +12508,10 @@ show-list-blurb:&quot;true&quot;
 <div created="20210503194545309" modified="20210520141945845" tags="[[Programming Paradigm]]" title="Functional Programming" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210423054231345" modified="20210520142243196" title="github" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210422234924506" modified="20210520141759754" title="GitHub" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210422234924506" modified="20210520141759754" title="GitHub" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210423054231345" modified="20210520142243196" title="github" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div created="20210503205459156" modified="20210520141759776" tags="[[Programming Language]]" title="Go" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12516,7 +12547,13 @@ style=&quot;width:100%; height:500px; border-radius: 4px; overflow:hidden; borde
 <div created="20210503195822982" modified="20210520141945816" tags="[[Programming Paradigm]]" title="Imperative Programming" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
+<div created="20210521214657180" modified="20210521214703183" tags="[[Array Programming]] [[Functional Programming]] [[Programming Language]]" title="J" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
 <div created="20210422235049686" modified="20210520141945808" tags="[[Programming Language]] [[Functional Programming]] [[Imperative Programming]]" title="JavaScript" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
+<div created="20210521214709647" modified="20210521214714831" tags="[[Array Programming]] [[Functional Programming]] [[Programming Language]]" title="K" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div created="20210422235212827" modified="20210520142243262" title="Lessons Learned" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12602,10 +12639,10 @@ There was no smooth sailing.
 <div created="20210422235507979" modified="20210520142019067" tags="JavaScript" title="NodeJS" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210423002450552" modified="20210520142243225" title="NPM" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210423070552874" modified="20210520142147099" title="npm" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210423070552874" modified="20210520142147099" title="npm" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210423002450552" modified="20210520142243225" title="NPM" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div created="20210503161343663" modified="20210520141945964" title="Observer Pattern" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -13085,6 +13122,9 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 <div created="20210423070032576" modified="20210520142019063" title="Scoped Styles" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
+<div created="20210521214755423" modified="20210521214755551" title="Single File Components" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
 <div _blurb="Light. Fast. Reactive. Sinuous is a low-level UI library with a tiny footprint." author="[[Wesley Luyten]]" created="20210424072640051" github="https://github.com/luwes/sinuous" modified="20210520141945786" tags="UI JavaScript Library [[Reactive Programming]] [[Functional Programming]]" title="Sinuous" type="text/vnd.tiddlywiki" website="https://sinuous.dev/" revision="0" bag="default">
 <pre>My favorite [[JavaScript]] front-end framework.
 
@@ -13369,6 +13409,9 @@ I took great pains to comment this library well. I'm sure the code could be clea
 <pre></pre>
 </div>
 <div created="20210503195147958" modified="20210520141945850" tags="[[Functional Programming]] Technique" title="Transducer" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
+<div created="20210521214607343" modified="20210521214623543" tags="[[Programming Language]] JavaScript" title="TypeScript" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div created="20210429233653621" modified="20210520142043129" title="UI" type="text/vnd.tiddlywiki" revision="0" bag="default">

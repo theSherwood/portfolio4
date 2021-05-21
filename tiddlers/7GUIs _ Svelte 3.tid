@@ -3,7 +3,7 @@ author: [[Adam Sherwood]]
 created: 20210517185204083
 demo: https://thesherwood.github.io/7_GUIs/svelte/public/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/svelte
 github: https://github.com/theSherwood/7_GUIs/tree/master/svelte
-modified: 20210521205903420
+modified: 20210521214551342
 tags: Svelte 7GUIs UI Project 2020 JavaScript
 title: 7GUIs / Svelte 3
 type: text/vnd.tiddlywiki
@@ -25,9 +25,22 @@ Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Svelte]].
 
 One of my [[7GUIs Implementations]].
 
+This one makes use of [[Svelte 3|Svelte]]. This was a pretty fun one. [[Svelte]] pays a lot of attention to developer experience, and I must say that it is much appreciated. It also handles state through and [[Observer Pattern]]. So much of the logic could be similar to that of [[7GUIs / Solid]] and [[7GUIs / Sinuous]].
+
 !! [[Smooth Sailing]]
+
+!!! [[Scoped Styles]]
+
+This is just a huge win over lots of other [[UI]] libraries/frameworks. It just comes with [[Svelte]]'s basic setup. You don't even have to think about it. I find this remarkably convenient.
+
+!!! Sparse [[Syntax]]
+
+Because [[Svelte]] makes use of a compiler, it is able to capture a lot of programmer intent with a minimum of characters. It even detects which variables are being used reactively and handles them appropriately. I've been a little bit surprised at what a big difference this sparse syntax made to my mood. I don't have a very rigorous argument as to why this is so much to be preferred, but I definitely preferred it.
+
+[[Rich Harris]] makes a point about the terseness being an approach that reduces bugs, which is the same argument used by the folks who use [[APL]], and the [[J]] and [[K]] languages. I'm not sure I'm totally convinced, but there's something definitely seductive about it. And my hunch is that given a choice between [[React]] with [[TypeScript]] or [[Svelte]] I could be safer and more productive with [[Svelte]].
 
 !! [[Pain Points]]
 
-!! [[Lessons Learned]]
+!!! [[Single File Components]]
 
+Generally, I really like [[Single File Components]]. But there are times when a component has no purpose other than to be used in a particular wrapper component. It would prefer sometimes to put the two components in the same file. The whole issue stems from the fact that [[Svelte]]'s reactive boundaries are at the component level. So sometimes a component must be split out not for reasons of usage but for reasons of performance, which is unfortunate.
