@@ -1,8 +1,15 @@
+author: [[Adam Sherwood]]
 created: 20210512192539019
-modified: 20210521193243895
+github: https://github.com/theSherwood/7_GUIs
+modified: 20210521235436673
 tags: 7GUIs 2020 UI Syntax
 title: 7GUIs Implementations
 type: text/vnd.tiddlywiki
+website: https://thesherwood.github.io/7_GUIs/
+
+Sometime in [[2020]] I discovered [[7GUIs: A GUI Programming Benchmark]]. It's a set of tasks and an analytical framework for evaluating the relative power of various GUI frameworks. I realized that I could use the tasks as a way of learning new libraries, frameworks, and even languages.
+
+The following are some implementations of the [[7GUIs]] that I have undertaken:
 
 |[[7GUIs / Svelte 3]] | {{7GUIs / Svelte 3!!_blurb}} |
 |[[7GUIs / Sinuous]] | {{7GUIs / Sinuous!!_blurb}} |
