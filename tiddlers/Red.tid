@@ -1,8 +1,10 @@
+author: [[Nenad Rakocevic]]
 created: 20210503175908049
 github: https://github.com/red/red
-modified: 20210520141759802
+modified: 20210521220456217
 tags: [[Programming Language]] [[Functional Programming]] [[Imperative Programming]] [[Reactive Programming]]
 title: Red
 type: text/vnd.tiddlywiki
+website: https://www.red-lang.org/
 
-The reincarnation of the [[Rebol]] programming language.
+A reincarnation of the [[Rebol]] programming language.
