@@ -1,13 +1,13 @@
 created: 20210512192539019
-modified: 20210520141620181
+modified: 20210521193243895
 tags: 7GUIs 2020 UI Syntax
 title: 7GUIs Implementations
 type: text/vnd.tiddlywiki
 
-|[[7GUIs / Svelte 3]] |
-|[[7GUIs / Sinuous]] |
-|[[7GUIs / Sinuous with Sinuous-Style]] |
-|[[7GUIs / Sinuous with Webscript]] |
-|[[7GUIs / Solid]] |
-|[[7GUIs / React]] |
-|[[7GUIs / ClojureScript with Reagent]] |
+|[[7GUIs / Svelte 3]] | {{7GUIs / Svelte 3!!_blurb}} |
+|[[7GUIs / Sinuous]] | {{7GUIs / Sinuous!!_blurb}} |
+|[[7GUIs / Sinuous with Sinuous-Style]] | {{7GUIs / Sinuous with Sinuous-Style!!_blurb}} |
+|[[7GUIs / Sinuous with Webscript]] | {{7GUIs / Sinuous with Webscript!!_blurb}} |
+|[[7GUIs / Solid]] | {{7GUIs / Solid!!_blurb}} |
+|[[7GUIs / React]] | {{7GUIs / React!!_blurb}} |
+|[[7GUIs / ClojureScript with Reagent]] | {{7GUIs / ClojureScript with Reagent!!_blurb}} |

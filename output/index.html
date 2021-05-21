@@ -11737,7 +11737,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="[[Adam Sherwood]] [[7GUIs / Sinuous]] $:/core/ui/SideBar/Open htm" title="$:/StoryList" revision="1" bag="default">
+<div list="[[Adam Sherwood]] [[7GUIs Implementations]] [[7GUIs / Sinuous with Sinuous-Style]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Field Value Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin Spacer [[View Tag Backlinks]] [[View Backlinks]] [[View Field Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210520213650914" title="$:/tags/ViewTemplate" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11982,8 +11982,10 @@ In the spreadsheet/cells task, I ended up using some nested observables. This wa
 Attempting to abstract over the DOM with something that treats the render as a pure function may not, in fact, make code simpler in the way [[React]] claims. The DOM is inherently stateful and trying to avoid dealing with that seems to lead to some impedence mismatches that can be avoided with a library like [[Sinuous]] that treats the DOM like what it is while providing means to handle stateful updates in a convenient way.
 </pre>
 </div>
-<div author="[[Adam Sherwood]]" created="20210517185535051" demo="https://thesherwood.github.io/7_GUIs/sinuous-with-sinuous-style/dist/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/sinuous-with-sinuous-style" github="https://github.com/theSherwood/7_GUIs/tree/master/sinuous-with-sinuous-style" modified="20210520141620167" tags="Sinuous 7GUIs UI Project 2020 JavaScript [[Scoped Styles]]" title="7GUIs / Sinuous with Sinuous-Style" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div _blurb="Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Sinuous]] and [[sinuous-style]]" author="[[Adam Sherwood]]" created="20210517185535051" demo="https://thesherwood.github.io/7_GUIs/sinuous-with-sinuous-style/dist/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/sinuous-with-sinuous-style" github="https://github.com/theSherwood/7_GUIs/tree/master/sinuous-with-sinuous-style" modified="20210521194427128" tags="Sinuous 7GUIs UI Project 2020 JavaScript [[Scoped Styles]]" title="7GUIs / Sinuous with Sinuous-Style" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! [[Description]]
+
+Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Sinuous]] and [[sinuous-style]].
 
 !! [[Demo]]
 
@@ -11999,11 +12001,19 @@ Attempting to abstract over the DOM with something that treats the render as a p
 
 One of my [[7GUIs Implementations]].
 
+I'll focus on how it was using [[sinuous-style]] as I've already written about the experience of using [[Sinuous]] [[here|7GUIs / Sinuous]].
+
 !! Smooth Sailing
+
+Fortunately, [[sinuous-style]] seems to work mostly as expected. [[Scoped Styles]] in [[Sinuous]]. Hooray!
 
 !! [[Pain Points]]
 
+[[sinuous-style]] makes some changes to the way the `html` tagged template gets called that can be somewhat difficult to remember and read. What is more, that causes some [[htm]]-specific tooling to fail because it disrupts the series of tokens that such tooling is looking for. So you get even less editor support than before, which is already a problem with [[htm]]-like syntax.
+
 !! [[Lessons Learned]]
+
+I probably won't be using [[sinuous-style]] again, to be honest, even though I wrote it.. The benefit is just too minimal when compared to the cost of readability.
 
 </pre>
 </div>
@@ -12080,14 +12090,14 @@ One of my [[7GUIs Implementations]].
 
 </pre>
 </div>
-<div created="20210512192539019" modified="20210520141620181" tags="7GUIs 2020 UI Syntax" title="7GUIs Implementations" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>|[[7GUIs / Svelte 3]] |
-|[[7GUIs / Sinuous]] |
-|[[7GUIs / Sinuous with Sinuous-Style]] |
-|[[7GUIs / Sinuous with Webscript]] |
-|[[7GUIs / Solid]] |
-|[[7GUIs / React]] |
-|[[7GUIs / ClojureScript with Reagent]] |</pre>
+<div created="20210512192539019" modified="20210521193243895" tags="7GUIs 2020 UI Syntax" title="7GUIs Implementations" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>|[[7GUIs / Svelte 3]] | {{7GUIs / Svelte 3!!_blurb}} |
+|[[7GUIs / Sinuous]] | {{7GUIs / Sinuous!!_blurb}} |
+|[[7GUIs / Sinuous with Sinuous-Style]] | {{7GUIs / Sinuous with Sinuous-Style!!_blurb}} |
+|[[7GUIs / Sinuous with Webscript]] | {{7GUIs / Sinuous with Webscript!!_blurb}} |
+|[[7GUIs / Solid]] | {{7GUIs / Solid!!_blurb}} |
+|[[7GUIs / React]] | {{7GUIs / React!!_blurb}} |
+|[[7GUIs / ClojureScript with Reagent]] | {{7GUIs / ClojureScript with Reagent!!_blurb}} |</pre>
 </div>
 <div author="[[Eugen Kiss]]" created="20210512191506437" github="https://github.com/eugenkiss/7guis" modified="20210520141620196" tags="7GUIs" title="7GUIs: A GUI Programming Benchmark" type="text/vnd.tiddlywiki" website="https://eugenkiss.github.io/7guis/" revision="0" bag="default">
 <pre>[[Description]] from the [[website|https://eugenkiss.github.io/7guis/]]:
