@@ -403,6 +403,8 @@ Error message and password prompt
 
 <li>Spacer</li>
 
+<li>State Management</li>
+
 <li>styled-jsx</li>
 
 <li>Svelte</li>
@@ -11743,7 +11745,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="[[Adam Sherwood]] [[Filter List]] [[7GUIs Implementations]] [[7GUIs / ClojureScript with Reagent]] [[Pain Points]] sinuous-style Babel" title="$:/StoryList" revision="1" bag="default">
+<div list="[[Adam Sherwood]] Project [[7GUIs / Solid]] [[7GUIs Implementations]] [[7GUIs / Svelte 3]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Field Value Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin Spacer [[View Tag Backlinks]] [[View Backlinks]] [[View Field Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210520213650914" title="$:/tags/ViewTemplate" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12056,7 +12058,7 @@ I'll focus on how it was using [[Webscript]] as I've already written about the e
 
 </pre>
 </div>
-<div _blurb="Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Solid]]" author="[[Adam Sherwood]]" created="20210517185736545" demo="https://thesherwood.github.io/7_GUIs/solid/build/index.html" github="https://github.com/theSherwood/7_GUIs/tree/master/solid" modified="20210521205848515" tags="2020 7GUIs Project JavaScript Solid UI" title="7GUIs / Solid" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div _blurb="Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Solid]]" author="[[Adam Sherwood]]" created="20210517185736545" demo="https://thesherwood.github.io/7_GUIs/solid/build/index.html" github="https://github.com/theSherwood/7_GUIs/tree/master/solid" modified="20210521212602656" tags="2020 7GUIs Project JavaScript Solid UI" title="7GUIs / Solid" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! [[Description]]
 
 Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Solid]].
@@ -12074,12 +12076,17 @@ Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Solid]].
 
 One of my [[7GUIs Implementations]].
 
+[[Solid]] and [[Sinuous]] are very similar. So I was able to use the same patterns I had used in [[7GUIs / Sinuous]] for this implementation. The differences between the two implementations stem mostly from the fact that [[JSX]] is the most natural way to use [[Solid]] and that [[Solid]] has a much more full-featured [[State Management]] system (though, like [[Sinuous]], it uses the [[Observer Pattern]]).
+
 !! [[Smooth Sailing]]
 
-!! [[Pain Points]]
+It was all pretty smooth sailing, really. Most of the logic between my [[Solid]] and [[Sinuous]] implementations could remain the same (semantically). Syntax had to change but the logic was pretty similar.
+
+[[Solid]]'s more robust [[State Management]] solution also meant that I didn't have to monkey around with nested observables as I had to with my [[Sinuous]] implementation of the spreadsheet/cells task. This isn't the biggest thing in the world, but it was very convenient.
 
 !! [[Lessons Learned]]
 
+If I need to reach for a full-featured, robust [[UI]] framework for some application in future, I will definitely look to [[Solid]].
 </pre>
 </div>
 <div _blurb="Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Svelte]]" author="[[Adam Sherwood]]" created="20210517185204083" demo="https://thesherwood.github.io/7_GUIs/svelte/public/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/svelte" github="https://github.com/theSherwood/7_GUIs/tree/master/svelte" modified="20210521205903420" tags="Svelte 7GUIs UI Project 2020 JavaScript" title="7GUIs / Svelte 3" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12998,7 +13005,7 @@ There are actually two parts to this utility. `watch.red` is a generic file watc
 
 At the time, [[Red]] didn't have any ability to register these kinds of callbacks with the operating system. So instead, these utilities rely on a daemon that polls the files in the relevant directory for the timestamp of their last change and checks it against a hash-table of recorded timestamps. Not a tremendous problem, but slightly annoying.</pre>
 </div>
-<div created="20210422235231955" modified="20210520142243252" title="Redux" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210422235231955" modified="20210521212023378" tags="[[State Management]] JavaScript" title="Redux" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div created="20210422235056372" modified="20210520142243288" title="regex" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -13007,7 +13014,7 @@ At the time, [[Red]] didn't have any ability to register these kinds of callback
 <div created="20210423001516654" modified="20210520142243215" title="Regex101" type="text/vnd.tiddlywiki" website="https://regex101.com/" revision="0" bag="default">
 <pre></pre>
 </div>
-<div _blurb="RegexXP is an educational app for [[JavaScript]] developers trying to improve their regular expression skills. The app allows users to create challenges and solve the challenges created by other users. It also contains a brief tutorial, covering the principal features of [[regex]] in [[JavaScript]]." author="[[Adam Sherwood]]" created="20210422230856028" github="https://github.com/theSherwood/RegexXP" modified="20210521210026293" tags="Project 2019 React [[Web App]] JavaScript" title="RegexXP" type="text/vnd.tiddlywiki" website="https://www.regexxp.online/" revision="0" bag="default">
+<div _blurb="RegexXP is an educational app for [[JavaScript]] developers trying to improve their regular expression skills. The app allows users to create challenges and solve the challenges created by other users. It also contains a brief tutorial, covering the principal features of [[regex]] in [[JavaScript]]." author="[[Adam Sherwood]]" created="20210422230856028" github="https://github.com/theSherwood/RegexXP" modified="20210521212049179" tags="Project 2019 React [[Web App]] JavaScript" title="RegexXP" type="text/vnd.tiddlywiki" website="https://www.regexxp.online/" revision="0" bag="default">
 <pre>!! [[Description]]
 
 RegexXP is an educational app for [[JavaScript]] developers trying to improve their regular expression skills. The app allows users to create challenges and solve the challenges created by other users. It also contains a brief tutorial, covering the principal features of [[regex]] in [[JavaScript]].
@@ -13015,7 +13022,7 @@ RegexXP is an educational app for [[JavaScript]] developers trying to improve th
 !! [[Tech Stack]]
 
 * [[React]] - [[UI]] framework
-* [[Redux]] - global state management
+* [[Redux]] - global [[State Management]]
 * [[Bootstrap]] - [[CSS]] framework
 * [[Express]] - RESTful api
 * [[NodeJS]] - server runtime
@@ -13339,6 +13346,9 @@ I took great pains to comment this library well. I'm sure the code could be clea
 </div>
 <div created="20210520213534336" modified="20210520213610901" tags="$:/tags/ViewTemplate" title="Spacer" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;div style=&quot;flex-grow: 1;&quot; /&gt;</pre>
+</div>
+<div created="20210521211928195" modified="20210521211928310" title="State Management" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
 </div>
 <div created="20210430002116832" github="https://github.com/vercel/styled-jsx" modified="20210520141759741" tags="UI CSS [[Scoped Styles]] Library" title="styled-jsx" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>The default styling solution for [[NextJS]]. Provides [[Scoped Styles]] for [[React]].</pre>
