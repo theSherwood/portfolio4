@@ -1,13 +1,16 @@
+_blurb: Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Solid]]
 author: [[Adam Sherwood]]
 created: 20210517185736545
 demo: https://thesherwood.github.io/7_GUIs/solid/build/index.html
 github: https://github.com/theSherwood/7_GUIs/tree/master/solid
-modified: 20210520141620141
+modified: 20210521203039531
 tags: 2020 7GUIs Project JavaScript Solid UI
 title: 7GUIs / Solid
 type: text/vnd.tiddlywiki
 
 !! [[Description]]
+
+Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Solid]].
 
 !! [[Demo]]
 

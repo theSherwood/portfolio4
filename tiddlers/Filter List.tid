@@ -1,10 +1,10 @@
 created: 20210518201758611
-modified: 20210520211044696
+modified: 20210521202410529
 tags: $:/tags/Macro
 title: Filter List
 type: text/vnd.tiddlywiki
 
-\define _truncate-regex() (^.{0,100})(.*)
+\define _truncate-regex() (^(.|\n){0,100})(.|\n)*
 
 \define _list-item(
 open
@@ -57,7 +57,7 @@ show-blurb
         {{!!_blurb}}
       </$reveal>
       <$reveal type=match default={{!!_blurb}} text="">
-        <$list filter="[all[current]get[text]search-replace:gi:regexp<_truncate-regex>,[$1]]" variable="truncated-text">
+        <$list filter="[all[current]get[text]search-replace::regexp<_truncate-regex>,[$1]]" variable="truncated-text">
           <<truncated-text>>
             <$list filter="[all[current]get[text]length[]]" variable="text-length">
               <$reveal type=gt default=<<text-length>> text=100 >

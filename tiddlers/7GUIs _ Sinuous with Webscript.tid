@@ -1,13 +1,16 @@
+_blurb: Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Sinuous]] and [[Webscript]]
 author: [[Adam Sherwood]]
 created: 20210517185619672
 demo: https://thesherwood.github.io/7_GUIs/sinuous-webscript/dist/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/sinuous-webscript
 github: https://github.com/theSherwood/7_GUIs/tree/master/sinuous-webscript
-modified: 20210520141620163
+modified: 20210521202936574
 tags: 2020 Project JavaScript Sinuous UI 7GUIs Webscript
 title: 7GUIs / Sinuous with Webscript
 type: text/vnd.tiddlywiki
 
 !! [[Description]]
+
+Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Sinuous]] and [[Webscript]].
 
 !! [[Demo]]
 

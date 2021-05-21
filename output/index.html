@@ -11737,7 +11737,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="[[Adam Sherwood]] [[7GUIs Implementations]] [[7GUIs / Sinuous with Sinuous-Style]]" title="$:/StoryList" revision="1" bag="default">
+<div list="[[Adam Sherwood]] [[Filter List]] [[7GUIs Implementations]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Field Value Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin Spacer [[View Tag Backlinks]] [[View Backlinks]] [[View Field Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210520213650914" title="$:/tags/ViewTemplate" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11858,8 +11858,10 @@ very-muted-foreground: #888888</pre>
 <div created="20210425205604293" modified="20210520142147093" title="2020" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div author="[[Adam Sherwood]]" created="20210517185828779" demo="https://thesherwood.github.io/7_GUIs/clojurescript-reagent/resources/public/index.html" github="https://github.com/theSherwood/7_GUIs/tree/master/clojurescript-reagent" modified="20210520141620125" tags="2020 7GUIs ClojureScript UI Reagent Project" title="7GUIs / ClojureScript with Reagent" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div _blurb="Complete [[7GUIs: A GUI Programming Benchmark]] implementation in [[ClojureScript]] and using [[Reagent]]" author="[[Adam Sherwood]]" created="20210517185828779" demo="https://thesherwood.github.io/7_GUIs/clojurescript-reagent/resources/public/index.html" github="https://github.com/theSherwood/7_GUIs/tree/master/clojurescript-reagent" modified="20210521202830898" tags="2020 7GUIs ClojureScript UI Reagent Project" title="7GUIs / ClojureScript with Reagent" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! [[Description]]
+
+Complete [[7GUIs: A GUI Programming Benchmark]] implementation in [[ClojureScript]] and using [[Reagent]].
 
 !! [[Demo]]
 
@@ -12017,8 +12019,10 @@ I probably won't be using [[sinuous-style]] again, to be honest, even though I w
 
 </pre>
 </div>
-<div author="[[Adam Sherwood]]" created="20210517185619672" demo="https://thesherwood.github.io/7_GUIs/sinuous-webscript/dist/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/sinuous-webscript" github="https://github.com/theSherwood/7_GUIs/tree/master/sinuous-webscript" modified="20210520141620163" tags="2020 Project JavaScript Sinuous UI 7GUIs Webscript" title="7GUIs / Sinuous with Webscript" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div _blurb="Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Sinuous]] and [[Webscript]]" author="[[Adam Sherwood]]" created="20210517185619672" demo="https://thesherwood.github.io/7_GUIs/sinuous-webscript/dist/index.html https://codesandbox.io/s/github/theSherwood/7_GUIs/tree/master/sinuous-webscript" github="https://github.com/theSherwood/7_GUIs/tree/master/sinuous-webscript" modified="20210521202936574" tags="2020 Project JavaScript Sinuous UI 7GUIs Webscript" title="7GUIs / Sinuous with Webscript" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! [[Description]]
+
+Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Sinuous]] and [[Webscript]].
 
 !! [[Demo]]
 
@@ -12042,8 +12046,10 @@ One of my [[7GUIs Implementations]].
 
 </pre>
 </div>
-<div author="[[Adam Sherwood]]" created="20210517185736545" demo="https://thesherwood.github.io/7_GUIs/solid/build/index.html" github="https://github.com/theSherwood/7_GUIs/tree/master/solid" modified="20210520141620141" tags="2020 7GUIs Project JavaScript Solid UI" title="7GUIs / Solid" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div _blurb="Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Solid]]" author="[[Adam Sherwood]]" created="20210517185736545" demo="https://thesherwood.github.io/7_GUIs/solid/build/index.html" github="https://github.com/theSherwood/7_GUIs/tree/master/solid" modified="20210521203039531" tags="2020 7GUIs Project JavaScript Solid UI" title="7GUIs / Solid" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! [[Description]]
+
+Complete [[7GUIs: A GUI Programming Benchmark]] implementation using [[Solid]].
 
 !! [[Demo]]
 
@@ -12185,8 +12191,8 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 &lt;$link to=&quot;&quot;&quot;$text$&quot;&quot;&quot;&gt;&lt;code&gt;$text$&lt;/code&gt;&lt;/$link&gt;
 \end</pre>
 </div>
-<div created="20210518201758611" modified="20210520211044696" tags="$:/tags/Macro" title="Filter List" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>\define _truncate-regex() (^.{0,100})(.*)
+<div created="20210518201758611" modified="20210521202410529" tags="$:/tags/Macro" title="Filter List" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>\define _truncate-regex() (^(.|\n){0,100})(.|\n)*
 
 \define _list-item(
 open
@@ -12239,7 +12245,7 @@ show-blurb
         {{!!_blurb}}
       &lt;/$reveal&gt;
       &lt;$reveal type=match default={{!!_blurb}} text=&quot;&quot;&gt;
-        &lt;$list filter=&quot;[all[current]get[text]search-replace:gi:regexp&lt;_truncate-regex&gt;,[$1]]&quot; variable=&quot;truncated-text&quot;&gt;
+        &lt;$list filter=&quot;[all[current]get[text]search-replace::regexp&lt;_truncate-regex&gt;,[$1]]&quot; variable=&quot;truncated-text&quot;&gt;
           &lt;&lt;truncated-text&gt;&gt;
             &lt;$list filter=&quot;[all[current]get[text]length[]]&quot; variable=&quot;text-length&quot;&gt;
               &lt;$reveal type=gt default=&lt;&lt;text-length&gt;&gt; text=100 &gt;
@@ -12763,7 +12769,7 @@ Consider a freeform section where developers can play with configuring [[ReconJS
 <div created="20210503175908049" github="https://github.com/red/red" modified="20210520141759802" tags="[[Programming Language]] [[Functional Programming]] [[Imperative Programming]] [[Reactive Programming]]" title="Red" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>The reincarnation of the [[Rebol]] programming language.</pre>
 </div>
-<div created="20210503175835090" modified="20210520141620185" tags="Red 2020" title="Red Utilities" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div author="[[Adam Sherwood]]" created="20210503175835090" modified="20210521195103345" tags="Red 2020" title="Red Utilities" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>In 2020, I did some contract work for [[Redlake Technologies]], helping them get some [[Hugo]] sites that they had laying around fixed up and ready to go live. [[Redlake|Redlake Technologies]] is the US arm of the team/organization behind the development of the [[Red]] programming language. During this time, I dabbled a little bit with [[Red]], including writing some regression tests for the compiler and interpreter.
 
 I put together a small handful of utilities in [[Red]]:
@@ -13058,7 +13064,7 @@ The highlightable textarea component is just a bit too tightly coupled. I need t
 
 In contrast to [[React]], [[Sinuous]] is much faster, simpler, and smaller.</pre>
 </div>
-<div created="20210503174523360" modified="20210520141620190" tags="Sinuous 2020 JavaScript UI" title="Sinuous Libraries" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div author="[[Adam Sherwood]]" created="20210503174523360" modified="20210521195122066" tags="Sinuous 2020 JavaScript UI" title="Sinuous Libraries" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>I have made 4 libraries that extend or otherwise augment the functionality of the [[Sinuous]] [[UI]] framework.
 
 |[[sinuous-context]] | {{sinuous-context!!_blurb}} |
