@@ -291,9 +291,9 @@ Error message and password prompt
 
 <li>Functional Programming</li>
 
-<li>github</li>
-
 <li>GitHub</li>
+
+<li>github</li>
 
 <li>Go</li>
 
@@ -337,9 +337,9 @@ Error message and password prompt
 
 <li>NodeJS</li>
 
-<li>npm</li>
-
 <li>NPM</li>
+
+<li>npm</li>
 
 <li>Observer Pattern</li>
 
@@ -432,6 +432,8 @@ Error message and password prompt
 <li>Solid</li>
 
 <li>Spacer</li>
+
+<li>Standoff Property Editor</li>
 
 <li>State Management</li>
 
@@ -11779,7 +11781,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="[[Adam Sherwood]] Project [[7GUIs Implementations]]" title="$:/StoryList" revision="1" bag="default">
+<div list="[[Adam Sherwood]] [[Standoff Property Editor]] [[Iframe Macros]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Tag Backlinks]] [[View Field Backlinks]] [[View Field Value Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin Spacer [[View Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210521220848437" title="$:/tags/ViewTemplate" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12564,10 +12566,10 @@ show-list-blurb:&quot;true&quot;
 <div created="20210503194545309" modified="20210520141945845" tags="[[Programming Paradigm]]" title="Functional Programming" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210423054231345" modified="20210520142243196" title="github" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210422234924506" modified="20210520141759754" title="GitHub" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210422234924506" modified="20210520141759754" title="GitHub" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210423054231345" modified="20210520142243196" title="github" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div created="20210503205459156" modified="20210520141759776" tags="[[Programming Language]]" title="Go" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12588,16 +12590,22 @@ show-list-blurb:&quot;true&quot;
 <div created="20210429233709796" github="https://github.com/hyperhype/hyperscript" modified="20210520142043123" title="HyperScript" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210502021439114" modified="20210521204129976" tags="$:/tags/Macro" title="Iframe Macros" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210502021439114" modified="20210527192325141" tags="$:/tags/Macro" title="Iframe Macros" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define codesandbox(src)
-&lt;iframe src=&quot;&quot;&quot;$src$&quot;&quot;&quot;
-style=&quot;width:100%; height:500px; border-radius: 4px; overflow:hidden; border: 1px solid gray;&quot; sandbox=&quot;allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts&quot; /&gt;
+&lt;iframe
+src=&quot;&quot;&quot;$src$&quot;&quot;&quot;
+style=&quot;width:100%; height:500px; border-radius: 4px; overflow:hidden; border: 1px solid gray;&quot; sandbox=&quot;allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts&quot; 
+loading=&quot;lazy&quot;
+/&gt;
 //This demo is an interactive [[CodeSandbox]]. Feel free to experiment by editing the code.//
 \end
 
 \define iframe(src)
-&lt;iframe src=&quot;&quot;&quot;$src$&quot;&quot;&quot;
-style=&quot;width:100%; height:500px; border-radius: 4px; overflow:hidden; border: 1px solid gray;&quot; /&gt;
+&lt;iframe
+src=&quot;&quot;&quot;$src$&quot;&quot;&quot;
+style=&quot;width:100%; height:500px; border-radius: 4px; overflow:hidden; border: 1px solid gray;&quot; 
+loading=&quot;lazy&quot;
+/&gt;
 \end</pre>
 </div>
 <div created="20210503195822982" modified="20210520141945816" tags="[[Programming Paradigm]]" title="Imperative Programming" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12701,10 +12709,10 @@ There was no smooth sailing.
 <div created="20210422235507979" modified="20210520142019067" tags="JavaScript" title="NodeJS" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210423070552874" modified="20210520142147099" title="npm" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210423002450552" modified="20210520142243225" title="NPM" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210423002450552" modified="20210520142243225" title="NPM" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210423070552874" modified="20210520142147099" title="npm" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div created="20210503161343663" modified="20210520141945964" title="Observer Pattern" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -13457,6 +13465,58 @@ I took great pains to comment this library well. I'm sure the code could be clea
 </div>
 <div created="20210520213534336" modified="20210520213610901" tags="$:/tags/ViewTemplate" title="Spacer" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;div style=&quot;flex-grow: 1;&quot; /&gt;</pre>
+</div>
+<div author="[[Adam Sherwood]]" created="20210527190408399" modified="20210527192720887" tags="2020 [[Web App]] UI Project [[Standoff Properties]]" title="Standoff Property Editor" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;img 
+src=&quot;./1_basics.gif&quot;
+style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
+loading=&quot;lazy&quot;
+/&gt;
+&lt;img 
+src=&quot;./2_spaces.gif&quot;
+style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
+loading=&quot;lazy&quot;
+/&gt;
+&lt;img 
+src=&quot;./3_navigation.gif&quot;
+style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
+loading=&quot;lazy&quot;
+/&gt;
+&lt;img 
+src=&quot;./4_navigation_cont.gif&quot;
+style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
+loading=&quot;lazy&quot;
+/&gt;
+&lt;img 
+src=&quot;./5_annotation_editing.gif&quot;
+style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
+loading=&quot;lazy&quot;
+/&gt;
+&lt;img 
+src=&quot;./6_code_basics.gif&quot;
+style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
+loading=&quot;lazy&quot;
+/&gt;
+&lt;img 
+src=&quot;./7_code_$.gif&quot;
+style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
+loading=&quot;lazy&quot;
+/&gt;
+&lt;img 
+src=&quot;./8_code_html.gif&quot;
+style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
+loading=&quot;lazy&quot;
+/&gt;
+&lt;img 
+src=&quot;./9_code_widgets.gif&quot;
+style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
+loading=&quot;lazy&quot;
+/&gt;
+&lt;img 
+src=&quot;./10_code_modules.gif&quot;
+style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
+loading=&quot;lazy&quot;
+/&gt;</pre>
 </div>
 <div created="20210521211928195" modified="20210521211928310" title="State Management" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
