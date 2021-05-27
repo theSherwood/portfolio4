@@ -1,0 +1,57 @@
+author: [[Adam Sherwood]]
+created: 20210527190408399
+modified: 20210527192720887
+tags: 2020 [[Web App]] UI Project [[Standoff Properties]]
+title: Standoff Property Editor
+type: text/vnd.tiddlywiki
+
+<img 
+src="./1_basics.gif"
+style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
+loading="lazy"
+/>
+<img 
+src="./2_spaces.gif"
+style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
+loading="lazy"
+/>
+<img 
+src="./3_navigation.gif"
+style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
+loading="lazy"
+/>
+<img 
+src="./4_navigation_cont.gif"
+style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
+loading="lazy"
+/>
+<img 
+src="./5_annotation_editing.gif"
+style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
+loading="lazy"
+/>
+<img 
+src="./6_code_basics.gif"
+style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
+loading="lazy"
+/>
+<img 
+src="./7_code_$.gif"
+style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
+loading="lazy"
+/>
+<img 
+src="./8_code_html.gif"
+style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
+loading="lazy"
+/>
+<img 
+src="./9_code_widgets.gif"
+style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
+loading="lazy"
+/>
+<img 
+src="./10_code_modules.gif"
+style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
+loading="lazy"
+/>
