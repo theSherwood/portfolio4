@@ -1,5 +1,5 @@
 created: 20210518201758611
-modified: 20210521202410529
+modified: 20210528195142865
 tags: $:/tags/Macro
 title: Filter List
 type: text/vnd.tiddlywiki
@@ -160,14 +160,14 @@ show-list-blurb:"true"
         </summary>
         <div style="margin-left: 20px;">
           <$list filter="[subfilter<__list__>fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]" variable=field>
-            <$list filter="[subfilter<__list__>get<field>] +[unique[]] +[enlist-input[]is[tiddler]count[]]" variable=count>
+            <$list filter="[subfilter<__list__>get<field>] +[enlist-input[]is[tiddler]] +[unique[]count[]]" variable=count>
               <$reveal default=<<count>> type=nomatch text="0">
                 <details $inner-field-filters-open$>
                   <summary style="outline: none;">
                     Filter by <$macrocall $name="field-link" text=<<field>> />
                   </summary>
                   <div class="filters-container">
-                    <$list filter="[subfilter<__list__>get<field>sort[title]] +[unique[]] +[enlist-input[]is[tiddler]]" variable=title>
+                    <$list filter="[subfilter<__list__>get<field>sort[title]] +[enlist-input[]is[tiddler]] +[unique[]]" variable=title>
                       <$set name="has-field-value" filter="[subfilter<__list__>] :filter[get<field>enlist-input[]match<title>]" >
                         <$macrocall $name="_filter-pill"
                           title=<<title>>
@@ -190,14 +190,14 @@ show-list-blurb:"true"
 <!-- end filter by field -->
 <!-- start individual field filter -->
 <$reveal type=nomatch default=<<__individual-field-filter__>> text="">
-  <$list filter="[subfilter<__list__>get<__individual-field-filter__>] +[unique[]] +[enlist-input[]is[tiddler]count[]]" variable=count>
+  <$list filter="[subfilter<__list__>get<__individual-field-filter__>] +[enlist-input[]is[tiddler]] +[unique[]count[]]" variable=count>
     <$reveal default=<<count>> type=nomatch text="0">
       <details $individual-field-filter-open$>
         <summary style="outline: none;">
           Filter by value of <$macrocall $name="field-link" text=<<__individual-field-filter__>> />
         </summary>
         <div class="filters-container">
-          <$list filter="[subfilter<__list__>get<__individual-field-filter__>sort[title]] +[unique[]] +[enlist-input[]is[tiddler]]" variable=title>
+          <$list filter="[subfilter<__list__>get<__individual-field-filter__>sort[title]] +[enlist-input[]is[tiddler]] +[unique[]]" variable=title>
             <$set name="has-field-value" filter="[subfilter<__list__>] :filter[get<__individual-field-filter__>enlist-input[]match<title>]" >
               <$macrocall $name="_filter-pill"
                 title=<<title>>

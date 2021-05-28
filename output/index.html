@@ -11791,7 +11791,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="[[Adam Sherwood]] [[Standoff Property Editor]] Mentat author" title="$:/StoryList" revision="1" bag="default">
+<div list="[[Adam Sherwood]] [[Standoff Property Editor]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Tag Backlinks]] [[View Field Backlinks]] [[View Field Value Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin Spacer [[View Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210521220848437" title="$:/tags/ViewTemplate" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12318,7 +12318,7 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 &lt;$link to=&quot;&quot;&quot;$text$&quot;&quot;&quot;&gt;&lt;code&gt;$text$&lt;/code&gt;&lt;/$link&gt;
 \end</pre>
 </div>
-<div created="20210518201758611" modified="20210521202410529" tags="$:/tags/Macro" title="Filter List" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210518201758611" modified="20210528195142865" tags="$:/tags/Macro" title="Filter List" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define _truncate-regex() (^(.|\n){0,100})(.|\n)*
 
 \define _list-item(
@@ -12475,14 +12475,14 @@ show-list-blurb:&quot;true&quot;
         &lt;/summary&gt;
         &lt;div style=&quot;margin-left: 20px;&quot;&gt;
           &lt;$list filter=&quot;[subfilter&lt;__list__&gt;fields[]!prefix[_]sort[title]] -[all[shadows]removeprefix[$:/language/Docs/Fields/]]&quot; variable=field&gt;
-            &lt;$list filter=&quot;[subfilter&lt;__list__&gt;get&lt;field&gt;] +[unique[]] +[enlist-input[]is[tiddler]count[]]&quot; variable=count&gt;
+            &lt;$list filter=&quot;[subfilter&lt;__list__&gt;get&lt;field&gt;] +[enlist-input[]is[tiddler]] +[unique[]count[]]&quot; variable=count&gt;
               &lt;$reveal default=&lt;&lt;count&gt;&gt; type=nomatch text=&quot;0&quot;&gt;
                 &lt;details $inner-field-filters-open$&gt;
                   &lt;summary style=&quot;outline: none;&quot;&gt;
                     Filter by &lt;$macrocall $name=&quot;field-link&quot; text=&lt;&lt;field&gt;&gt; /&gt;
                   &lt;/summary&gt;
                   &lt;div class=&quot;filters-container&quot;&gt;
-                    &lt;$list filter=&quot;[subfilter&lt;__list__&gt;get&lt;field&gt;sort[title]] +[unique[]] +[enlist-input[]is[tiddler]]&quot; variable=title&gt;
+                    &lt;$list filter=&quot;[subfilter&lt;__list__&gt;get&lt;field&gt;sort[title]] +[enlist-input[]is[tiddler]] +[unique[]]&quot; variable=title&gt;
                       &lt;$set name=&quot;has-field-value&quot; filter=&quot;[subfilter&lt;__list__&gt;] :filter[get&lt;field&gt;enlist-input[]match&lt;title&gt;]&quot; &gt;
                         &lt;$macrocall $name=&quot;_filter-pill&quot;
                           title=&lt;&lt;title&gt;&gt;
@@ -12505,14 +12505,14 @@ show-list-blurb:&quot;true&quot;
 &lt;!-- end filter by field --&gt;
 &lt;!-- start individual field filter --&gt;
 &lt;$reveal type=nomatch default=&lt;&lt;__individual-field-filter__&gt;&gt; text=&quot;&quot;&gt;
-  &lt;$list filter=&quot;[subfilter&lt;__list__&gt;get&lt;__individual-field-filter__&gt;] +[unique[]] +[enlist-input[]is[tiddler]count[]]&quot; variable=count&gt;
+  &lt;$list filter=&quot;[subfilter&lt;__list__&gt;get&lt;__individual-field-filter__&gt;] +[enlist-input[]is[tiddler]] +[unique[]count[]]&quot; variable=count&gt;
     &lt;$reveal default=&lt;&lt;count&gt;&gt; type=nomatch text=&quot;0&quot;&gt;
       &lt;details $individual-field-filter-open$&gt;
         &lt;summary style=&quot;outline: none;&quot;&gt;
           Filter by value of &lt;$macrocall $name=&quot;field-link&quot; text=&lt;&lt;__individual-field-filter__&gt;&gt; /&gt;
         &lt;/summary&gt;
         &lt;div class=&quot;filters-container&quot;&gt;
-          &lt;$list filter=&quot;[subfilter&lt;__list__&gt;get&lt;__individual-field-filter__&gt;sort[title]] +[unique[]] +[enlist-input[]is[tiddler]]&quot; variable=title&gt;
+          &lt;$list filter=&quot;[subfilter&lt;__list__&gt;get&lt;__individual-field-filter__&gt;sort[title]] +[enlist-input[]is[tiddler]] +[unique[]]&quot; variable=title&gt;
             &lt;$set name=&quot;has-field-value&quot; filter=&quot;[subfilter&lt;__list__&gt;] :filter[get&lt;__individual-field-filter__&gt;enlist-input[]match&lt;title&gt;]&quot; &gt;
               &lt;$macrocall $name=&quot;_filter-pill&quot;
                 title=&lt;&lt;title&gt;&gt;
