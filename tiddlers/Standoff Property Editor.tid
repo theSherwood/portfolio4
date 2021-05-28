@@ -1,11 +1,24 @@
+_blurb: [[Outliner]] built atop [[CodeMirror]] incorporating [[Standoff Properties]] and [[User Programming]]
 author: [[Adam Sherwood]]
 created: 20210527190408399
-modified: 20210528193801145
+modified: 20210528204355950
 tags: 2020 [[Web App]] UI Project [[Standoff Properties]] Editor Outliner [[Tool for Thought]] [[User Programming]]
 title: Standoff Property Editor
 type: text/vnd.tiddlywiki
 
-Some time back I started work on an editor. Some form of [[Tool for Thought]]. It was supposed to be the marriage of [[Codex]] and [[Roam Research]]. Like [[Codex]], it used [[Standoff Properties]] instead of markup for creating links between different blocks of content. Like [[Roam Research]], it used an outline view instead of one large document/text stream.
+!! [[Description]]
+
+[[Outliner]] built atop [[CodeMirror]] incorporating [[Standoff Properties]] and [[User Programming]].
+
+!! [[Tech Stack]]
+
+* [[JavaScript]]
+* [[CodeMirror]] - the base editor
+* [[Sinuous]] - rendering and state management
+
+!! [[Overview]]
+
+Some time back I started work on an editor, some form of [[Tool for Thought]]. It was supposed to be the marriage of [[Codex]] and [[Roam Research]]. Like [[Codex]], it used [[Standoff Properties]] instead of markup for creating links between different blocks of content. Like [[Roam Research]], it used an outline view instead of one large document/text stream.
 
 Some early demos of this fledgling app are what got me a job at [[Roam Research]]. I still believe is something like this vision, though in the course of building this editor and during my time at [[Roam Research]], my vision has changed developed.
 
@@ -13,9 +26,9 @@ As such, I'll be working on that new vision instead of continuing work on this e
 
 The following are some screen recordings of a version of the editor, all gussied up and looking pretty for the camera.
 
-!! The Basic Outliner
+!!! The Basic Outliner
 
-Indent, dedent, collapsing and expanding children, and the like
+Indent, dedent, collapsing and expanding children, and the like.
 
 <img 
 src="./1_basics.gif"
@@ -23,7 +36,7 @@ style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;
 loading="lazy"
 />
 
-!! Spaces
+!!! Spaces
 
 If you are familiar with [[Roam Research]], a space is similar to a page in that links to a space are easy to create with a space's text. Unlike, pages, spaces can be nested (though that is not pictured here).
 
@@ -35,7 +48,7 @@ style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;
 loading="lazy"
 />
 
-!! Basic Navigation
+!!! Basic Navigation
 
 Click to follow a link or use keyboard shortcuts to do it. Also, zoom in and out of blocks.
 
@@ -45,7 +58,7 @@ style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;
 loading="lazy"
 />
 
-!! Navigation, Cont.
+!!! Navigation, Cont.
 
 [[Standoff Properties]] can be used not only to link to a space, but to any block. Notice that "aliasing" is automatic. The link text and the link's target block's text need not be related. This is a great advantage of [[Standoff Properties]] over markup-based links.
 
@@ -57,7 +70,7 @@ style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;
 loading="lazy"
 />
 
-!! Editing [[Standoff Properties]]
+!!! Editing [[Standoff Properties]]
 
 Upon selecting an annotation, that annotation can be stretched or slid left or right or in both directions. Notice again, that the target of the link has not changed even though the annotated text has.
 
@@ -67,7 +80,7 @@ style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;
 loading="lazy"
 />
 
-!! Code Execution
+!!! Code Execution
 
 Code may be one of my principle [[Tools for Thought|Tool for Thought]]. It's the medium where the thinking of a thing is most closely married to the building of the thing. As such, I wanted to include code execution in my editor.
 
@@ -77,7 +90,7 @@ style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;
 loading="lazy"
 />
 
-!! Notebook Style
+!!! Notebook Style
 
 The very beginning of a foray into using the editor as a programming notebook. Use `$` to get the result of the last computation.
 
@@ -87,7 +100,7 @@ style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;
 loading="lazy"
 />
 
-!! Render [[HTML]]
+!!! Render [[HTML]]
 
 Not terribly exciting yet, but it lays the foundation for much more exciting stuff.
 
@@ -97,7 +110,7 @@ style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;
 loading="lazy"
 />
 
-!! Widgets
+!!! Widgets
 
 You can even write and execute widgets! The editor exposes [[Sinuous]] and [[Webscript]] on the window object for the convenience of the end user.
 
@@ -107,7 +120,7 @@ style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;
 loading="lazy"
 />
 
-!! Modules
+!!! Modules
 
 This is only the very first of my module system: import and export from individual blocks. But I would also want to support importing and exporting from spaces (as in namespaces) and possibly even importing from queries, though that's considerably more speculative.
 
@@ -117,4 +130,26 @@ style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;
 loading="lazy"
 />
 
+!!! What's Next?
+
 Obviously, a lot more could be done with all this. I didn't get nearly as far as I might have liked, but it was a fun and enlightening prototype and I will be taking a lot of these ideas forward to something even better. Stay tuned!
+
+!! [[Smooth Sailing]]
+
+[[CodeMirror]] is well-documented. Huge kudos to the author, [[Marijn Haverbeke]]. He was also extremely helpful in extending [[CodeMirror]] to support overlapping text annotations.
+
+!! [[Pain Points]]
+
+!!! Paradigms
+
+[[CodeMirror]] doesn't necessarily play very nicely with a declarative approach. In order to be efficient and fast, it must handle its state, itself, and must engage in plenty of direct DOM manipulation. Not all of this manipulation is completely abstracted away. So my wrapper around [[CodeMirror]] had to deal with that [[Imperative Programming]] paradigm pretty directly.
+
+Fortunately, [[Sinuous]], which I used for some rendering and for state management, is pretty good at this. But I wasn't entirely happy with the abstractions that I was able to create. I have yet to find or devise a satisfactory way of paving over the DOM.
+
+!!! History Module
+
+I never got the history (undo/redo) logic quite right. It only sort of works, which sucks. But that is, at least, consistent with my experience of other [[outliners|Outliner]]! ;)
+
+!! [[Lessons Learned]]
+
+As soon as is practical, I want to get away from rendering through the DOM and find a nice [[WebGL]] library to settle down with. The DOM only seems to add complexity. There are some candidates I'm looking at ([[Makepad]], [[Egui]], [[Fidget]], even [[Flutter]]), but nothing is quite there yet. [[Cross-Platform]] solutions are massively to be preferred.
