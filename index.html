@@ -13540,8 +13540,22 @@ I took great pains to comment this library well. I'm sure the code could be clea
 <div created="20210528190445377" modified="20210528190445563" title="Standoff Properties" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div _blurb="[[Outliner]] built atop [[CodeMirror]] incorporating [[Standoff Properties]] and [[User Programming]]" author="[[Adam Sherwood]]" created="20210527190408399" modified="20210528204355950" tags="2020 [[Web App]] UI Project [[Standoff Properties]] Editor Outliner [[Tool for Thought]] [[User Programming]]" title="Standoff Property Editor" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>!! [[Description]]
+<div _blurb="[[Outliner]] built atop [[CodeMirror]] incorporating [[Standoff Properties]] and [[User Programming]]" author="[[Adam Sherwood]]" created="20210527190408399" modified="20210528212540427" tags="2020 [[Web App]] UI Project [[Standoff Properties]] Editor Outliner [[Tool for Thought]] [[User Programming]]" title="Standoff Property Editor" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>\define img(src)
+&lt;a
+target=&quot;_blank&quot;
+href=&lt;&lt;__src__&gt;&gt;
+style=&quot;margin: auto; display: block;&quot;
+&gt;
+&lt;img 
+src=&lt;&lt;__src__&gt;&gt;
+style=&quot;border: solid 1px gray; border-radius: 4px; display: block; margin: auto;&quot;
+loading=&quot;lazy&quot;
+/&gt;
+&lt;/a&gt;
+\end
+
+!! [[Description]]
 
 [[Outliner]] built atop [[CodeMirror]] incorporating [[Standoff Properties]] and [[User Programming]].
 
@@ -13565,11 +13579,7 @@ The following are some screen recordings of a version of the editor, all gussied
 
 Indent, dedent, collapsing and expanding children, and the like.
 
-&lt;img 
-src=&quot;./1_basics.gif&quot;
-style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
-loading=&quot;lazy&quot;
-/&gt;
+&lt;&lt;img &quot;./1_basics.gif&quot; &gt;&gt;
 
 !!! Spaces
 
@@ -13577,21 +13587,13 @@ If you are familiar with [[Roam Research]], a space is similar to a page in that
 
 [[Standoff Properties]] can be created from selected text.
 
-&lt;img 
-src=&quot;./2_spaces.gif&quot;
-style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
-loading=&quot;lazy&quot;
-/&gt;
+&lt;&lt;img &quot;./2_spaces.gif&quot; &gt;&gt;
 
 !!! Basic Navigation
 
 Click to follow a link or use keyboard shortcuts to do it. Also, zoom in and out of blocks.
 
-&lt;img 
-src=&quot;./3_navigation.gif&quot;
-style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
-loading=&quot;lazy&quot;
-/&gt;
+&lt;&lt;img &quot;./3_navigation.gif&quot; &gt;&gt;
 
 !!! Navigation, Cont.
 
@@ -13599,71 +13601,43 @@ loading=&quot;lazy&quot;
 
 Also, get previews of a link's target block on hover!
 
-&lt;img 
-src=&quot;./4_navigation_cont.gif&quot;
-style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
-loading=&quot;lazy&quot;
-/&gt;
+&lt;&lt;img &quot;./4_navigation_cont.gif&quot; &gt;&gt;
 
 !!! Editing [[Standoff Properties]]
 
 Upon selecting an annotation, that annotation can be stretched or slid left or right or in both directions. Notice again, that the target of the link has not changed even though the annotated text has.
 
-&lt;img 
-src=&quot;./5_annotation_editing.gif&quot;
-style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
-loading=&quot;lazy&quot;
-/&gt;
+&lt;&lt;img &quot;./5_annotation_editing.gif&quot; &gt;&gt;
 
 !!! Code Execution
 
 Code may be one of my principle [[Tools for Thought|Tool for Thought]]. It's the medium where the thinking of a thing is most closely married to the building of the thing. As such, I wanted to include code execution in my editor.
 
-&lt;img 
-src=&quot;./6_code_basics.gif&quot;
-style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
-loading=&quot;lazy&quot;
-/&gt;
+&lt;&lt;img &quot;./6_code_basics.gif&quot; &gt;&gt;
 
 !!! Notebook Style
 
 The very beginning of a foray into using the editor as a programming notebook. Use `$` to get the result of the last computation.
 
-&lt;img 
-src=&quot;./7_code_$.gif&quot;
-style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
-loading=&quot;lazy&quot;
-/&gt;
+&lt;&lt;img &quot;./7_code_$.gif&quot; &gt;&gt;
 
 !!! Render [[HTML]]
 
 Not terribly exciting yet, but it lays the foundation for much more exciting stuff.
 
-&lt;img 
-src=&quot;./8_code_html.gif&quot;
-style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
-loading=&quot;lazy&quot;
-/&gt;
+&lt;&lt;img &quot;./8_code_html.gif&quot; &gt;&gt;
 
 !!! Widgets
 
 You can even write and execute widgets! The editor exposes [[Sinuous]] and [[Webscript]] on the window object for the convenience of the end user.
 
-&lt;img 
-src=&quot;./9_code_widgets.gif&quot;
-style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
-loading=&quot;lazy&quot;
-/&gt;
+&lt;&lt;img &quot;./9_code_widgets.gif&quot; &gt;&gt;
 
 !!! Modules
 
 This is only the very first of my module system: import and export from individual blocks. But I would also want to support importing and exporting from spaces (as in namespaces) and possibly even importing from queries, though that's considerably more speculative.
 
-&lt;img 
-src=&quot;./10_code_modules.gif&quot;
-style=&quot;border: solid 1px gray; border-radius: 4px; margin: auto; display: block;&quot;
-loading=&quot;lazy&quot;
-/&gt;
+&lt;&lt;img &quot;./10_code_modules.gif&quot; &gt;&gt;
 
 !!! What's Next?
 
