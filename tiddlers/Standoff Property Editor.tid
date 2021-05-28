@@ -1,10 +1,24 @@
 _blurb: [[Outliner]] built atop [[CodeMirror]] incorporating [[Standoff Properties]] and [[User Programming]]
 author: [[Adam Sherwood]]
 created: 20210527190408399
-modified: 20210528204355950
+modified: 20210528212540427
 tags: 2020 [[Web App]] UI Project [[Standoff Properties]] Editor Outliner [[Tool for Thought]] [[User Programming]]
 title: Standoff Property Editor
 type: text/vnd.tiddlywiki
+
+\define img(src)
+<a
+target="_blank"
+href=<<__src__>>
+style="margin: auto; display: block;"
+>
+<img 
+src=<<__src__>>
+style="border: solid 1px gray; border-radius: 4px; display: block; margin: auto;"
+loading="lazy"
+/>
+</a>
+\end
 
 !! [[Description]]
 
@@ -30,11 +44,7 @@ The following are some screen recordings of a version of the editor, all gussied
 
 Indent, dedent, collapsing and expanding children, and the like.
 
-<img 
-src="./1_basics.gif"
-style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
-loading="lazy"
-/>
+<<img "./1_basics.gif" >>
 
 !!! Spaces
 
@@ -42,21 +52,13 @@ If you are familiar with [[Roam Research]], a space is similar to a page in that
 
 [[Standoff Properties]] can be created from selected text.
 
-<img 
-src="./2_spaces.gif"
-style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
-loading="lazy"
-/>
+<<img "./2_spaces.gif" >>
 
 !!! Basic Navigation
 
 Click to follow a link or use keyboard shortcuts to do it. Also, zoom in and out of blocks.
 
-<img 
-src="./3_navigation.gif"
-style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
-loading="lazy"
-/>
+<<img "./3_navigation.gif" >>
 
 !!! Navigation, Cont.
 
@@ -64,71 +66,43 @@ loading="lazy"
 
 Also, get previews of a link's target block on hover!
 
-<img 
-src="./4_navigation_cont.gif"
-style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
-loading="lazy"
-/>
+<<img "./4_navigation_cont.gif" >>
 
 !!! Editing [[Standoff Properties]]
 
 Upon selecting an annotation, that annotation can be stretched or slid left or right or in both directions. Notice again, that the target of the link has not changed even though the annotated text has.
 
-<img 
-src="./5_annotation_editing.gif"
-style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
-loading="lazy"
-/>
+<<img "./5_annotation_editing.gif" >>
 
 !!! Code Execution
 
 Code may be one of my principle [[Tools for Thought|Tool for Thought]]. It's the medium where the thinking of a thing is most closely married to the building of the thing. As such, I wanted to include code execution in my editor.
 
-<img 
-src="./6_code_basics.gif"
-style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
-loading="lazy"
-/>
+<<img "./6_code_basics.gif" >>
 
 !!! Notebook Style
 
 The very beginning of a foray into using the editor as a programming notebook. Use `$` to get the result of the last computation.
 
-<img 
-src="./7_code_$.gif"
-style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
-loading="lazy"
-/>
+<<img "./7_code_$.gif" >>
 
 !!! Render [[HTML]]
 
 Not terribly exciting yet, but it lays the foundation for much more exciting stuff.
 
-<img 
-src="./8_code_html.gif"
-style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
-loading="lazy"
-/>
+<<img "./8_code_html.gif" >>
 
 !!! Widgets
 
 You can even write and execute widgets! The editor exposes [[Sinuous]] and [[Webscript]] on the window object for the convenience of the end user.
 
-<img 
-src="./9_code_widgets.gif"
-style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
-loading="lazy"
-/>
+<<img "./9_code_widgets.gif" >>
 
 !!! Modules
 
 This is only the very first of my module system: import and export from individual blocks. But I would also want to support importing and exporting from spaces (as in namespaces) and possibly even importing from queries, though that's considerably more speculative.
 
-<img 
-src="./10_code_modules.gif"
-style="border: solid 1px gray; border-radius: 4px; margin: auto; display: block;"
-loading="lazy"
-/>
+<<img "./10_code_modules.gif" >>
 
 !!! What's Next?
 
