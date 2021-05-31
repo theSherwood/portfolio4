@@ -1,7 +1,7 @@
 created: 20210429231314393
 email: <a class="tc-tiddlylink-external" href="mailto:adam.the.sherwood@gmail.com">adam.the.sherwood@gmail.com</a>
 github: https://github.com/theSherwood
-modified: 20210531222219030
+modified: 20210531224722225
 resume: https://raw.githubusercontent.com/theSherwood/resume/master/resume.pdf
 tags: Person
 title: Adam Sherwood
@@ -13,8 +13,12 @@ type: text/vnd.tiddlywiki
 <a href={{Adam Sherwood!!resume}} title="Résumé">{{$:/core/images/file}}</a>
 <a href="mailto:adam.the.sherwood@gmail.com" title="adam.the.sherwood@gmail.com">{{$:/core/images/mail}}</a>
 
-I'm a sculptor turned software engineer. I was getting my Master's degree at the Royal College or Art in London when I started getting into programming as a way of making sculpture. After my first foray, I was hooked.
+I'm a sculptor turned software engineer. I was getting my master's degree at the Royal College of Art in London when I started getting into programming as a way of making sculpture. After my first foray, I was hooked.
 
-I dove in headfirst, learned as much as I could, and by the time my degree was through, I was able to switch careers.
+I dove in headfirst, learned as much as I could, and by the time my degree was through, I was able to switch careers. This turned out to be pretty great. Code has a number of distinct advantages over sculpture, not least of which is that people are more interested in paying you to make it, which is sort of a big deal when you're supporting a family.
 
-Most of my work since has been in [[JavaScript]], but I love learning languages and am constantly looking for opportunities to learn new techniques and modes of thinking about software.
+But writing code is also just a uniquely engaging and powerful experience that gives one the opportunity to work in many different facets of life at once: there's a bit of art and design, a lot of engineering, a ton of coordinating with other people, there's some entrepreneurship too, and, at its core, code is rooted deeply in navigating some basic aspect of the way the universe works. Computation is a fundamental aspect of nature and code gives one the chance to play with that.
+
+Most of my work since graduating from art school has been in [[JavaScript]], but I love learning languages and am constantly looking for opportunities to learn new techniques and modes of thinking about and writing software.
+
+Hit me up on [[twitter|https://twitter.com/adamthesherwood]] or by [[email|mailto:adam.the.sherwood@gmail.com]] if you get the chance!
