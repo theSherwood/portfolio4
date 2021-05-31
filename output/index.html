@@ -203,6 +203,18 @@ Error message and password prompt
 
 <li>$:/DefaultTiddlers</li>
 
+<li>$:/header-links</li>
+
+<li>$:/header-links.css</li>
+
+<li>$:/header-links/my-email</li>
+
+<li>$:/header-links/my-github</li>
+
+<li>$:/header-links/my-résumé</li>
+
+<li>$:/header-links/my-twitter</li>
+
 <li>$:/Import</li>
 
 <li>$:/isEncrypted</li>
@@ -216,6 +228,8 @@ Error message and password prompt
 <li>$:/plugins/flibbles/relink</li>
 
 <li>$:/plugins/rmnvsl/krystal</li>
+
+<li>$:/plugins/rmnvsl/krystal/header</li>
 
 <li>$:/plugins/rmnvsl/krystal/header.css</li>
 
@@ -266,8 +280,6 @@ Error message and password prompt
 <li>7GUIs Implementations</li>
 
 <li>7GUIs: A GUI Programming Benchmark</li>
-
-<li>About</li>
 
 <li>AcornJS</li>
 
@@ -10767,6 +10779,44 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210422040539032" modified="20210520142746763" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>[list[$:/StoryList]]</pre>
 </div>
+<div created="20210531191830381" list="$:/header-links/my-github $:/header-links/my-twitter $:/header-links/my-résumé $:/header-links/my-email" modified="20210531195517149" tags="$:/plugins/rmnvsl/krystal/header" title="$:/header-links" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;div class=&quot;header-links&quot;&gt;
+&lt;$list filter=&quot;[all[system+tiddlers]tag[$:/header-links]!has[draft.of]]&quot; &gt;
+&lt;div class=&quot;header-link-item&quot;&gt;
+{{!!text}}
+&lt;/div&gt;
+&lt;/$list&gt;
+&lt;/div&gt;</pre>
+</div>
+<div created="20210531193407786" modified="20210531195141020" tags="$:/tags/Stylesheet" title="$:/header-links.css" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>.header-links {
+margin-right: .8em;
+display: flex;
+justify-content: center;
+position: relative;
+top: 2px;
+}
+.header-link-item {
+margin-left: .8em;
+fill: &lt;&lt;color tiddler-title-foreground&gt;&gt;;
+}
+.header-link-item svg {
+height: 1.6em;
+width: 1.6em;
+}</pre>
+</div>
+<div created="20210531192621829" modified="20210531195506165" tags="$:/header-links" title="$:/header-links/my-email" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot; title=&quot;adam.the.sherwood@gmail.com&quot;&gt;{{$:/core/images/mail}}&lt;/a&gt;</pre>
+</div>
+<div created="20210531192247444" modified="20210531195247989" tags="$:/header-links" title="$:/header-links/my-github" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;a href={{Adam Sherwood!!github}} title={{Adam Sherwood!!github}} &gt;{{$:/core/images/github}}&lt;/a&gt;</pre>
+</div>
+<div created="20210531192654646" modified="20210531195430934" tags="$:/header-links" title="$:/header-links/my-résumé" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;a href={{Adam Sherwood!!resume}} title=&quot;Résumé&quot;&gt;{{$:/core/images/file}}&lt;/a&gt;</pre>
+</div>
+<div created="20210531192543619" modified="20210531195331100" tags="$:/header-links" title="$:/header-links/my-twitter" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;a href=&quot;https://twitter.com/adamthesherwood&quot; title=&quot;@adamthesherwood&quot; &gt;{{$:/core/images/twitter}}&lt;/a&gt;</pre>
+</div>
 <div created="20210520145033591" modified="20210520145033591" status="complete" title="$:/Import" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>The following tiddlers were imported:
 
@@ -11908,6 +11958,17 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
+<div created="20210531191853877" list="$:/core/ui/SideBarSegments/site-title $:/plugins/rmnvsl/krystal/headertools $:/header-links $:/plugins/rmnvsl/krystal/search" list-before="$:/core/ui/PageTemplate/topleftbar" modified="20210531192131815" tags="$:/tags/PageTemplate" title="$:/plugins/rmnvsl/krystal/header" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;header class=&quot;krystal-header&quot;&gt;
+
+&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/plugins/rmnvsl/krystal/header]!has[draft.of]]&quot; variable=&quot;listItem&quot; storyview=&quot;pop&quot;&gt;
+
+&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=&quot;inline&quot;/&gt;
+
+&lt;/$list&gt;
+
+&lt;/header&gt;</pre>
+</div>
 <div created="20210531184901721" modified="20210531184906680" tags="$:/tags/Stylesheet" title="$:/plugins/rmnvsl/krystal/header.css" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
 
@@ -12124,7 +12185,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="[[Adam Sherwood]] About $:/core/ui/Buttons/more-tiddler-actions $:/ControlPanel [[Hi! Welcome to my portfolio!]] [[Search Input CSS]] $:/AdvancedSearch" title="$:/StoryList" revision="1" bag="default">
+<div list="[[Adam Sherwood]] [[Hi! Welcome to my portfolio!]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div created="20210531132754768" list="Tags About" modified="20210531171747994" title="$:/tags/SideBar" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12548,21 +12609,16 @@ The following are some implementations of the [[7GUIs]] that I have undertaken:
 
 I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a means of learning some new programming language or [[UI]] framework. I have a number of [[implementations|7GUIs Implementations]].</pre>
 </div>
-<div created="20210531132719607" modified="20210531133952239" tags="$:/tags/SideBar" title="About" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>! Hello and welcome to my portfolio!
-
-{{Adam Sherwood}}</pre>
-</div>
 <div author="[[Marijn Haverbeke]]" created="20210528202623300" github="https://github.com/acornjs/acorn" modified="20210528202733116" tags="Parsing Library JavaScript" title="AcornJS" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210429231314393" email="&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot;&gt;adam.the.sherwood@gmail.com&lt;/a&gt;" github="https://github.com/theSherwood" modified="20210531174622529" resume="https://raw.githubusercontent.com/theSherwood/resume/master/resume.pdf" tags="Person" title="Adam Sherwood" twitter="&lt;a href=&quot;https://twitter.com/adamthesherwood&quot;&gt;@adamthesherwood&lt;/a&gt;" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210429231314393" email="&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot;&gt;adam.the.sherwood@gmail.com&lt;/a&gt;" github="https://github.com/theSherwood" modified="20210531195645878" resume="https://raw.githubusercontent.com/theSherwood/resume/master/resume.pdf" tags="Person" title="Adam Sherwood" twitter="&lt;a href=&quot;https://twitter.com/adamthesherwood&quot;&gt;@adamthesherwood&lt;/a&gt;" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>I'm a sculptor turned software engineer.
 
-&lt;a href={{!!github}} title={{!!github}} &gt;{{$:/core/images/github}}&lt;/a&gt;
+&lt;a href={{Adam Sherwood!!github}} title={{Adam Sherwood!!github}} &gt;{{$:/core/images/github}}&lt;/a&gt;
 &lt;a href=&quot;https://twitter.com/adamthesherwood&quot; title=&quot;@adamthesherwood&quot; &gt;{{$:/core/images/twitter}}&lt;/a&gt;
-&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot; title=&quot;adam.the.sherwood@gmail.com&quot;&gt;{{$:/core/images/mail}}&lt;/a&gt;
-&lt;a href={{!!resume}} title=&quot;Résumé&quot;&gt;{{$:/core/images/file}}&lt;/a&gt;</pre>
+&lt;a href={{Adam Sherwood!!resume}} title=&quot;Résumé&quot;&gt;{{$:/core/images/file}}&lt;/a&gt;
+&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot; title=&quot;adam.the.sherwood@gmail.com&quot;&gt;{{$:/core/images/mail}}&lt;/a&gt;</pre>
 </div>
 <div author="[[Carl Sassenrath]]" created="20210521215453657" modified="20210521220037478" tags="[[Programming Language]] [[Imperative Programming]]" title="AltScript" type="text/vnd.tiddlywiki" website="https://altscript.com/" revision="0" bag="default">
 <pre></pre>
@@ -12955,8 +13011,10 @@ show-list-blurb:&quot;true&quot;
 <div created="20210503205459156" modified="20210520141759776" tags="[[Programming Language]]" title="Go" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210531175543157" modified="20210531175619867" tags="" title="Hi! Welcome to my portfolio!" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre></pre>
+<div created="20210531175543157" modified="20210531191458438" tags="" title="Hi! Welcome to my portfolio!" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>! Hello and welcome to my portfolio!
+
+{{Adam Sherwood}}</pre>
 </div>
 <div created="20210429224735299" modified="20210520142019050" tags="UI ClojureScript Clojure Syntax" title="Hiccup" type="text/vnd.tiddlywiki" website="https://github.com/weavejester/hiccup" revision="0" bag="default">
 <pre></pre>
@@ -14046,7 +14104,7 @@ As soon as is practical, I want to get away from rendering through the DOM and f
 <div created="20210502000414105" modified="20210520142019046" title="Syntax" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210531131126501" modified="20210531131600802" tags="$:/tags/SideBar" title="Tags" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210531131126501" modified="20210531192001373" tags="" title="Tags" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;$list filter={{$:/core/Filters/AllTags!!filter}}&gt;
 &lt;$transclude tiddler=&quot;$:/core/ui/TagTemplate&quot;/&gt;
 &lt;/$list&gt;</pre>

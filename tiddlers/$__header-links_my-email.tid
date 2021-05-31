@@ -1,0 +1,7 @@
+created: 20210531192621829
+modified: 20210531195506165
+tags: $:/header-links
+title: $:/header-links/my-email
+type: text/vnd.tiddlywiki
+
+<a href="mailto:adam.the.sherwood@gmail.com" title="adam.the.sherwood@gmail.com">{{$:/core/images/mail}}</a>

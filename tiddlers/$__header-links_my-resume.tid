@@ -1,0 +1,7 @@
+created: 20210531192654646
+modified: 20210531195430934
+tags: $:/header-links
+title: $:/header-links/my-résumé
+type: text/vnd.tiddlywiki
+
+<a href={{Adam Sherwood!!resume}} title="Résumé">{{$:/core/images/file}}</a>

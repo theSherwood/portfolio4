@@ -1,0 +1,14 @@
+created: 20210531191830381
+list: $:/header-links/my-github $:/header-links/my-twitter $:/header-links/my-résumé $:/header-links/my-email
+modified: 20210531195517149
+tags: $:/plugins/rmnvsl/krystal/header
+title: $:/header-links
+type: text/vnd.tiddlywiki
+
+<div class="header-links">
+<$list filter="[all[system+tiddlers]tag[$:/header-links]!has[draft.of]]" >
+<div class="header-link-item">
+{{!!text}}
+</div>
+</$list>
+</div>

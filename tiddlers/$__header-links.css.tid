@@ -1,0 +1,21 @@
+created: 20210531193407786
+modified: 20210531195141020
+tags: $:/tags/Stylesheet
+title: $:/header-links.css
+type: text/vnd.tiddlywiki
+
+.header-links {
+margin-right: .8em;
+display: flex;
+justify-content: center;
+position: relative;
+top: 2px;
+}
+.header-link-item {
+margin-left: .8em;
+fill: <<color tiddler-title-foreground>>;
+}
+.header-link-item svg {
+height: 1.6em;
+width: 1.6em;
+}
