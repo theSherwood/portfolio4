@@ -1,0 +1,21 @@
+created: 20210531201800532
+modified: 20210531213113369
+tags: $:/tags/Stylesheet
+title: $:/landing-note.css
+type: text/vnd.tiddlywiki
+
+[data-tiddler-title="$:/landing-note"] > *:not(.tc-tiddler-body) {
+display: none;
+}
+
+[data-tiddler-title="$:/landing-note"]  h1 {
+font-size: 2.8em;
+}
+
+[data-tiddler-title="$:/landing-note"] .close-btn {
+text-align: right;
+}
+
+[data-tiddler-title="$:/landing-note"] .close-btn svg {
+fill: #cccccc;
+}

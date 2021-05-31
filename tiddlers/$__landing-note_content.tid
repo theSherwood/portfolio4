@@ -1,0 +1,23 @@
+created: 20210531203127509
+modified: 20210531213308729
+tags: 
+title: $:/landing-note/content
+type: text/vnd.tiddlywiki
+
+<div class="close-btn">
+<$transclude tiddler="$:/core/ui/Buttons/close" mode="block"/>
+</div>
+
+! Hello and welcome to my portfolio! 
+
+<a href={{Adam Sherwood!!github}} title={{Adam Sherwood!!github}} >{{$:/core/images/github}}</a>
+<a href="https://twitter.com/adamthesherwood" title="@adamthesherwood" >{{$:/core/images/twitter}}</a>
+<a href={{Adam Sherwood!!resume}} title="Résumé">{{$:/core/images/file}}</a>
+<a href="mailto:adam.the.sherwood@gmail.com" title="adam.the.sherwood@gmail.com">{{$:/core/images/mail}}</a>
+
+I'm a sculptor turned software engineer. [[You can find out more about me here|Adam Sherwood]].
+
+Alternatively, feel free to look around! You might find [[Projects]] a helpful place to start.
+
+And if you are using a wheeled mouse for navigation, hold `shift` to scroll sideways.
+

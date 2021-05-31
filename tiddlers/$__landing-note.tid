@@ -1,0 +1,7 @@
+created: 20210531175543157
+modified: 20210531213038112
+tags: 
+title: $:/landing-note
+type: text/vnd.tiddlywiki
+
+<$transclude tiddler="$:/landing-note/content" mode="block"  />

@@ -47,7 +47,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>Adam Sherwood — </title>
+<title>Adam Sherwood — Portfolio</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
 
 <!--~~ Raw markup ~~-->
@@ -141,8 +141,6 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
-<li>_</li>
-
 <li>$:/config/EditorTypeMappings/text/vnd.tiddlywiki</li>
 
 <li>$:/config/Navigation/openLinkFromOutsideRiver</li>
@@ -221,9 +219,11 @@ Error message and password prompt
 
 <li>$:/isEncrypted</li>
 
-<li>$:/landing-content</li>
+<li>$:/landing-note</li>
 
-<li>$:/landing-content.css</li>
+<li>$:/landing-note.css</li>
+
+<li>$:/landing-note/content</li>
 
 <li>$:/language/DefaultNewTiddlerTitle</li>
 
@@ -238,6 +238,8 @@ Error message and password prompt
 <li>$:/plugins/rmnvsl/krystal/header</li>
 
 <li>$:/plugins/rmnvsl/krystal/header.css</li>
+
+<li>$:/plugins/rmnvsl/krystal/plugin.js</li>
 
 <li>$:/plugins/rmnvsl/krystal/references</li>
 
@@ -262,6 +264,10 @@ Error message and password prompt
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
+
+<li>$:/themes/tiddlywiki/vanilla/metrics/fontsize</li>
+
+<li>$:/themes/tiddlywiki/vanilla/settings/fontfamily</li>
 
 <li>2019</li>
 
@@ -439,6 +445,8 @@ Error message and password prompt
 
 <li>Project</li>
 
+<li>Projects</li>
+
 <li>Python</li>
 
 <li>React</li>
@@ -589,9 +597,6 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20210531175543157" modified="20210531204222265" tags="" title="_" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>&lt;$transclude tiddler=&quot;$:/landing-content&quot; mode=&quot;block&quot;  /&gt;</pre>
-</div>
 <div created="20210422061137459" modified="20210520143021902" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>comptext</pre>
 </div>
@@ -10783,8 +10788,10 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 &lt;/$reveal&gt;
 </pre>
 </div>
-<div created="20210422040539032" modified="20210531205133536" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>_</pre>
+<div created="20210422040539032" modified="20210531213513605" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>$:/landing-note
+Projects
+[[Adam Sherwood]]</pre>
 </div>
 <div created="20210531191830381" list="$:/header-links/my-github $:/header-links/my-twitter $:/header-links/my-résumé $:/header-links/my-email" modified="20210531195517149" tags="$:/plugins/rmnvsl/krystal/header" title="$:/header-links" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;div class=&quot;header-links&quot;&gt;
@@ -10832,31 +10839,45 @@ width: 1.6em;
 <div title="$:/isEncrypted" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div created="20210531203127509" modified="20210531204545822" tags="" title="$:/landing-content" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210531175543157" modified="20210531213038112" tags="" title="$:/landing-note" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;$transclude tiddler=&quot;$:/landing-note/content&quot; mode=&quot;block&quot;  /&gt;</pre>
+</div>
+<div created="20210531201800532" modified="20210531213113369" tags="$:/tags/Stylesheet" title="$:/landing-note.css" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>[data-tiddler-title=&quot;$:/landing-note&quot;] &gt; *:not(.tc-tiddler-body) {
+display: none;
+}
+
+[data-tiddler-title=&quot;$:/landing-note&quot;]  h1 {
+font-size: 2.8em;
+}
+
+[data-tiddler-title=&quot;$:/landing-note&quot;] .close-btn {
+text-align: right;
+}
+
+[data-tiddler-title=&quot;$:/landing-note&quot;] .close-btn svg {
+fill: #cccccc;
+}</pre>
+</div>
+<div created="20210531203127509" modified="20210531213308729" tags="" title="$:/landing-note/content" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;div class=&quot;close-btn&quot;&gt;
 &lt;$transclude tiddler=&quot;$:/core/ui/Buttons/close&quot; mode=&quot;block&quot;/&gt;
 &lt;/div&gt;
 
-! Hello and welcome to my portfolio!
+! Hello and welcome to my portfolio! 
 
-{{Adam Sherwood}}</pre>
-</div>
-<div created="20210531201800532" modified="20210531204933214" tags="$:/tags/Stylesheet" title="$:/landing-content.css" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>[data-tiddler-title^=_] &gt; *:not(.tc-tiddler-body) {
-display: none;
-}
+&lt;a href={{Adam Sherwood!!github}} title={{Adam Sherwood!!github}} &gt;{{$:/core/images/github}}&lt;/a&gt;
+&lt;a href=&quot;https://twitter.com/adamthesherwood&quot; title=&quot;@adamthesherwood&quot; &gt;{{$:/core/images/twitter}}&lt;/a&gt;
+&lt;a href={{Adam Sherwood!!resume}} title=&quot;Résumé&quot;&gt;{{$:/core/images/file}}&lt;/a&gt;
+&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot; title=&quot;adam.the.sherwood@gmail.com&quot;&gt;{{$:/core/images/mail}}&lt;/a&gt;
 
-[data-tiddler-title^=_]  h1 {
-font-size: 2.8em;
-}
+I'm a sculptor turned software engineer. [[You can find out more about me here|Adam Sherwood]].
 
-[data-tiddler-title^=_] .close-btn {
-text-align: right;
-}
+Alternatively, feel free to look around! You might find [[Projects]] a helpful place to start.
 
-[data-tiddler-title^=_] .close-btn svg {
-fill: #cccccc;
-}</pre>
+And if you are using a wheeled mouse for navigation, hold `shift` to scroll sideways.
+
+</pre>
 </div>
 <div created="20210422050129437" modified="20210520142746752" title="$:/language/DefaultNewTiddlerTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>note</pre>
@@ -12047,6 +12068,270 @@ very-muted-foreground: #888888</pre>
   }
 }</pre>
 </div>
+<div created="20210531211614596" modified="20210531211621155" module-type="startup" title="$:/plugins/rmnvsl/krystal/plugin.js" type="application/javascript" revision="0" bag="default">
+<pre>/*\
+title: $:/plugins/rmnvsl/krystal/plugin.js
+type: application/javascript
+module-type: startup
+
+Sets plugin behavior
+
+\*/
+(function () {
+  const STORY_TIDDLER_TITLE = &quot;$:/StoryList&quot;;
+  const ACTIVE_LINK_CLASS = &quot;krystal-link--active&quot;;
+  const MAXIMIZED_TIDDLER_CLASS = &quot;krystal-tiddler__frame--maximized&quot;;
+
+  exports.after = [&quot;render&quot;];
+
+  exports.startup = function () {
+    header();
+
+    window.addEventListener(&quot;resize&quot;, header);
+
+    const throttledTiddlerFrameEffects = throttle(tiddlerFrameEffects, 100);
+    window.addEventListener(&quot;scroll&quot;, throttledTiddlerFrameEffects, true);
+
+    $tw.rootWidget.addEventListener(&quot;tm-scroll&quot;, function (event) {
+      if (event.type === &quot;tm-scroll&quot;) {
+        scroll(event.target, event.delay);
+      }
+    });
+
+    $tw.rootWidget.addEventListener(&quot;tm-maximize&quot;, function (event) {
+      if (event.type === &quot;tm-maximize&quot;) {
+        tiddlerFullscreen(event.param);
+      }
+    });
+
+    // $tw.hooks.addHook(&quot;th-navigating&quot;, closeTiddlersToRight);
+
+    $tw.wiki.addEventListener(&quot;change&quot;, highlightOpenTiddlerLinks);
+    $tw.wiki.addEventListener(&quot;change&quot;, reinitiateTiddlerFrameEffects);
+  };
+
+  function highlightOpenTiddlerLinks(changes) {
+    if (!$tw.utils.hop(changes, STORY_TIDDLER_TITLE)) {
+      return;
+    }
+
+    const config = $tw.wiki.getTiddler(
+      &quot;$:/plugins/rmnvsl/krystal/config/highlight&quot;
+    );
+
+    if (config &amp;&amp; config.fields &amp;&amp; config.fields.text === &quot;disable&quot;) {
+      return;
+    }
+
+    const tiddlers = $tw.wiki.getTiddlerList(STORY_TIDDLER_TITLE);
+
+    Array.from(
+      document.querySelectorAll(`.${ACTIVE_LINK_CLASS}`)
+    ).forEach((link) =&gt; link.classList.remove(ACTIVE_LINK_CLASS));
+
+    tiddlers.forEach((tiddler) =&gt; {
+      Array.from(
+        document.querySelectorAll(
+          `.tc-tiddler-body a[href=&quot;#${encodeURIComponent(tiddler)}&quot;]`
+        )
+      ).forEach((link) =&gt; link.classList.add(ACTIVE_LINK_CLASS));
+    });
+  }
+
+  function header() {
+    const height = document.querySelector(&quot;.krystal-header&quot;).offsetHeight;
+    document.documentElement.style.setProperty(
+      &quot;--krystal-header-height&quot;,
+      `${height}px`
+    );
+  }
+
+  function scroll(tiddlerElement, delay) {
+    const mediaQueryList = window.matchMedia(&quot;(min-width: 960px)&quot;);
+    const duration = $tw.utils.getAnimationDuration();
+
+    if (mediaQueryList.matches) {
+      var storyRiver = tiddlerElement.parentElement;
+
+      var tiddlerPosition = Array.from(
+        storyRiver.querySelectorAll(&quot;div[data-tiddler-title]&quot;)
+      ).indexOf(tiddlerElement);
+      var tiddlerWidth = tiddlerElement.offsetWidth;
+      var windowWidth = window.innerWidth;
+
+      var position = windowWidth / 2 - tiddlerWidth / 2;
+      var newRiverPosition = Math.max(
+        tiddlerPosition * tiddlerWidth - position,
+        0
+      );
+
+      setTimeout(
+        () =&gt; storyRiver.scroll({ left: newRiverPosition, behavior: &quot;smooth&quot; }),
+        delay ? duration : 0
+      );
+    } else {
+      tiddlerElement.scrollIntoView({ behavior: &quot;smooth&quot; });
+    }
+  }
+
+  function tiddlerFrameEffects() {
+    var tiddlers = Array.from(document.querySelectorAll(&quot;.tc-tiddler-frame&quot;));
+    var tiddlersCount = tiddlers.length;
+
+    if (tiddlersCount === 0) {
+      return;
+    }
+
+    var offset = 100;
+    var tiddlerPadding = Number(
+      window.getComputedStyle(tiddlers[0]).paddingRight.slice(0, -2)
+    );
+    var tiddlerWidth = tiddlers[0].offsetWidth;
+    var windowWidth = window.innerWidth;
+
+    tiddlers.forEach(function (tiddler, i) {
+      if (i === 0) {
+        return;
+      }
+
+      var tiddlerTitle = tiddler.querySelector(&quot;.krystal-tiddler__title&quot;);
+
+      // Edit Template
+      if (!tiddlerTitle) {
+        return;
+      }
+
+      var previousTiddler = tiddlers[i - 1];
+      var previousTiddlerTitle = previousTiddler.querySelector(
+        &quot;.krystal-tiddler__title&quot;
+      );
+
+      var x = tiddler.getBoundingClientRect().left;
+
+      var start = x &lt; offset + i * tiddlerPadding;
+      var end =
+        x &gt; windowWidth - (offset + (tiddlersCount - i) * tiddlerPadding);
+
+      var startOverlay = x &lt; tiddlerWidth + (i - 1) * tiddlerPadding;
+
+      tiddler.classList.toggle(&quot;krystal-tiddler__frame--overlay&quot;, startOverlay);
+
+      if (previousTiddlerTitle) {
+        previousTiddlerTitle.classList.toggle(
+          &quot;krystal-tiddler__title--start-active&quot;,
+          start
+        );
+
+        if (!end) {
+          previousTiddler.classList.toggle(
+            &quot;krystal-tiddler__frame--hide&quot;,
+            start
+          );
+        }
+      }
+
+      if (start) {
+        tiddlerTitle.classList.remove(&quot;krystal-tiddler__title--end&quot;);
+      }
+
+      if (end) {
+        tiddler.classList.add(&quot;krystal-tiddler__frame--overlay&quot;);
+        tiddler.classList.add(&quot;krystal-tiddler__frame--hide&quot;);
+        tiddlerTitle.classList.add(
+          &quot;krystal-tiddler__title--end&quot;,
+          &quot;krystal-tiddler__title--end-active&quot;
+        );
+      } else {
+        if (!startOverlay) {
+          tiddler.classList.remove(&quot;krystal-tiddler__frame--overlay&quot;);
+        }
+
+        tiddler.classList.remove(&quot;krystal-tiddler__frame--hide&quot;);
+        tiddlerTitle.classList.remove(&quot;krystal-tiddler__title--end-active&quot;);
+      }
+    });
+  }
+
+  function reinitiateTiddlerFrameEffects(changes) {
+    if (!$tw.utils.hop(changes, STORY_TIDDLER_TITLE)) {
+      return;
+    }
+    var duration = $tw.utils.getAnimationDuration() || 0;
+    setTimeout(tiddlerFrameEffects, duration);
+  }
+
+  function closeTiddlersToRight(event) {
+    const storyTiddler = $tw.wiki.getTiddler(STORY_TIDDLER_TITLE);
+    const tiddlers = $tw.wiki.getTiddlerList(STORY_TIDDLER_TITLE);
+
+    const navigateFrom = event.navigateFromTitle;
+    const navigateTo = event.navigateTo;
+
+    const config = $tw.wiki.getTiddler(
+      &quot;$:/plugins/rmnvsl/krystal/config/close&quot;
+    );
+
+    if (config &amp;&amp; config.fields &amp;&amp; config.fields.text === &quot;disable&quot;) {
+      return event;
+    }
+
+    // Navigating from outside open tiddlers
+    if (!navigateFrom) {
+      return event;
+    }
+
+    // Destination tiddler already open
+    if (tiddlers.indexOf(navigateTo) === -1) {
+      const currentTiddlerIndex = tiddlers.indexOf(navigateFrom);
+      const tiddlersToClose = tiddlers.slice(currentTiddlerIndex + 1);
+
+      if (tiddlersToClose.length === 0) {
+        return event;
+      }
+
+      const newStoryList = tiddlers.filter(
+        (title) =&gt; !tiddlersToClose.includes(title)
+      );
+
+      $tw.wiki.addTiddler(
+        new $tw.Tiddler({ title: STORY_TIDDLER_TITLE }, storyTiddler, {
+          list: newStoryList,
+        })
+      );
+    }
+
+    return event;
+  }
+
+  function tiddlerFullscreen(tiddlerTitle) {
+    const tiddler = document.querySelector(
+      `div[data-tiddler-title=&quot;${tiddlerTitle}&quot;]`
+    );
+
+    tiddler.classList.toggle(MAXIMIZED_TIDDLER_CLASS);
+  }
+
+  // ---
+
+  function throttle(callback, limit) {
+    var wait = false; // Initially, we're not waiting
+
+    return function () {
+      // We return a throttled function
+      if (!wait) {
+        // If we're not waiting
+        callback.call(); // Execute users function
+        wait = true; // Prevent future invocations
+        setTimeout(function () {
+          // After a period of time
+          wait = false; // And allow future invocations
+        }, limit);
+      }
+    };
+  }
+})();
+</pre>
+</div>
 <div created="20210520212334391" modified="20210520212336775" tags="" title="$:/plugins/rmnvsl/krystal/references" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;$list filter=&quot;[!is[system]all[current]backlinks[]sort[title]] -[is[current]] +[limit[1]]&quot; variable=none&gt;
 &lt;ul class=&quot;krystal-references&quot;&gt;
@@ -12209,16 +12494,16 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
-<div created="20210422040459705" modified="20210531132554581" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre></pre>
+<div created="20210422040459705" modified="20210531213450043" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>Portfolio</pre>
 </div>
-<div created="20210422040355488" modified="20210531201504797" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>[[Adam Sherwood|_]]</pre>
+<div created="20210422040355488" modified="20210531213037790" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>[[Adam Sherwood|$:/landing-note]]</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="_" title="$:/StoryList" revision="1" bag="default">
+<div list="$:/landing-note Projects [[Adam Sherwood]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div created="20210531132754768" list="Tags About" modified="20210531171747994" title="$:/tags/SideBar" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12335,6 +12620,12 @@ very-muted-foreground: #888888</pre>
         }
     }
 }</pre>
+</div>
+<div created="20210531210830060" modified="20210531210918431" title="$:/themes/tiddlywiki/vanilla/metrics/fontsize" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>14px</pre>
+</div>
+<div created="20210531210841737" modified="20210531210948401" title="$:/themes/tiddlywiki/vanilla/settings/fontfamily" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;</pre>
 </div>
 <div created="20210423065650716" modified="20210520142147081" title="2019" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
@@ -12645,13 +12936,14 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 <div author="[[Marijn Haverbeke]]" created="20210528202623300" github="https://github.com/acornjs/acorn" modified="20210528202733116" tags="Parsing Library JavaScript" title="AcornJS" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210429231314393" email="&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot;&gt;adam.the.sherwood@gmail.com&lt;/a&gt;" github="https://github.com/theSherwood" modified="20210531201242001" resume="https://raw.githubusercontent.com/theSherwood/resume/master/resume.pdf" tags="Person" title="Adam Sherwood" twitter="&lt;a href=&quot;https://twitter.com/adamthesherwood&quot;&gt;@adamthesherwood&lt;/a&gt;" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>I'm a sculptor turned software engineer.
-
-&lt;a href={{Adam Sherwood!!github}} title={{Adam Sherwood!!github}} &gt;{{$:/core/images/github}}&lt;/a&gt;
+<div created="20210429231314393" email="&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot;&gt;adam.the.sherwood@gmail.com&lt;/a&gt;" github="https://github.com/theSherwood" modified="20210531211746558" resume="https://raw.githubusercontent.com/theSherwood/resume/master/resume.pdf" tags="Person" title="Adam Sherwood" twitter="&lt;a href=&quot;https://twitter.com/adamthesherwood&quot;&gt;@adamthesherwood&lt;/a&gt;" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;a href={{Adam Sherwood!!github}} title={{Adam Sherwood!!github}} &gt;{{$:/core/images/github}}&lt;/a&gt;
 &lt;a href=&quot;https://twitter.com/adamthesherwood&quot; title=&quot;@adamthesherwood&quot; &gt;{{$:/core/images/twitter}}&lt;/a&gt;
 &lt;a href={{Adam Sherwood!!resume}} title=&quot;Résumé&quot;&gt;{{$:/core/images/file}}&lt;/a&gt;
-&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot; title=&quot;adam.the.sherwood@gmail.com&quot;&gt;{{$:/core/images/mail}}&lt;/a&gt;</pre>
+&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot; title=&quot;adam.the.sherwood@gmail.com&quot;&gt;{{$:/core/images/mail}}&lt;/a&gt;
+
+I'm a sculptor turned software engineer.
+</pre>
 </div>
 <div author="[[Carl Sassenrath]]" created="20210521215453657" modified="20210521220037478" tags="[[Programming Language]] [[Imperative Programming]]" title="AltScript" type="text/vnd.tiddlywiki" website="https://altscript.com/" revision="0" bag="default">
 <pre></pre>
@@ -13271,6 +13563,19 @@ Things have been reasonably smooth. [[Svelte]] is pretty ergonomic, [[Skeleton]]
 </div>
 <div created="20210423000856082" modified="20210520142243238" title="Project" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div created="20210531211704152" modified="20210531212439234" title="Projects" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>[[Standoff Property Editor]]
+
+[[Sinuous Libraries]]
+
+[[Red Utilities]]
+
+[[Mentat]]
+
+[[ReconJS]] and [[ReconJS Site]]
+
+[[7GUIs Implementations]]</pre>
 </div>
 <div created="20210503183708162" modified="20210520141945824" tags="[[Programming Language]]" title="Python" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>

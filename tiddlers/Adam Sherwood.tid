@@ -1,16 +1,16 @@
 created: 20210429231314393
 email: <a href="mailto:adam.the.sherwood@gmail.com">adam.the.sherwood@gmail.com</a>
 github: https://github.com/theSherwood
-modified: 20210531201242001
+modified: 20210531211746558
 resume: https://raw.githubusercontent.com/theSherwood/resume/master/resume.pdf
 tags: Person
 title: Adam Sherwood
 twitter: <a href="https://twitter.com/adamthesherwood">@adamthesherwood</a>
 type: text/vnd.tiddlywiki
 
-I'm a sculptor turned software engineer.
-
 <a href={{Adam Sherwood!!github}} title={{Adam Sherwood!!github}} >{{$:/core/images/github}}</a>
 <a href="https://twitter.com/adamthesherwood" title="@adamthesherwood" >{{$:/core/images/twitter}}</a>
 <a href={{Adam Sherwood!!resume}} title="Résumé">{{$:/core/images/file}}</a>
 <a href="mailto:adam.the.sherwood@gmail.com" title="adam.the.sherwood@gmail.com">{{$:/core/images/mail}}</a>
+
+I'm a sculptor turned software engineer.
