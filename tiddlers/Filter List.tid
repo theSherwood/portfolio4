@@ -1,5 +1,5 @@
 created: 20210518201758611
-modified: 20210528195142865
+modified: 20210531220919886
 tags: $:/tags/Macro
 title: Filter List
 type: text/vnd.tiddlywiki
@@ -16,9 +16,9 @@ show-blurb
 )
 <details $open$>
   <summary style="outline: none !important;">
-    <$link mode=inline />
+    <h3 style="display: inline;"><$link mode=inline /></h3>
   </summary>
-  <div style="margin-left: 20px">
+  <div style="margin: 4px 0 4px 28px;">
     <$reveal type=match default=<<__show-tags__>> text=true >
       {{||$:/core/ui/ViewTemplate/tags}}
     </$reveal>

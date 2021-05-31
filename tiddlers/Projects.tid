@@ -1,5 +1,5 @@
 created: 20210531211704152
-modified: 20210531212439234
+modified: 20210531220206067
 title: Projects
 type: text/vnd.tiddlywiki
 
@@ -9,8 +9,36 @@ type: text/vnd.tiddlywiki
 
 [[Red Utilities]]
 
+[[RegexXP]]
+
 [[Mentat]]
 
 [[ReconJS]] and [[ReconJS Site]]
 
 [[7GUIs Implementations]]
+
+<$set name=included value=<<qualify $:/temp/projects-included>> >
+<$set name=excluded value=<<qualify $:/temp/projects-excluded>> >
+<$set name=list filter="[tag[Project]]" >
+<div class="backlinks-wrapper">
+<details>
+<summary style="outline: none !important;">For a more comprehensive list of projects:</summary>
+<div style="margin-left: 20px">
+
+<$macrocall $name="filter-list"
+list=<<list>>
+included=<<included>>
+excluded=<<excluded>>
+tag-filters-open="open"
+show-tag-filters="true"
+show-field-filters="false"
+list-items-open=""
+show-list-fields="false"
+/>
+
+</div>
+</details>
+</div>
+</$set>
+</$set>
+</$set>

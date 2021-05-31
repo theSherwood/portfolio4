@@ -1,11 +1,11 @@
 created: 20210429231314393
-email: <a href="mailto:adam.the.sherwood@gmail.com">adam.the.sherwood@gmail.com</a>
+email: <a class="tc-tiddlylink-external" href="mailto:adam.the.sherwood@gmail.com">adam.the.sherwood@gmail.com</a>
 github: https://github.com/theSherwood
-modified: 20210531211746558
+modified: 20210531222219030
 resume: https://raw.githubusercontent.com/theSherwood/resume/master/resume.pdf
 tags: Person
 title: Adam Sherwood
-twitter: <a href="https://twitter.com/adamthesherwood">@adamthesherwood</a>
+twitter: <a class="tc-tiddlylink-external" href="https://twitter.com/adamthesherwood">@adamthesherwood</a>
 type: text/vnd.tiddlywiki
 
 <a href={{Adam Sherwood!!github}} title={{Adam Sherwood!!github}} >{{$:/core/images/github}}</a>
@@ -13,4 +13,8 @@ type: text/vnd.tiddlywiki
 <a href={{Adam Sherwood!!resume}} title="Résumé">{{$:/core/images/file}}</a>
 <a href="mailto:adam.the.sherwood@gmail.com" title="adam.the.sherwood@gmail.com">{{$:/core/images/mail}}</a>
 
-I'm a sculptor turned software engineer.
+I'm a sculptor turned software engineer. I was getting my Master's degree at the Royal College or Art in London when I started getting into programming as a way of making sculpture. After my first foray, I was hooked.
+
+I dove in headfirst, learned as much as I could, and by the time my degree was through, I was able to switch careers.
+
+Most of my work since has been in [[JavaScript]], but I love learning languages and am constantly looking for opportunities to learn new techniques and modes of thinking about software.
