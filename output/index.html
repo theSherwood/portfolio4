@@ -151,6 +151,8 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home</li>
 
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler</li>
+
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/permaview</li>
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/save-wiki</li>
@@ -171,11 +173,15 @@ Error message and password prompt
 
 <li>$:/config/Toolbar/Text</li>
 
+<li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/new-tiddler</li>
+
 <li>$:/config/WikiParserRules/Inline/wikilink</li>
 
 <li>$:/core</li>
 
 <li>$:/core/modules/filters/contains.js</li>
+
+<li>$:/core/ui/Buttons/new-tiddler</li>
 
 <li>$:/core/ui/SideBar/More</li>
 
@@ -184,6 +190,10 @@ Error message and password prompt
 <li>$:/core/ui/SideBar/Recent</li>
 
 <li>$:/core/ui/SideBar/Tools</li>
+
+<li>$:/core/ui/SideBarSegments/page-controls</li>
+
+<li>$:/core/ui/SideBarSegments/site-subtitle</li>
 
 <li>$:/core/ui/TagTemplate</li>
 
@@ -332,6 +342,8 @@ Error message and password prompt
 <li>github</li>
 
 <li>Go</li>
+
+<li>Hi! Welcome to my portfolio!</li>
 
 <li>Hiccup</li>
 
@@ -570,10 +582,13 @@ Error message and password prompt
 <div created="20210531132529192" modified="20210531132536079" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>hide</pre>
 </div>
+<div created="20210531174310627" modified="20210531174331475" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>hide</pre>
+</div>
 <div created="20210531132512207" modified="20210531132516908" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/permaview" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>hide</pre>
 </div>
-<div created="20210531132539759" modified="20210531132539775" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/save-wiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210531132539759" modified="20210531171949194" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/save-wiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>hide</pre>
 </div>
 <div created="20210422061344270" modified="20210520143021892" title="$:/config/RelinkOnRename" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -599,6 +614,9 @@ Error message and password prompt
 </div>
 <div created="20210422040910304" modified="20210520143021803" title="$:/config/Toolbar/Text" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>no</pre>
+</div>
+<div created="20210531174457706" modified="20210531174457724" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/new-tiddler" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>hide</pre>
 </div>
 <div created="20210422040649993" modified="20210520143021782" title="$:/config/WikiParserRules/Inline/wikilink" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>disable</pre>
@@ -10515,6 +10533,18 @@ exports.contains = function(source,operator,options) {
 })();
 </pre>
 </div>
+<div caption="{{$:/core/images/new-button}} {{$:/language/Buttons/NewTiddler/Caption}}" created="20210531174054732" description="{{$:/language/Buttons/NewTiddler/Hint}}" modified="20210531174056895" tags="$:/tags/PageControls $:/tags/ViewToolbar" title="$:/core/ui/Buttons/new-tiddler" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>\whitespace trim
+&lt;$button actions={{$:/core/ui/Actions/new-tiddler}} tooltip={{$:/language/Buttons/NewTiddler/Hint}} aria-label={{$:/language/Buttons/NewTiddler/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
+{{$:/core/images/new-button}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text={{$:/language/Buttons/NewTiddler/Caption}}/&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;
+</pre>
+</div>
 <div caption="{{$:/language/SideBar/More/Caption}}" created="20210531133051461" modified="20210531133056557" tags="" title="$:/core/ui/SideBar/More" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;div class=&quot;tc-more-sidebar&quot;&gt;
 &lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[all[shadows+tiddlers]tag[$:/tags/MoreSideBar]!has[draft.of]]&quot; default={{$:/config/DefaultMoreSidebarTab}} state=&quot;$:/state/tab/moresidebar&quot; class=&quot;tc-vertical tc-sidebar-tabs-more&quot; explicitState=&quot;$:/state/tab/moresidebar-1850697562&quot;/&gt;
@@ -10590,6 +10620,18 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 &lt;/$set&gt;
 
 &lt;/$set&gt;
+</pre>
+</div>
+<div created="20210531175128016" modified="20210531175431227" tags="" title="$:/core/ui/SideBarSegments/page-controls" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>{{||$:/core/ui/PageTemplate/pagecontrols}}
+</pre>
+</div>
+<div created="20210531175110096" modified="20210531175445242" tags="" title="$:/core/ui/SideBarSegments/site-subtitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;div class=&quot;tc-site-subtitle&quot;&gt;
+
+&lt;$transclude tiddler=&quot;$:/SiteSubtitle&quot; mode=&quot;inline&quot;/&gt;
+
+&lt;/div&gt;
 </pre>
 </div>
 <div created="20210425191332093" modified="20210520142746773" title="$:/core/ui/TagTemplate" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -11930,16 +11972,16 @@ very-muted-foreground: #888888</pre>
 <div created="20210422040459705" modified="20210531132554581" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210422040355488" modified="20210531133843286" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>[[Adam Sherwood|About]]</pre>
+<div created="20210422040355488" modified="20210531175706407" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>[[Adam Sherwood|Hi! Welcome to my portfolio!]]</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="[[Adam Sherwood]]" title="$:/StoryList" revision="1" bag="default">
+<div list="[[Adam Sherwood]] About $:/core/ui/Buttons/more-tiddler-actions $:/AdvancedSearch $:/ControlPanel [[Hi! Welcome to my portfolio!]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
-<div created="20210531132754768" list="$:/core/ui/SideBar/Tools $:/core/ui/SideBar/More Tags About" modified="20210531133113960" title="$:/tags/SideBar" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210531132754768" list="Tags About" modified="20210531171747994" title="$:/tags/SideBar" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div created="20210423020212887" list="$:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Tag Backlinks]] [[View Field Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin Spacer [[View Field Value Backlinks]] [[View Backlinks]] $:/plugins/rmnvsl/krystal/title" modified="20210531133634068" title="$:/tags/ViewTemplate" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12368,8 +12410,13 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 <div author="[[Marijn Haverbeke]]" created="20210528202623300" github="https://github.com/acornjs/acorn" modified="20210528202733116" tags="Parsing Library JavaScript" title="AcornJS" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210429231314393" email="&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot;&gt;adam.the.sherwood@gmail.com&lt;/a&gt;" github="https://github.com/theSherwood" modified="20210531140839112" resume="https://github.com/theSherwood/resume/blob/master/resume.pdf" tags="Person" title="Adam Sherwood" twitter="&lt;a href=&quot;https://twitter.com/adamthesherwood&quot;&gt;@adamthesherwood&lt;/a&gt;" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>I'm a sculptor turned software engineer.</pre>
+<div created="20210429231314393" email="&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot;&gt;adam.the.sherwood@gmail.com&lt;/a&gt;" github="https://github.com/theSherwood" modified="20210531174622529" resume="https://raw.githubusercontent.com/theSherwood/resume/master/resume.pdf" tags="Person" title="Adam Sherwood" twitter="&lt;a href=&quot;https://twitter.com/adamthesherwood&quot;&gt;@adamthesherwood&lt;/a&gt;" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>I'm a sculptor turned software engineer.
+
+&lt;a href={{!!github}} title={{!!github}} &gt;{{$:/core/images/github}}&lt;/a&gt;
+&lt;a href=&quot;https://twitter.com/adamthesherwood&quot; title=&quot;@adamthesherwood&quot; &gt;{{$:/core/images/twitter}}&lt;/a&gt;
+&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot; title=&quot;adam.the.sherwood@gmail.com&quot;&gt;{{$:/core/images/mail}}&lt;/a&gt;
+&lt;a href={{!!resume}} title=&quot;Résumé&quot;&gt;{{$:/core/images/file}}&lt;/a&gt;</pre>
 </div>
 <div author="[[Carl Sassenrath]]" created="20210521215453657" modified="20210521220037478" tags="[[Programming Language]] [[Imperative Programming]]" title="AltScript" type="text/vnd.tiddlywiki" website="https://altscript.com/" revision="0" bag="default">
 <pre></pre>
@@ -12760,6 +12807,9 @@ show-list-blurb:&quot;true&quot;
 <pre></pre>
 </div>
 <div created="20210503205459156" modified="20210520141759776" tags="[[Programming Language]]" title="Go" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
+</div>
+<div created="20210531175543157" modified="20210531175619867" tags="" title="Hi! Welcome to my portfolio!" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
 <div created="20210429224735299" modified="20210520142019050" tags="UI ClojureScript Clojure Syntax" title="Hiccup" type="text/vnd.tiddlywiki" website="https://github.com/weavejester/hiccup" revision="0" bag="default">

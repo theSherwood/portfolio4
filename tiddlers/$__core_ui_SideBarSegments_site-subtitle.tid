@@ -1,0 +1,11 @@
+created: 20210531175110096
+modified: 20210531175445242
+tags: 
+title: $:/core/ui/SideBarSegments/site-subtitle
+type: text/vnd.tiddlywiki
+
+<div class="tc-site-subtitle">
+
+<$transclude tiddler="$:/SiteSubtitle" mode="inline"/>
+
+</div>

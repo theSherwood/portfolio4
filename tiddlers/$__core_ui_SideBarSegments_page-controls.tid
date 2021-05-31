@@ -1,0 +1,7 @@
+created: 20210531175128016
+modified: 20210531175431227
+tags: 
+title: $:/core/ui/SideBarSegments/page-controls
+type: text/vnd.tiddlywiki
+
+{{||$:/core/ui/PageTemplate/pagecontrols}}
