@@ -10859,7 +10859,7 @@ text-align: right;
 fill: #cccccc;
 }</pre>
 </div>
-<div created="20210531203127509" modified="20210531213308729" tags="" title="$:/landing-note/content" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210531203127509" modified="20210531214812454" tags="" title="$:/landing-note/content" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;div class=&quot;close-btn&quot;&gt;
 &lt;$transclude tiddler=&quot;$:/core/ui/Buttons/close&quot; mode=&quot;block&quot;/&gt;
 &lt;/div&gt;
@@ -10873,7 +10873,7 @@ fill: #cccccc;
 
 I'm a sculptor turned software engineer. [[You can find out more about me here|Adam Sherwood]].
 
-Alternatively, feel free to look around! You might find [[Projects]] a helpful place to start.
+Alternatively, feel free to look around! You might find [[Projects]] a helpful place to start. Pay attention to [[tags|Tags]] and the various forms of backlinks as aids to discovering related content.
 
 And if you are using a wheeled mouse for navigation, hold `shift` to scroll sideways.
 
@@ -12936,13 +12936,17 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 <div author="[[Marijn Haverbeke]]" created="20210528202623300" github="https://github.com/acornjs/acorn" modified="20210528202733116" tags="Parsing Library JavaScript" title="AcornJS" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210429231314393" email="&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot;&gt;adam.the.sherwood@gmail.com&lt;/a&gt;" github="https://github.com/theSherwood" modified="20210531211746558" resume="https://raw.githubusercontent.com/theSherwood/resume/master/resume.pdf" tags="Person" title="Adam Sherwood" twitter="&lt;a href=&quot;https://twitter.com/adamthesherwood&quot;&gt;@adamthesherwood&lt;/a&gt;" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210429231314393" email="&lt;a class=&quot;tc-tiddlylink-external&quot; href=&quot;mailto:adam.the.sherwood@gmail.com&quot;&gt;adam.the.sherwood@gmail.com&lt;/a&gt;" github="https://github.com/theSherwood" modified="20210531222219030" resume="https://raw.githubusercontent.com/theSherwood/resume/master/resume.pdf" tags="Person" title="Adam Sherwood" twitter="&lt;a class=&quot;tc-tiddlylink-external&quot; href=&quot;https://twitter.com/adamthesherwood&quot;&gt;@adamthesherwood&lt;/a&gt;" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;a href={{Adam Sherwood!!github}} title={{Adam Sherwood!!github}} &gt;{{$:/core/images/github}}&lt;/a&gt;
 &lt;a href=&quot;https://twitter.com/adamthesherwood&quot; title=&quot;@adamthesherwood&quot; &gt;{{$:/core/images/twitter}}&lt;/a&gt;
 &lt;a href={{Adam Sherwood!!resume}} title=&quot;Résumé&quot;&gt;{{$:/core/images/file}}&lt;/a&gt;
 &lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot; title=&quot;adam.the.sherwood@gmail.com&quot;&gt;{{$:/core/images/mail}}&lt;/a&gt;
 
-I'm a sculptor turned software engineer.
+I'm a sculptor turned software engineer. I was getting my Master's degree at the Royal College or Art in London when I started getting into programming as a way of making sculpture. After my first foray, I was hooked.
+
+I dove in headfirst, learned as much as I could, and by the time my degree was through, I was able to switch careers.
+
+Most of my work since has been in [[JavaScript]], but I love learning languages and am constantly looking for opportunities to learn new techniques and modes of thinking about software.
 </pre>
 </div>
 <div author="[[Carl Sassenrath]]" created="20210521215453657" modified="20210521220037478" tags="[[Programming Language]] [[Imperative Programming]]" title="AltScript" type="text/vnd.tiddlywiki" website="https://altscript.com/" revision="0" bag="default">
@@ -13063,7 +13067,7 @@ I'm a sculptor turned software engineer.
 &lt;$link to=&quot;&quot;&quot;$text$&quot;&quot;&quot;&gt;&lt;code&gt;$text$&lt;/code&gt;&lt;/$link&gt;
 \end</pre>
 </div>
-<div created="20210518201758611" modified="20210528195142865" tags="$:/tags/Macro" title="Filter List" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210518201758611" modified="20210531220919886" tags="$:/tags/Macro" title="Filter List" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>\define _truncate-regex() (^(.|\n){0,100})(.|\n)*
 
 \define _list-item(
@@ -13076,9 +13080,9 @@ show-blurb
 )
 &lt;details $open$&gt;
   &lt;summary style=&quot;outline: none !important;&quot;&gt;
-    &lt;$link mode=inline /&gt;
+    &lt;h3 style=&quot;display: inline;&quot;&gt;&lt;$link mode=inline /&gt;&lt;/h3&gt;
   &lt;/summary&gt;
-  &lt;div style=&quot;margin-left: 20px&quot;&gt;
+  &lt;div style=&quot;margin: 4px 0 4px 28px;&quot;&gt;
     &lt;$reveal type=match default=&lt;&lt;__show-tags__&gt;&gt; text=true &gt;
       {{||$:/core/ui/ViewTemplate/tags}}
     &lt;/$reveal&gt;
@@ -13564,18 +13568,46 @@ Things have been reasonably smooth. [[Svelte]] is pretty ergonomic, [[Skeleton]]
 <div created="20210423000856082" modified="20210520142243238" title="Project" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210531211704152" modified="20210531212439234" title="Projects" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210531211704152" modified="20210531220206067" title="Projects" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>[[Standoff Property Editor]]
 
 [[Sinuous Libraries]]
 
 [[Red Utilities]]
 
+[[RegexXP]]
+
 [[Mentat]]
 
 [[ReconJS]] and [[ReconJS Site]]
 
-[[7GUIs Implementations]]</pre>
+[[7GUIs Implementations]]
+
+&lt;$set name=included value=&lt;&lt;qualify $:/temp/projects-included&gt;&gt; &gt;
+&lt;$set name=excluded value=&lt;&lt;qualify $:/temp/projects-excluded&gt;&gt; &gt;
+&lt;$set name=list filter=&quot;[tag[Project]]&quot; &gt;
+&lt;div class=&quot;backlinks-wrapper&quot;&gt;
+&lt;details&gt;
+&lt;summary style=&quot;outline: none !important;&quot;&gt;For a more comprehensive list of projects:&lt;/summary&gt;
+&lt;div style=&quot;margin-left: 20px&quot;&gt;
+
+&lt;$macrocall $name=&quot;filter-list&quot;
+list=&lt;&lt;list&gt;&gt;
+included=&lt;&lt;included&gt;&gt;
+excluded=&lt;&lt;excluded&gt;&gt;
+tag-filters-open=&quot;open&quot;
+show-tag-filters=&quot;true&quot;
+show-field-filters=&quot;false&quot;
+list-items-open=&quot;&quot;
+show-list-fields=&quot;false&quot;
+/&gt;
+
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;</pre>
 </div>
 <div created="20210503183708162" modified="20210520141945824" tags="[[Programming Language]]" title="Python" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
