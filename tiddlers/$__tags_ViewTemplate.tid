@@ -1,5 +1,5 @@
 created: 20210423020212887
-list: $:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Tag Backlinks]] [[View Field Backlinks]] [[View Field Value Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin Spacer [[View Backlinks]] $:/plugins/rmnvsl/krystal/title
-modified: 20210521220848437
+list: $:/core/ui/ViewTemplate/title $:/core/ui/ViewTemplate/unfold $:/core/ui/ViewTemplate/tags [[View Case Insensitive]] [[View Fields]] [[View Tag Backlinks]] [[View Field Backlinks]] $:/core/ui/ViewTemplate/classic $:/core/ui/ViewTemplate/body $:/core/ui/ViewTemplate/import $:/core/ui/ViewTemplate/plugin Spacer [[View Field Value Backlinks]] [[View Backlinks]] $:/plugins/rmnvsl/krystal/title
+modified: 20210531133634068
 title: $:/tags/ViewTemplate
 type: text/vnd.tiddlywiki
