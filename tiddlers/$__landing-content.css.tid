@@ -1,0 +1,21 @@
+created: 20210531201800532
+modified: 20210531204933214
+tags: $:/tags/Stylesheet
+title: $:/landing-content.css
+type: text/vnd.tiddlywiki
+
+[data-tiddler-title^=_] > *:not(.tc-tiddler-body) {
+display: none;
+}
+
+[data-tiddler-title^=_]  h1 {
+font-size: 2.8em;
+}
+
+[data-tiddler-title^=_] .close-btn {
+text-align: right;
+}
+
+[data-tiddler-title^=_] .close-btn svg {
+fill: #cccccc;
+}

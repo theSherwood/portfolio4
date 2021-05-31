@@ -141,6 +141,8 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>_</li>
+
 <li>$:/config/EditorTypeMappings/text/vnd.tiddlywiki</li>
 
 <li>$:/config/Navigation/openLinkFromOutsideRiver</li>
@@ -218,6 +220,10 @@ Error message and password prompt
 <li>$:/Import</li>
 
 <li>$:/isEncrypted</li>
+
+<li>$:/landing-content</li>
+
+<li>$:/landing-content.css</li>
 
 <li>$:/language/DefaultNewTiddlerTitle</li>
 
@@ -358,8 +364,6 @@ Error message and password prompt
 <li>github</li>
 
 <li>Go</li>
-
-<li>Hi! Welcome to my portfolio!</li>
 
 <li>Hiccup</li>
 
@@ -585,6 +589,9 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20210531175543157" modified="20210531204222265" tags="" title="_" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;$transclude tiddler=&quot;$:/landing-content&quot; mode=&quot;block&quot;  /&gt;</pre>
+</div>
 <div created="20210422061137459" modified="20210520143021902" title="$:/config/EditorTypeMappings/text/vnd.tiddlywiki" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>comptext</pre>
 </div>
@@ -10776,8 +10783,8 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 &lt;/$reveal&gt;
 </pre>
 </div>
-<div created="20210422040539032" modified="20210520142746763" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>[list[$:/StoryList]]</pre>
+<div created="20210422040539032" modified="20210531205133536" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>_</pre>
 </div>
 <div created="20210531191830381" list="$:/header-links/my-github $:/header-links/my-twitter $:/header-links/my-résumé $:/header-links/my-email" modified="20210531195517149" tags="$:/plugins/rmnvsl/krystal/header" title="$:/header-links" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>&lt;div class=&quot;header-links&quot;&gt;
@@ -10788,7 +10795,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 &lt;/$list&gt;
 &lt;/div&gt;</pre>
 </div>
-<div created="20210531193407786" modified="20210531195141020" tags="$:/tags/Stylesheet" title="$:/header-links.css" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210531193407786" modified="20210531200032400" tags="$:/tags/Stylesheet" title="$:/header-links.css" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>.header-links {
 margin-right: .8em;
 display: flex;
@@ -10798,7 +10805,7 @@ top: 2px;
 }
 .header-link-item {
 margin-left: .8em;
-fill: &lt;&lt;color tiddler-title-foreground&gt;&gt;;
+fill: #888888;
 }
 .header-link-item svg {
 height: 1.6em;
@@ -10824,6 +10831,32 @@ width: 1.6em;
 </div>
 <div title="$:/isEncrypted" revision="0" bag="default">
 <pre>no</pre>
+</div>
+<div created="20210531203127509" modified="20210531204545822" tags="" title="$:/landing-content" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>&lt;div class=&quot;close-btn&quot;&gt;
+&lt;$transclude tiddler=&quot;$:/core/ui/Buttons/close&quot; mode=&quot;block&quot;/&gt;
+&lt;/div&gt;
+
+! Hello and welcome to my portfolio!
+
+{{Adam Sherwood}}</pre>
+</div>
+<div created="20210531201800532" modified="20210531204933214" tags="$:/tags/Stylesheet" title="$:/landing-content.css" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>[data-tiddler-title^=_] &gt; *:not(.tc-tiddler-body) {
+display: none;
+}
+
+[data-tiddler-title^=_]  h1 {
+font-size: 2.8em;
+}
+
+[data-tiddler-title^=_] .close-btn {
+text-align: right;
+}
+
+[data-tiddler-title^=_] .close-btn svg {
+fill: #cccccc;
+}</pre>
 </div>
 <div created="20210422050129437" modified="20210520142746752" title="$:/language/DefaultNewTiddlerTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>note</pre>
@@ -12179,13 +12212,13 @@ very-muted-foreground: #888888</pre>
 <div created="20210422040459705" modified="20210531132554581" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210422040355488" modified="20210531175706407" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>[[Adam Sherwood|Hi! Welcome to my portfolio!]]</pre>
+<div created="20210422040355488" modified="20210531201504797" title="$:/SiteTitle" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>[[Adam Sherwood|_]]</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="[[Adam Sherwood]] [[Hi! Welcome to my portfolio!]]" title="$:/StoryList" revision="1" bag="default">
+<div list="_" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div created="20210531132754768" list="Tags About" modified="20210531171747994" title="$:/tags/SideBar" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -12612,7 +12645,7 @@ I personally use the [[7GUIs benchmark|7GUIs: A GUI Programming Benchmark]] as a
 <div author="[[Marijn Haverbeke]]" created="20210528202623300" github="https://github.com/acornjs/acorn" modified="20210528202733116" tags="Parsing Library JavaScript" title="AcornJS" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210429231314393" email="&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot;&gt;adam.the.sherwood@gmail.com&lt;/a&gt;" github="https://github.com/theSherwood" modified="20210531195645878" resume="https://raw.githubusercontent.com/theSherwood/resume/master/resume.pdf" tags="Person" title="Adam Sherwood" twitter="&lt;a href=&quot;https://twitter.com/adamthesherwood&quot;&gt;@adamthesherwood&lt;/a&gt;" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20210429231314393" email="&lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot;&gt;adam.the.sherwood@gmail.com&lt;/a&gt;" github="https://github.com/theSherwood" modified="20210531201242001" resume="https://raw.githubusercontent.com/theSherwood/resume/master/resume.pdf" tags="Person" title="Adam Sherwood" twitter="&lt;a href=&quot;https://twitter.com/adamthesherwood&quot;&gt;@adamthesherwood&lt;/a&gt;" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>I'm a sculptor turned software engineer.
 
 &lt;a href={{Adam Sherwood!!github}} title={{Adam Sherwood!!github}} &gt;{{$:/core/images/github}}&lt;/a&gt;
@@ -13010,11 +13043,6 @@ show-list-blurb:&quot;true&quot;
 </div>
 <div created="20210503205459156" modified="20210520141759776" tags="[[Programming Language]]" title="Go" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
-</div>
-<div created="20210531175543157" modified="20210531191458438" tags="" title="Hi! Welcome to my portfolio!" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>! Hello and welcome to my portfolio!
-
-{{Adam Sherwood}}</pre>
 </div>
 <div created="20210429224735299" modified="20210520142019050" tags="UI ClojureScript Clojure Syntax" title="Hiccup" type="text/vnd.tiddlywiki" website="https://github.com/weavejester/hiccup" revision="0" bag="default">
 <pre></pre>

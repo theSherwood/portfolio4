@@ -1,5 +1,5 @@
 created: 20210531193407786
-modified: 20210531195141020
+modified: 20210531200032400
 tags: $:/tags/Stylesheet
 title: $:/header-links.css
 type: text/vnd.tiddlywiki
@@ -13,7 +13,7 @@ top: 2px;
 }
 .header-link-item {
 margin-left: .8em;
-fill: <<color tiddler-title-foreground>>;
+fill: #888888;
 }
 .header-link-item svg {
 height: 1.6em;
