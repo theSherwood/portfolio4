@@ -1,0 +1,35 @@
+created: 20210531180234723
+modified: 20210531191150090
+tags: $:/tags/Stylesheet
+title: Search Input CSS
+type: text/vnd.tiddlywiki
+
+.tc-sidebar-search {
+display: flex;
+flex: 1 1 auto;
+}
+.tc-sidebar-search .tc-block-dropdown.tc-search-drop-down {
+margin-left: unset;
+}
+.tc-sidebar-search-inner {
+flex: 1 1 10000px;
+}
+.tc-search {
+flex: 1 1 auto;
+border: solid 1px #888888;
+border-radius: 99999px;
+padding: 4px 8px 4px 8px;
+display: flex;
+flex-direction: row;
+}
+.tc-search .tc-keyboard {
+flex: 1 1 auto;
+display: flex;
+flex-direction: row;
+}
+.tc-search input {
+border: none;
+flex: 1 1 auto;
+outline: none;
+background: transparent;
+}
