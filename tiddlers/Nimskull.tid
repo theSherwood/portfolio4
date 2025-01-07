@@ -1,10 +1,10 @@
 created: 20250107155514278
-modified: 20250107160612874
+github: https://github.com/nim-works/nimskull
+modified: 20250107182724867
+tags: [[Programming Language]] [[Systems Programming]]
 title: Nimskull
-tags: [[Programming Language]]
 type: text/vnd.tiddlywiki
 website: https://github.com/nim-works/nimskull
-github: https://github.com/nim-works/nimskull
 
 Nimskull is a systems language and hard fork of [[Nim]]. Nimskull's purpose seems to be largely about addressing issues of correctness ignored by the core [[Nim]] team. The Nimskull community seems to be a place for fans of [[Nim]] who don't want to have to deal with all the nonsense that the [[Nim]] team tend to create. "Nimskull" is a temporary name.
 

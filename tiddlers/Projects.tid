@@ -1,45 +1,50 @@
 created: 20210531211704152
-modified: 20250106175945987
+modified: 20250107183944744
 title: Projects
 type: text/vnd.tiddlywiki
 
-!! [[kanren]]
+\define tidInfo(title)
+!! [[$title$]]
+{{$title$||$:/core/ui/ViewTemplate/tags}}
+\end
+
+<<tidInfo "kanren">>
 
 This library provides some logic programming utilities in [[Nimskull]]; sort of a [[miniKanren]] with some additional goodies for arithmetic and rules. It relies on my [[dynamic_value]] library.
 
-!! [[dynamic_value]]
+<<tidInfo "dynamic_value">>
 
 This library provides a dynamic value in [[Nimskull]] on top of my [[persistent]] collection library. Uses tagged unions on 32-bit systems ([[WASM]]) and NaN-boxing on 64-bit systems. Intended to be used for implementing dynamic programming languages and similar projects.
 
-!! [[persistent]]
+<<tidInfo "persistent">>
 
 Implements [[Clojure]]-like persistent, immutable collections for [[Nimskull]]: `vec`, `map`, `set`, and `multiset`.
 
-!! [[Standoff Property Editor]]
+<<tidInfo "Standoff Property Editor">>
 
 Check out [[Standoff Property Editor]] if you're interested in some of my old explorations of knowledge management.
 
-!! [[Sinuous Libraries]]
+<<tidInfo "Sinuous Libraries">>
 
 [[Sinuous Libraries]] contains a handful of libraries I wrote to extend the [[Sinuous]] [[UI]] library.
 
-!! [[Mentat]]
+<<tidInfo "Mentat">>
 
 [[Mentat]] was my first real project in [[JavaScript]] and provided an OS-like windowing system for [[TiddlyWiki]].
 
-!! [[ReconJS]]
+<<tidInfo "ReconJS">>
 
 [[ReconJS]] and [[ReconJS Site]] are projects that center around statically checking [[JavaScript]] for potential security vulnerabilities.
 
-!! [[7GUIs Implementations]]
+<<tidInfo "7GUIs Implementations">>
 
 My [[7GUIs Implementations]] are a way I explore learning new [[UI]] libraries, and occasionally languages, using a set of 7 tasks.
 
-!! [[Red Utilities]]
+<<tidInfo "Red Utilities">>
 
 [[Red Utilities]] are just some useful helpers I wrote for working with [[Red]] code, worth checking out if you have any interest in the [[Red]] programming language.
 
-!! [[RegexXP]]
+<<tidInfo "RegexXP">>
 
 [[RegexXP]] was my first full-stack app that I made solo and an opportunity for me to teach myself [[regex]].
 

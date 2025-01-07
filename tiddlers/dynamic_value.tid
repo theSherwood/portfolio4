@@ -1,10 +1,10 @@
 created: 20250107155558956
-modified: 20250107155559051
+github: https://github.com/theSherwood/dynamic_value
+modified: 20250107182612690
+tags: Nimskull Project 2024
 title: dynamic_value
 type: text/vnd.tiddlywiki
-tags: Nimskull Project
 website: https://github.com/theSherwood/dynamic_value
-github: https://github.com/theSherwood/dynamic_value
 
 This library provides a dynamic value in [[Nimskull]] on top of my [[persistent]] collection library. Uses tagged unions on 32-bit systems ([[WASM]]) and NaN-boxing on 64-bit systems. Intended to be used for implementing dynamic programming languages and similar projects.
 

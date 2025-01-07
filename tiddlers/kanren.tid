@@ -1,10 +1,10 @@
 created: 20250107155610657
-modified: 20250107161642200
-tags: Nimskull [[Logic Programming]] Project
+github: https://github.com/theSherwood/kanren
+modified: 20250107182600586
+tags: Nimskull [[Logic Programming]] Project 2024
 title: kanren
 type: text/vnd.tiddlywiki
 website: https://github.com/theSherwood/kanren
-github: https://github.com/theSherwood/kanren
 
 This library provides some logic programming utilities in [[Nimskull]]; sort of a [[miniKanren]] with some additional goodies for arithmetic and rules. It relies on my [[dynamic_value]] library.
 

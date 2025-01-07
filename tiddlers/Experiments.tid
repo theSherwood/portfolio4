@@ -3,8 +3,13 @@ modified: 20250107165659931
 title: Experiments
 type: text/vnd.tiddlywiki
 
-!! [[differential_dataflow]]
+\define tidInfo(title)
+!! [[$title$]]
+{{$title$||$:/core/ui/ViewTemplate/tags}}
+\end
+
+There aren't very clear criteria of what ends up in listed in this document rather than being listed in [[Projects]]. Generally, the stuff listed here is less finished or was done as part of a code jam or something.
+
+<<tidInfo "differential_dataflow">>
 
 Based on the ideas of [[Frank McSherry]] and his [[Differential Dataflow]]. This implementation relies on my [[dynamic_value]] lib.
-
-!! [[jams]]

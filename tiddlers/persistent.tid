@@ -1,10 +1,10 @@
 created: 20250107155550058
-modified: 20250107161652194
-tags: Nimskull [[Functional Programming]] Project
+github: https://github.com/theSherwood/persistent
+modified: 20250107182626247
+tags: Nimskull [[Functional Programming]] Project 2024
 title: persistent
 type: text/vnd.tiddlywiki
 website: https://github.com/theSherwood/persistent
-github: https://github.com/theSherwood/persistent
 
 Implements [[Clojure]]-like persistent, immutable collections for [[Nimskull]]: `vec`, `map`, `set`, and `multiset`.
 
