@@ -1,0 +1,13 @@
+created: 20250107163403162
+github: https://github.com/theSherwood/differential_dataflow
+modified: 20250107165807034
+tags: Nimskull Experiment
+title: differential_dataflow
+type: text/vnd.tiddlywiki
+website: https://github.com/theSherwood/differential_dataflow
+
+This is just an [[experiment|Experiments]] based on the ideas of [[Frank McSherry]] and his [[Differential Dataflow]]. This implementation is written in [[Nimskull]] and relies on my [[dynamic_value]] lib. 
+
+I want to come back to these ideas at some point, but I'm not really doing much with [[Nimskull]]. So this particular experiment probably won't see any more development.
+
+See the [ext[repo|https://github.com/theSherwood/differential_dataflow]] for more information.

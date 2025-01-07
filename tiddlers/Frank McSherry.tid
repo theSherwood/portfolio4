@@ -1,0 +1,8 @@
+created: 20250107165549581
+modified: 20250107165551432
+tags: Person
+title: Frank McSherry
+type: text/vnd.tiddlywiki
+website: https://github.com/frankmcsherry/blog
+
+Frank McSherry is the creator of [[Differential Dataflow]]. His [ext[blog|https://github.com/frankmcsherry/blog]] is a fantastic resource for understanding the ideas and motivation around [[Differential Dataflow]].

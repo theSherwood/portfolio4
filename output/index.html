@@ -343,6 +343,12 @@ Error message and password prompt
 
 <li>Description</li>
 
+<li>Differential Dataflow</li>
+
+<li>differential_dataflow</li>
+
+<li>dynamic_value</li>
+
 <li>Egui</li>
 
 <li>email</li>
@@ -350,6 +356,8 @@ Error message and password prompt
 <li>Eugen Kiss</li>
 
 <li>Example</li>
+
+<li>Experiments</li>
 
 <li>Express</li>
 
@@ -362,6 +370,8 @@ Error message and password prompt
 <li>Firefox</li>
 
 <li>Flutter</li>
+
+<li>Frank McSherry</li>
 
 <li>Functional Programming</li>
 
@@ -389,6 +399,8 @@ Error message and password prompt
 
 <li>J</li>
 
+<li>jams Experiment</li>
+
 <li>JavaScript</li>
 
 <li>Jeremy Ruston</li>
@@ -396,6 +408,8 @@ Error message and password prompt
 <li>JSX</li>
 
 <li>K</li>
+
+<li>kanren Project</li>
 
 <li>Kenneth Iverson</li>
 
@@ -411,6 +425,8 @@ Error message and password prompt
 
 <li>Metaprogramming</li>
 
+<li>miniKanren</li>
+
 <li>MongoDB</li>
 
 <li>Nenad Rakocevic</li>
@@ -420,6 +436,8 @@ Error message and password prompt
 <li>Nick Mudge</li>
 
 <li>Nim</li>
+
+<li>Nimskull [[Programming Language]]</li>
 
 <li>NodeJS</li>
 
@@ -436,6 +454,8 @@ Error message and password prompt
 <li>Overview</li>
 
 <li>Pain Points</li>
+
+<li>persistent Project</li>
 
 <li>Portfolio Website 2</li>
 
@@ -574,6 +594,8 @@ Error message and password prompt
 <li>View Fields</li>
 
 <li>View Tag Backlinks</li>
+
+<li>WASM</li>
 
 <li>WebGL</li>
 
@@ -10791,6 +10813,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210422040539032" modified="20210531213513605" title="$:/DefaultTiddlers" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>$:/landing-note
 Projects
+Experiments
 [[Adam Sherwood]]</pre>
 </div>
 <div created="20210531191830381" list="$:/header-links/my-github $:/header-links/my-twitter $:/header-links/my-résumé $:/header-links/my-email" modified="20210531195517149" tags="$:/plugins/rmnvsl/krystal/header" title="$:/header-links" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -10871,9 +10894,14 @@ fill: #cccccc;
 &lt;a href={{Adam Sherwood!!resume}} title=&quot;Résumé&quot;&gt;{{$:/core/images/file}}&lt;/a&gt;
 &lt;a href=&quot;mailto:adam.the.sherwood@gmail.com&quot; title=&quot;adam.the.sherwood@gmail.com&quot;&gt;{{$:/core/images/mail}}&lt;/a&gt;
 
-I'm a sculptor turned software engineer. [[You can find out more about me here|Adam Sherwood]].
+I'm a sculptor turned software engineer. [[You can find out more about me here|Adam Sherwood]]. Feel free to look around!
 
-Alternatively, feel free to look around! You might find [[Projects]] a helpful place to start. Pay attention to [[tags|Tags]] and the various forms of backlinks as aids to discovering related content.
+Some places to start:
+
+* [[Projects]]
+* [[Experiments]]
+
+Pay attention to [[tags|Tags]] and the various forms of backlinks as aids to discovering related content.
 
 Not every note in here is about work I've done. Some notes just refer to tools I've used or the people who built them, and many notes are just collection points for backlinks, but you should be able to find your way around without much trouble.
 
@@ -12507,7 +12535,7 @@ Sets plugin behavior
 <div title="$:/status/RequireReloadDueToPluginChange" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div list="$:/landing-note Projects [[Adam Sherwood]]" title="$:/StoryList" revision="1" bag="default">
+<div list="$:/landing-note Projects Experiments [[Adam Sherwood]]" title="$:/StoryList" revision="1" bag="default">
 <pre></pre>
 </div>
 <div created="20210531132754768" list="Tags About" modified="20210531171747994" title="$:/tags/SideBar" type="text/vnd.tiddlywiki" revision="0" bag="default">
@@ -13052,6 +13080,29 @@ Hit me up on [[twitter|https://twitter.com/adamthesherwood]] or by [[email|mailt
 <div created="20210422235240170" modified="20210520142243247" title="Description" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
+<div created="20250107165607197" github="https://github.com/TimelyDataflow/differential-dataflow" modified="20250107165627255" tags="[[Programming Paradigm]]" title="Differential Dataflow" type="text/vnd.tiddlywiki" website="https://github.com/TimelyDataflow/differential-dataflow" revision="0" bag="default">
+<pre>Differential Dataflow is a new [[Programming Paradigm]] built around the ideas of [[Frank McSherry]]. The basic notion is one of incremental computation and incremental view maintenance. The canonical implementation is in [[Rust]] at [ext[differential-dataflow|https://github.com/TimelyDataflow/differential-dataflow]]. [ext[Frank McSherry's blog|https://github.com/frankmcsherry/blog]] is great resource for understanding the fundamental ideas.
+
+I'm pretty bullish on this whole approach and am excited to see more projects implementing it, like [ext[Electric Clojure|https://github.com/hyperfiddle/electric]]. I've experimented with my own implementation, [[differential_dataflow]], and hope to do more with it in future.</pre>
+</div>
+<div created="20250107163403162" github="https://github.com/theSherwood/differential_dataflow" modified="20250107165807034" tags="Nimskull Experiment" title="differential_dataflow" type="text/vnd.tiddlywiki" website="https://github.com/theSherwood/differential_dataflow" revision="0" bag="default">
+<pre>This is just an [[experiment|Experiments]] based on the ideas of [[Frank McSherry]] and his [[Differential Dataflow]]. This implementation is written in [[Nimskull]] and relies on my [[dynamic_value]] lib. 
+
+I want to come back to these ideas at some point, but I'm not really doing much with [[Nimskull]]. So this particular experiment probably won't see any more development.
+
+See the [ext[repo|https://github.com/theSherwood/differential_dataflow]] for more information.
+</pre>
+</div>
+<div created="20250107155558956" github="https://github.com/theSherwood/dynamic_value" modified="20250107155559051" tags="Nimskull Project" title="dynamic_value" type="text/vnd.tiddlywiki" website="https://github.com/theSherwood/dynamic_value" revision="0" bag="default">
+<pre>This library provides a dynamic value in [[Nimskull]] on top of my [[persistent]] collection library. Uses tagged unions on 32-bit systems ([[WASM]]) and NaN-boxing on 64-bit systems. Intended to be used for implementing dynamic programming languages and similar projects.
+
+This was pretty fun to implement. I learned a fair bit about NaN-boxing and similar strategies. 
+
+This library is used by [[kanren]] and [[differential_dataflow]] and compiles to [[C]] or [[WASM]].
+
+See the [ext[repo|https://github.com/theSherwood/dynamic_value]] for more information.
+</pre>
+</div>
 <div created="20210528203731205" modified="20210528203749473" tags="Rust WebGL Library UI Cross-Platform" title="Egui" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
@@ -13063,6 +13114,13 @@ Hit me up on [[twitter|https://twitter.com/adamthesherwood]] or by [[email|mailt
 </div>
 <div created="20210503204524143" modified="20210520141759788" title="Example" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div created="20250107163220426" modified="20250107165659931" title="Experiments" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!! [[differential_dataflow]]
+
+Based on the ideas of [[Frank McSherry]] and his [[Differential Dataflow]]. This implementation relies on my [[dynamic_value]] lib.
+
+!! [[jams]]</pre>
 </div>
 <div created="20210422235515309" modified="20210520142243243" title="Express" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
@@ -13336,6 +13394,10 @@ show-list-blurb:&quot;true&quot;
 <div created="20210528203858328" modified="20210528203942667" tags="Dart Cross-Platform UI Library WebGL" title="Flutter" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
+<div created="20250107165549581" modified="20250107165551432" tags="Person" title="Frank McSherry" type="text/vnd.tiddlywiki" website="https://github.com/frankmcsherry/blog" revision="0" bag="default">
+<pre>Frank McSherry is the creator of [[Differential Dataflow]]. His [ext[blog|https://github.com/frankmcsherry/blog]] is a fantastic resource for understanding the ideas and motivation around [[Differential Dataflow]].
+</pre>
+</div>
 <div created="20210503194545309" modified="20210520141945845" tags="[[Programming Paradigm]]" title="Functional Programming" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
@@ -13390,6 +13452,9 @@ loading=&quot;lazy&quot;
 <div author="[[Kenneth Iverson]] [[Roger Hui]] [[Arthur Whitney]]" created="20210521214657180" modified="20210521221920830" tags="[[Array Programming]] [[Functional Programming]] [[Programming Language]]" title="J" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
+<div created="20250107163407466" github="https://github.com/theSherwood/jams" modified="20250107163407561" title="jams Experiment" type="text/vnd.tiddlywiki" website="https://github.com/theSherwood/jams" revision="0" bag="default">
+<pre></pre>
+</div>
 <div created="20210422235049686" modified="20210520141945808" tags="[[Programming Language]] [[Functional Programming]] [[Imperative Programming]]" title="JavaScript" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
@@ -13401,6 +13466,17 @@ loading=&quot;lazy&quot;
 </div>
 <div author="[[Arthur Whitney]]" created="20210521214709647" modified="20210521221725310" tags="[[Array Programming]] [[Functional Programming]] [[Programming Language]]" title="K" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div created="20250107155610657" github="https://github.com/theSherwood/kanren" modified="20250107161642200" tags="Nimskull [[Logic Programming]]" title="kanren Project" type="text/vnd.tiddlywiki" website="https://github.com/theSherwood/kanren" revision="0" bag="default">
+<pre>This library provides some logic programming utilities in [[Nimskull]]; sort of a [[miniKanren]] with some additional goodies for arithmetic and rules. It relies on my [[dynamic_value]] library.
+
+I made a lot of use of [[Nimskull]]'s closure iterators (generators). It's a common approach in [[miniKanren]] implementations that allow the model to continue making progress on the computation without getting stuck.
+
+I was surprised at how compact [[miniKanren]]s can be (if one doesn't count the implementation of the dynamic type). This implementation is less than 500 loc and 100 of those lines are helpers for generating and debugging the closure iterators.
+
+Compiles to [[C]] or [[WASM]].
+
+See the [ext[repo|https://github.com/theSherwood/kanren]] for more information.</pre>
 </div>
 <div created="20210521221659539" modified="20210528193928648" tags="Person" title="Kenneth Iverson" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
@@ -13482,6 +13558,9 @@ There was no smooth sailing.
 <div created="20210503193740623" modified="20210520141945859" title="Metaprogramming" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
+<div created="20250107155642845" modified="20250107162010941" tags="[[Logic Programming]]" title="miniKanren" type="text/vnd.tiddlywiki" website="http://minikanren.org/" revision="0" bag="default">
+<pre></pre>
+</div>
 <div created="20210423012213697" modified="20210520142243229" title="MongoDB" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
@@ -13496,6 +13575,12 @@ There was no smooth sailing.
 </div>
 <div created="20210528204015522" modified="20210528204042076" tags="[[Programming Language]] [[Imperative Programming]]" title="Nim" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div created="20250107155514278" github="https://github.com/nim-works/nimskull" modified="20250107160612874" title="Nimskull [[Programming Language]]" type="text/vnd.tiddlywiki" website="https://github.com/nim-works/nimskull" revision="0" bag="default">
+<pre>Nimskull is a systems language and hard fork of [[Nim]]. Nimskull's purpose seems to be largely about addressing issues of correctness ignored by the core [[Nim]] team. The Nimskull community seems to be a place for fans of [[Nim]] who don't want to have to deal with all the nonsense that the [[Nim]] team tend to create. &quot;Nimskull&quot; is a temporary name.
+
+I've done a handful of projects in [[Nimskull]]. It's pretty great, though there are certainly some sharp edges. Last I checked it was something of a pain to compile to [[WASM]] but it was possible. I don't do much with it at the moment because I'm looking for something more [[WASM]]-native, so to speak. But I think the design is pretty great.
+</pre>
 </div>
 <div created="20210422235507979" modified="20210520142019067" tags="JavaScript" title="NodeJS" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
@@ -13520,6 +13605,14 @@ There was no smooth sailing.
 </div>
 <div created="20210423001542699" modified="20210520142243233" title="Pain Points" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
+</div>
+<div created="20250107155550058" github="https://github.com/theSherwood/persistent" modified="20250107161652194" tags="Nimskull [[Functional Programming]]" title="persistent Project" type="text/vnd.tiddlywiki" website="https://github.com/theSherwood/persistent" revision="0" bag="default">
+<pre>Implements [[Clojure]]-like persistent, immutable collections for [[Nimskull]]: `vec`, `map`, `set`, and `multiset`.
+
+This library is used by [[dynamic_value]] and compiles to [[C]] or [[WASM]].
+
+See the [ext[repo|https://github.com/theSherwood/persistent]] for more information.
+</pre>
 </div>
 <div _blurb="A simple website portfolio [[SPA]] to curate a few of my projects." author="[[Adam Sherwood]]" created="20210423014016560" github="https://github.com/theSherwood/portfolio2" modified="20210521205938434" tags="Project 2019 JavaScript Svelte" title="Portfolio Website 2" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>!! [[Description]]
@@ -13576,10 +13669,22 @@ Things have been reasonably smooth. [[Svelte]] is pretty ergonomic, [[Skeleton]]
 <div created="20210423000856082" modified="20210520142243238" title="Project" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>
 </div>
-<div created="20210531211704152" modified="20210531230718416" title="Projects" type="text/vnd.tiddlywiki" revision="0" bag="default">
-<pre>!! [[Standoff Property Editor]]
+<div created="20210531211704152" modified="20250106175945987" title="Projects" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre>!! [[kanren]]
 
-Check out [[Standoff Property Editor]] if you're interested in my most recent explorations of knowledge management.
+This library provides some logic programming utilities in [[Nimskull]]; sort of a [[miniKanren]] with some additional goodies for arithmetic and rules. It relies on my [[dynamic_value]] library.
+
+!! [[dynamic_value]]
+
+This library provides a dynamic value in [[Nimskull]] on top of my [[persistent]] collection library. Uses tagged unions on 32-bit systems ([[WASM]]) and NaN-boxing on 64-bit systems. Intended to be used for implementing dynamic programming languages and similar projects.
+
+!! [[persistent]]
+
+Implements [[Clojure]]-like persistent, immutable collections for [[Nimskull]]: `vec`, `map`, `set`, and `multiset`.
+
+!! [[Standoff Property Editor]]
+
+Check out [[Standoff Property Editor]] if you're interested in some of my old explorations of knowledge management.
 
 !! [[Sinuous Libraries]]
 
@@ -14697,6 +14802,9 @@ excluded=&lt;&lt;excluded&gt;&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;</pre>
+</div>
+<div created="20250107155619350" modified="20250107155619441" title="WASM" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<pre></pre>
 </div>
 <div created="20210528213857438" modified="20210528213857614" title="WebGL" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre></pre>

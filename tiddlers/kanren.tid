@@ -1,0 +1,17 @@
+created: 20250107155610657
+modified: 20250107161642200
+tags: Nimskull [[Logic Programming]]
+title: kanren Project
+type: text/vnd.tiddlywiki
+website: https://github.com/theSherwood/kanren
+github: https://github.com/theSherwood/kanren
+
+This library provides some logic programming utilities in [[Nimskull]]; sort of a [[miniKanren]] with some additional goodies for arithmetic and rules. It relies on my [[dynamic_value]] library.
+
+I made a lot of use of [[Nimskull]]'s closure iterators (generators). It's a common approach in [[miniKanren]] implementations that allow the model to continue making progress on the computation without getting stuck.
+
+I was surprised at how compact [[miniKanren]]s can be (if one doesn't count the implementation of the dynamic type). This implementation is less than 500 loc and 100 of those lines are helpers for generating and debugging the closure iterators.
+
+Compiles to [[C]] or [[WASM]].
+
+See the [ext[repo|https://github.com/theSherwood/kanren]] for more information.

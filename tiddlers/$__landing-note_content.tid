@@ -15,9 +15,14 @@ type: text/vnd.tiddlywiki
 <a href={{Adam Sherwood!!resume}} title="Résumé">{{$:/core/images/file}}</a>
 <a href="mailto:adam.the.sherwood@gmail.com" title="adam.the.sherwood@gmail.com">{{$:/core/images/mail}}</a>
 
-I'm a sculptor turned software engineer. [[You can find out more about me here|Adam Sherwood]].
+I'm a sculptor turned software engineer. [[You can find out more about me here|Adam Sherwood]]. Feel free to look around!
 
-Alternatively, feel free to look around! You might find [[Projects]] a helpful place to start. Pay attention to [[tags|Tags]] and the various forms of backlinks as aids to discovering related content.
+Some places to start:
+
+* [[Projects]]
+* [[Experiments]]
+
+Pay attention to [[tags|Tags]] and the various forms of backlinks as aids to discovering related content.
 
 Not every note in here is about work I've done. Some notes just refer to tools I've used or the people who built them, and many notes are just collection points for backlinks, but you should be able to find your way around without much trouble.
 

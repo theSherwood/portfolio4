@@ -1,0 +1,10 @@
+created: 20250107163220426
+modified: 20250107165659931
+title: Experiments
+type: text/vnd.tiddlywiki
+
+!! [[differential_dataflow]]
+
+Based on the ideas of [[Frank McSherry]] and his [[Differential Dataflow]]. This implementation relies on my [[dynamic_value]] lib.
+
+!! [[jams]]

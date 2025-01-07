@@ -1,11 +1,23 @@
 created: 20210531211704152
-modified: 20210531230718416
+modified: 20250106175945987
 title: Projects
 type: text/vnd.tiddlywiki
 
+!! [[kanren]]
+
+This library provides some logic programming utilities in [[Nimskull]]; sort of a [[miniKanren]] with some additional goodies for arithmetic and rules. It relies on my [[dynamic_value]] library.
+
+!! [[dynamic_value]]
+
+This library provides a dynamic value in [[Nimskull]] on top of my [[persistent]] collection library. Uses tagged unions on 32-bit systems ([[WASM]]) and NaN-boxing on 64-bit systems. Intended to be used for implementing dynamic programming languages and similar projects.
+
+!! [[persistent]]
+
+Implements [[Clojure]]-like persistent, immutable collections for [[Nimskull]]: `vec`, `map`, `set`, and `multiset`.
+
 !! [[Standoff Property Editor]]
 
-Check out [[Standoff Property Editor]] if you're interested in my most recent explorations of knowledge management.
+Check out [[Standoff Property Editor]] if you're interested in some of my old explorations of knowledge management.
 
 !! [[Sinuous Libraries]]
 

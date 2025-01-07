@@ -1,0 +1,11 @@
+created: 20250107165607197
+modified: 20250107165627255
+tags: [[Programming Paradigm]]
+title: Differential Dataflow
+type: text/vnd.tiddlywiki
+website: https://github.com/TimelyDataflow/differential-dataflow
+github: https://github.com/TimelyDataflow/differential-dataflow
+
+Differential Dataflow is a new [[Programming Paradigm]] built around the ideas of [[Frank McSherry]]. The basic notion is one of incremental computation and incremental view maintenance. The canonical implementation is in [[Rust]] at [ext[differential-dataflow|https://github.com/TimelyDataflow/differential-dataflow]]. [ext[Frank McSherry's blog|https://github.com/frankmcsherry/blog]] is great resource for understanding the fundamental ideas.
+
+I'm pretty bullish on this whole approach and am excited to see more projects implementing it, like [ext[Electric Clojure|https://github.com/hyperfiddle/electric]]. I've experimented with my own implementation, [[differential_dataflow]], and hope to do more with it in future.
